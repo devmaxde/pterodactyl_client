@@ -163,7 +163,6 @@ paths:
         -
           JWT: []
       tags:
-        
         - "servers_databases"
 
       parameters:
