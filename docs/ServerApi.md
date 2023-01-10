@@ -1,65 +1,65 @@
-# pterodactyl_client.ServersApi
+# pterodactyl_client.ServerApi
 
 All URIs are relative to *http://example.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_application_servers_external_remote_id1_get**](ServersApi.md#api_application_servers_external_remote_id1_get) | **GET** /api/application/servers/external/RemoteId1 | 
-[**api_application_servers_get**](ServersApi.md#api_application_servers_get) | **GET** /api/application/servers | 
-[**api_application_servers_id_delete**](ServersApi.md#api_application_servers_id_delete) | **DELETE** /api/application/servers/{id} | 
-[**api_application_servers_id_force_delete**](ServersApi.md#api_application_servers_id_force_delete) | **DELETE** /api/application/servers/{id}/force | 
-[**api_application_servers_id_get**](ServersApi.md#api_application_servers_id_get) | **GET** /api/application/servers/{id} | 
-[**api_application_servers_id_reinstall_post**](ServersApi.md#api_application_servers_id_reinstall_post) | **POST** /api/application/servers/{id}/reinstall | 
-[**api_application_servers_id_suspend_post**](ServersApi.md#api_application_servers_id_suspend_post) | **POST** /api/application/servers/{id}/suspend | 
-[**api_application_servers_id_unsuspend_post**](ServersApi.md#api_application_servers_id_unsuspend_post) | **POST** /api/application/servers/{id}/unsuspend | 
-[**api_application_servers_post**](ServersApi.md#api_application_servers_post) | **POST** /api/application/servers | 
-[**api_client_servers_server_id_backups_backup_id_delete**](ServersApi.md#api_client_servers_server_id_backups_backup_id_delete) | **DELETE** /api/client/servers/{server_id}/backups/{backup_id} | 
-[**api_client_servers_server_id_backups_backup_id_download_get**](ServersApi.md#api_client_servers_server_id_backups_backup_id_download_get) | **GET** /api/client/servers/{server_id}/backups/{backup_id}/download | 
-[**api_client_servers_server_id_backups_backup_id_get**](ServersApi.md#api_client_servers_server_id_backups_backup_id_get) | **GET** /api/client/servers/{server_id}/backups/{backup_id} | 
-[**api_client_servers_server_id_backups_get**](ServersApi.md#api_client_servers_server_id_backups_get) | **GET** /api/client/servers/{server_id}/backups | 
-[**api_client_servers_server_id_backups_post**](ServersApi.md#api_client_servers_server_id_backups_post) | **POST** /api/client/servers/{server_id}/backups | 
-[**api_client_servers_server_id_command_post**](ServersApi.md#api_client_servers_server_id_command_post) | **POST** /api/client/servers/{server_id}/command | 
-[**api_client_servers_server_id_databases_database_id_delete**](ServersApi.md#api_client_servers_server_id_databases_database_id_delete) | **DELETE** /api/client/servers/{server_id}/databases/{database_id} | 
-[**api_client_servers_server_id_databases_database_id_rotate_password_post**](ServersApi.md#api_client_servers_server_id_databases_database_id_rotate_password_post) | **POST** /api/client/servers/{server_id}/databases/{database_id}/rotate-password | 
-[**api_client_servers_server_id_databases_get**](ServersApi.md#api_client_servers_server_id_databases_get) | **GET** /api/client/servers/{server_id}/databases | 
-[**api_client_servers_server_id_databases_post**](ServersApi.md#api_client_servers_server_id_databases_post) | **POST** /api/client/servers/{server_id}/databases | 
-[**api_client_servers_server_id_files_compress_post**](ServersApi.md#api_client_servers_server_id_files_compress_post) | **POST** /api/client/servers/{server_id}/files/compress | 
-[**api_client_servers_server_id_files_contents_get**](ServersApi.md#api_client_servers_server_id_files_contents_get) | **GET** /api/client/servers/{server_id}/files/contents | 
-[**api_client_servers_server_id_files_copy_post**](ServersApi.md#api_client_servers_server_id_files_copy_post) | **POST** /api/client/servers/{server_id}/files/copy | 
-[**api_client_servers_server_id_files_create_folder_post**](ServersApi.md#api_client_servers_server_id_files_create_folder_post) | **POST** /api/client/servers/{server_id}/files/create-folder | 
-[**api_client_servers_server_id_files_decompress_post**](ServersApi.md#api_client_servers_server_id_files_decompress_post) | **POST** /api/client/servers/{server_id}/files/decompress | 
-[**api_client_servers_server_id_files_delete_post**](ServersApi.md#api_client_servers_server_id_files_delete_post) | **POST** /api/client/servers/{server_id}/files/delete | 
-[**api_client_servers_server_id_files_download_get**](ServersApi.md#api_client_servers_server_id_files_download_get) | **GET** /api/client/servers/{server_id}/files/download | 
-[**api_client_servers_server_id_files_list_get**](ServersApi.md#api_client_servers_server_id_files_list_get) | **GET** /api/client/servers/{server_id}/files/list | 
-[**api_client_servers_server_id_files_rename_put**](ServersApi.md#api_client_servers_server_id_files_rename_put) | **PUT** /api/client/servers/{server_id}/files/rename | 
-[**api_client_servers_server_id_files_upload_get**](ServersApi.md#api_client_servers_server_id_files_upload_get) | **GET** /api/client/servers/{server_id}/files/upload | 
-[**api_client_servers_server_id_files_write_post**](ServersApi.md#api_client_servers_server_id_files_write_post) | **POST** /api/client/servers/{server_id}/files/write | 
-[**api_client_servers_server_id_get**](ServersApi.md#api_client_servers_server_id_get) | **GET** /api/client/servers/{server_id} | 
-[**api_client_servers_server_id_network_allocations_get**](ServersApi.md#api_client_servers_server_id_network_allocations_get) | **GET** /api/client/servers/{server_id}/network/allocations | 
-[**api_client_servers_server_id_network_allocations_id_delete**](ServersApi.md#api_client_servers_server_id_network_allocations_id_delete) | **DELETE** /api/client/servers/{server_id}/network/allocations/{id} | 
-[**api_client_servers_server_id_network_allocations_id_post**](ServersApi.md#api_client_servers_server_id_network_allocations_id_post) | **POST** /api/client/servers/{server_id}/network/allocations/{id} | 
-[**api_client_servers_server_id_network_allocations_id_primary_post**](ServersApi.md#api_client_servers_server_id_network_allocations_id_primary_post) | **POST** /api/client/servers/{server_id}/network/allocations/{id}/primary | 
-[**api_client_servers_server_id_network_allocations_post**](ServersApi.md#api_client_servers_server_id_network_allocations_post) | **POST** /api/client/servers/{server_id}/network/allocations | 
-[**api_client_servers_server_id_power_post**](ServersApi.md#api_client_servers_server_id_power_post) | **POST** /api/client/servers/{server_id}/power | 
-[**api_client_servers_server_id_resources_get**](ServersApi.md#api_client_servers_server_id_resources_get) | **GET** /api/client/servers/{server_id}/resources | 
-[**api_client_servers_server_id_schedules_get**](ServersApi.md#api_client_servers_server_id_schedules_get) | **GET** /api/client/servers/{server_id}/schedules | 
-[**api_client_servers_server_id_schedules_id_delete**](ServersApi.md#api_client_servers_server_id_schedules_id_delete) | **DELETE** /api/client/servers/{server_id}/schedules/{id} | 
-[**api_client_servers_server_id_schedules_id_get**](ServersApi.md#api_client_servers_server_id_schedules_id_get) | **GET** /api/client/servers/{server_id}/schedules/{id} | 
-[**api_client_servers_server_id_schedules_id_post**](ServersApi.md#api_client_servers_server_id_schedules_id_post) | **POST** /api/client/servers/{server_id}/schedules/{id} | 
-[**api_client_servers_server_id_schedules_id_tasks_id1_delete**](ServersApi.md#api_client_servers_server_id_schedules_id_tasks_id1_delete) | **DELETE** /api/client/servers/{server_id}/schedules/{id}/tasks/{id1} | 
-[**api_client_servers_server_id_schedules_id_tasks_id1_post**](ServersApi.md#api_client_servers_server_id_schedules_id_tasks_id1_post) | **POST** /api/client/servers/{server_id}/schedules/{id}/tasks/{id1} | 
-[**api_client_servers_server_id_schedules_id_tasks_post**](ServersApi.md#api_client_servers_server_id_schedules_id_tasks_post) | **POST** /api/client/servers/{server_id}/schedules/{id}/tasks | 
-[**api_client_servers_server_id_schedules_post**](ServersApi.md#api_client_servers_server_id_schedules_post) | **POST** /api/client/servers/{server_id}/schedules | 
-[**api_client_servers_server_id_settings_reinstall_post**](ServersApi.md#api_client_servers_server_id_settings_reinstall_post) | **POST** /api/client/servers/{server_id}/settings/reinstall | 
-[**api_client_servers_server_id_settings_rename_post**](ServersApi.md#api_client_servers_server_id_settings_rename_post) | **POST** /api/client/servers/{server_id}/settings/rename | 
-[**api_client_servers_server_id_startup_get**](ServersApi.md#api_client_servers_server_id_startup_get) | **GET** /api/client/servers/{server_id}/startup | 
-[**api_client_servers_server_id_startup_variable_put**](ServersApi.md#api_client_servers_server_id_startup_variable_put) | **PUT** /api/client/servers/{server_id}/startup/variable | 
-[**api_client_servers_server_id_users_get**](ServersApi.md#api_client_servers_server_id_users_get) | **GET** /api/client/servers/{server_id}/users | 
-[**api_client_servers_server_id_users_post**](ServersApi.md#api_client_servers_server_id_users_post) | **POST** /api/client/servers/{server_id}/users | 
-[**api_client_servers_server_id_users_user_id_delete**](ServersApi.md#api_client_servers_server_id_users_user_id_delete) | **DELETE** /api/client/servers/{server_id}/users/{user_id} | 
-[**api_client_servers_server_id_users_user_id_get**](ServersApi.md#api_client_servers_server_id_users_user_id_get) | **GET** /api/client/servers/{server_id}/users/{user_id} | 
-[**api_client_servers_server_id_users_user_id_post**](ServersApi.md#api_client_servers_server_id_users_user_id_post) | **POST** /api/client/servers/{server_id}/users/{user_id} | 
-[**api_client_servers_server_id_websocket_get**](ServersApi.md#api_client_servers_server_id_websocket_get) | **GET** /api/client/servers/{server_id}/websocket | 
+[**api_application_servers_external_remote_id1_get**](ServerApi.md#api_application_servers_external_remote_id1_get) | **GET** /api/application/servers/external/RemoteId1 | 
+[**api_application_servers_get**](ServerApi.md#api_application_servers_get) | **GET** /api/application/servers | 
+[**api_application_servers_id_delete**](ServerApi.md#api_application_servers_id_delete) | **DELETE** /api/application/servers/{id} | 
+[**api_application_servers_id_force_delete**](ServerApi.md#api_application_servers_id_force_delete) | **DELETE** /api/application/servers/{id}/force | 
+[**api_application_servers_id_get**](ServerApi.md#api_application_servers_id_get) | **GET** /api/application/servers/{id} | 
+[**api_application_servers_id_reinstall_post**](ServerApi.md#api_application_servers_id_reinstall_post) | **POST** /api/application/servers/{id}/reinstall | 
+[**api_application_servers_id_suspend_post**](ServerApi.md#api_application_servers_id_suspend_post) | **POST** /api/application/servers/{id}/suspend | 
+[**api_application_servers_id_unsuspend_post**](ServerApi.md#api_application_servers_id_unsuspend_post) | **POST** /api/application/servers/{id}/unsuspend | 
+[**api_application_servers_post**](ServerApi.md#api_application_servers_post) | **POST** /api/application/servers | 
+[**api_client_servers_server_id_backups_backup_id_delete**](ServerApi.md#api_client_servers_server_id_backups_backup_id_delete) | **DELETE** /api/client/servers/{server_id}/backups/{backup_id} | 
+[**api_client_servers_server_id_backups_backup_id_download_get**](ServerApi.md#api_client_servers_server_id_backups_backup_id_download_get) | **GET** /api/client/servers/{server_id}/backups/{backup_id}/download | 
+[**api_client_servers_server_id_backups_backup_id_get**](ServerApi.md#api_client_servers_server_id_backups_backup_id_get) | **GET** /api/client/servers/{server_id}/backups/{backup_id} | 
+[**api_client_servers_server_id_backups_get**](ServerApi.md#api_client_servers_server_id_backups_get) | **GET** /api/client/servers/{server_id}/backups | 
+[**api_client_servers_server_id_backups_post**](ServerApi.md#api_client_servers_server_id_backups_post) | **POST** /api/client/servers/{server_id}/backups | 
+[**api_client_servers_server_id_command_post**](ServerApi.md#api_client_servers_server_id_command_post) | **POST** /api/client/servers/{server_id}/command | 
+[**api_client_servers_server_id_databases_database_id_delete**](ServerApi.md#api_client_servers_server_id_databases_database_id_delete) | **DELETE** /api/client/servers/{server_id}/databases/{database_id} | 
+[**api_client_servers_server_id_databases_database_id_rotate_password_post**](ServerApi.md#api_client_servers_server_id_databases_database_id_rotate_password_post) | **POST** /api/client/servers/{server_id}/databases/{database_id}/rotate-password | 
+[**api_client_servers_server_id_databases_get**](ServerApi.md#api_client_servers_server_id_databases_get) | **GET** /api/client/servers/{server_id}/databases | 
+[**api_client_servers_server_id_databases_post**](ServerApi.md#api_client_servers_server_id_databases_post) | **POST** /api/client/servers/{server_id}/databases | 
+[**api_client_servers_server_id_files_compress_post**](ServerApi.md#api_client_servers_server_id_files_compress_post) | **POST** /api/client/servers/{server_id}/files/compress | 
+[**api_client_servers_server_id_files_contents_get**](ServerApi.md#api_client_servers_server_id_files_contents_get) | **GET** /api/client/servers/{server_id}/files/contents | 
+[**api_client_servers_server_id_files_copy_post**](ServerApi.md#api_client_servers_server_id_files_copy_post) | **POST** /api/client/servers/{server_id}/files/copy | 
+[**api_client_servers_server_id_files_create_folder_post**](ServerApi.md#api_client_servers_server_id_files_create_folder_post) | **POST** /api/client/servers/{server_id}/files/create-folder | 
+[**api_client_servers_server_id_files_decompress_post**](ServerApi.md#api_client_servers_server_id_files_decompress_post) | **POST** /api/client/servers/{server_id}/files/decompress | 
+[**api_client_servers_server_id_files_delete_post**](ServerApi.md#api_client_servers_server_id_files_delete_post) | **POST** /api/client/servers/{server_id}/files/delete | 
+[**api_client_servers_server_id_files_download_get**](ServerApi.md#api_client_servers_server_id_files_download_get) | **GET** /api/client/servers/{server_id}/files/download | 
+[**api_client_servers_server_id_files_list_get**](ServerApi.md#api_client_servers_server_id_files_list_get) | **GET** /api/client/servers/{server_id}/files/list | 
+[**api_client_servers_server_id_files_rename_put**](ServerApi.md#api_client_servers_server_id_files_rename_put) | **PUT** /api/client/servers/{server_id}/files/rename | 
+[**api_client_servers_server_id_files_upload_get**](ServerApi.md#api_client_servers_server_id_files_upload_get) | **GET** /api/client/servers/{server_id}/files/upload | 
+[**api_client_servers_server_id_files_write_post**](ServerApi.md#api_client_servers_server_id_files_write_post) | **POST** /api/client/servers/{server_id}/files/write | 
+[**api_client_servers_server_id_get**](ServerApi.md#api_client_servers_server_id_get) | **GET** /api/client/servers/{server_id} | 
+[**api_client_servers_server_id_network_allocations_get**](ServerApi.md#api_client_servers_server_id_network_allocations_get) | **GET** /api/client/servers/{server_id}/network/allocations | 
+[**api_client_servers_server_id_network_allocations_id_delete**](ServerApi.md#api_client_servers_server_id_network_allocations_id_delete) | **DELETE** /api/client/servers/{server_id}/network/allocations/{id} | 
+[**api_client_servers_server_id_network_allocations_id_post**](ServerApi.md#api_client_servers_server_id_network_allocations_id_post) | **POST** /api/client/servers/{server_id}/network/allocations/{id} | 
+[**api_client_servers_server_id_network_allocations_id_primary_post**](ServerApi.md#api_client_servers_server_id_network_allocations_id_primary_post) | **POST** /api/client/servers/{server_id}/network/allocations/{id}/primary | 
+[**api_client_servers_server_id_network_allocations_post**](ServerApi.md#api_client_servers_server_id_network_allocations_post) | **POST** /api/client/servers/{server_id}/network/allocations | 
+[**api_client_servers_server_id_power_post**](ServerApi.md#api_client_servers_server_id_power_post) | **POST** /api/client/servers/{server_id}/power | 
+[**api_client_servers_server_id_resources_get**](ServerApi.md#api_client_servers_server_id_resources_get) | **GET** /api/client/servers/{server_id}/resources | 
+[**api_client_servers_server_id_schedules_get**](ServerApi.md#api_client_servers_server_id_schedules_get) | **GET** /api/client/servers/{server_id}/schedules | 
+[**api_client_servers_server_id_schedules_id_delete**](ServerApi.md#api_client_servers_server_id_schedules_id_delete) | **DELETE** /api/client/servers/{server_id}/schedules/{id} | 
+[**api_client_servers_server_id_schedules_id_get**](ServerApi.md#api_client_servers_server_id_schedules_id_get) | **GET** /api/client/servers/{server_id}/schedules/{id} | 
+[**api_client_servers_server_id_schedules_id_post**](ServerApi.md#api_client_servers_server_id_schedules_id_post) | **POST** /api/client/servers/{server_id}/schedules/{id} | 
+[**api_client_servers_server_id_schedules_id_tasks_id1_delete**](ServerApi.md#api_client_servers_server_id_schedules_id_tasks_id1_delete) | **DELETE** /api/client/servers/{server_id}/schedules/{id}/tasks/{id1} | 
+[**api_client_servers_server_id_schedules_id_tasks_id1_post**](ServerApi.md#api_client_servers_server_id_schedules_id_tasks_id1_post) | **POST** /api/client/servers/{server_id}/schedules/{id}/tasks/{id1} | 
+[**api_client_servers_server_id_schedules_id_tasks_post**](ServerApi.md#api_client_servers_server_id_schedules_id_tasks_post) | **POST** /api/client/servers/{server_id}/schedules/{id}/tasks | 
+[**api_client_servers_server_id_schedules_post**](ServerApi.md#api_client_servers_server_id_schedules_post) | **POST** /api/client/servers/{server_id}/schedules | 
+[**api_client_servers_server_id_settings_reinstall_post**](ServerApi.md#api_client_servers_server_id_settings_reinstall_post) | **POST** /api/client/servers/{server_id}/settings/reinstall | 
+[**api_client_servers_server_id_settings_rename_post**](ServerApi.md#api_client_servers_server_id_settings_rename_post) | **POST** /api/client/servers/{server_id}/settings/rename | 
+[**api_client_servers_server_id_startup_get**](ServerApi.md#api_client_servers_server_id_startup_get) | **GET** /api/client/servers/{server_id}/startup | 
+[**api_client_servers_server_id_startup_variable_put**](ServerApi.md#api_client_servers_server_id_startup_variable_put) | **PUT** /api/client/servers/{server_id}/startup/variable | 
+[**api_client_servers_server_id_users_get**](ServerApi.md#api_client_servers_server_id_users_get) | **GET** /api/client/servers/{server_id}/users | 
+[**api_client_servers_server_id_users_post**](ServerApi.md#api_client_servers_server_id_users_post) | **POST** /api/client/servers/{server_id}/users | 
+[**api_client_servers_server_id_users_user_id_delete**](ServerApi.md#api_client_servers_server_id_users_user_id_delete) | **DELETE** /api/client/servers/{server_id}/users/{user_id} | 
+[**api_client_servers_server_id_users_user_id_get**](ServerApi.md#api_client_servers_server_id_users_user_id_get) | **GET** /api/client/servers/{server_id}/users/{user_id} | 
+[**api_client_servers_server_id_users_user_id_post**](ServerApi.md#api_client_servers_server_id_users_user_id_post) | **POST** /api/client/servers/{server_id}/users/{user_id} | 
+[**api_client_servers_server_id_websocket_get**](ServerApi.md#api_client_servers_server_id_websocket_get) | **GET** /api/client/servers/{server_id}/websocket | 
 
 
 # **api_application_servers_external_remote_id1_get**
@@ -74,7 +74,7 @@ Method | HTTP request | Description
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -96,13 +96,13 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
 
     # example, this endpoint has no required or optional parameters
     try:
         api_instance.api_application_servers_external_remote_id1_get()
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_application_servers_external_remote_id1_get: %s\n" % e)
+        print("Exception when calling ServerApi->api_application_servers_external_remote_id1_get: %s\n" % e)
 ```
 
 
@@ -143,7 +143,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -165,13 +165,13 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
 
     # example, this endpoint has no required or optional parameters
     try:
         api_instance.api_application_servers_get()
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_application_servers_get: %s\n" % e)
+        print("Exception when calling ServerApi->api_application_servers_get: %s\n" % e)
 ```
 
 
@@ -212,7 +212,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -234,14 +234,14 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     id = "id_example" # str | 
 
     # example passing only required values which don't have defaults set
     try:
         api_instance.api_application_servers_id_delete(id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_application_servers_id_delete: %s\n" % e)
+        print("Exception when calling ServerApi->api_application_servers_id_delete: %s\n" % e)
 ```
 
 
@@ -285,7 +285,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -307,14 +307,14 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     id = "id_example" # str | 
 
     # example passing only required values which don't have defaults set
     try:
         api_instance.api_application_servers_id_force_delete(id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_application_servers_id_force_delete: %s\n" % e)
+        print("Exception when calling ServerApi->api_application_servers_id_force_delete: %s\n" % e)
 ```
 
 
@@ -358,7 +358,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -380,14 +380,14 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     id = "id_example" # str | 
 
     # example passing only required values which don't have defaults set
     try:
         api_instance.api_application_servers_id_get(id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_application_servers_id_get: %s\n" % e)
+        print("Exception when calling ServerApi->api_application_servers_id_get: %s\n" % e)
 ```
 
 
@@ -431,7 +431,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -453,14 +453,14 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     id = "id_example" # str | 
 
     # example passing only required values which don't have defaults set
     try:
         api_instance.api_application_servers_id_reinstall_post(id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_application_servers_id_reinstall_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_application_servers_id_reinstall_post: %s\n" % e)
 ```
 
 
@@ -504,7 +504,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -526,14 +526,14 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     id = "id_example" # str | 
 
     # example passing only required values which don't have defaults set
     try:
         api_instance.api_application_servers_id_suspend_post(id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_application_servers_id_suspend_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_application_servers_id_suspend_post: %s\n" % e)
 ```
 
 
@@ -577,7 +577,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -599,14 +599,14 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     id = "id_example" # str | 
 
     # example passing only required values which don't have defaults set
     try:
         api_instance.api_application_servers_id_unsuspend_post(id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_application_servers_id_unsuspend_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_application_servers_id_unsuspend_post: %s\n" % e)
 ```
 
 
@@ -650,7 +650,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pterodactyl_client.model.api_application_servers_get_request import ApiApplicationServersGetRequest
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
@@ -673,7 +673,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     api_application_servers_get_request = ApiApplicationServersGetRequest(
         name="name_example",
         user=3.14,
@@ -704,7 +704,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_application_servers_post(api_application_servers_get_request)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_application_servers_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_application_servers_post: %s\n" % e)
 ```
 
 
@@ -748,7 +748,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -770,7 +770,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
     backup_id = "backup_id_example" # str | 
 
@@ -778,7 +778,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_backups_backup_id_delete(server_id, backup_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_backups_backup_id_delete: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_backups_backup_id_delete: %s\n" % e)
 ```
 
 
@@ -823,7 +823,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -845,7 +845,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
     backup_id = "backup_id_example" # str | 
 
@@ -853,7 +853,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_backups_backup_id_download_get(server_id, backup_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_backups_backup_id_download_get: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_backups_backup_id_download_get: %s\n" % e)
 ```
 
 
@@ -898,7 +898,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -920,7 +920,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
     backup_id = "backup_id_example" # str | 
 
@@ -928,7 +928,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_backups_backup_id_get(server_id, backup_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_backups_backup_id_get: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_backups_backup_id_get: %s\n" % e)
 ```
 
 
@@ -973,7 +973,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -995,14 +995,14 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
 
     # example passing only required values which don't have defaults set
     try:
         api_instance.api_client_servers_server_id_backups_get(server_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_backups_get: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_backups_get: %s\n" % e)
 ```
 
 
@@ -1046,7 +1046,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1068,14 +1068,14 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
 
     # example passing only required values which don't have defaults set
     try:
         api_instance.api_client_servers_server_id_backups_post(server_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_backups_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_backups_post: %s\n" % e)
 ```
 
 
@@ -1119,7 +1119,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pterodactyl_client.model.api_client_servers_server_id_command_post_request import ApiClientServersServerIdCommandPostRequest
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
@@ -1142,7 +1142,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
     api_client_servers_server_id_command_post_request = ApiClientServersServerIdCommandPostRequest(
         command="command_example",
@@ -1152,7 +1152,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_command_post(server_id, api_client_servers_server_id_command_post_request)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_command_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_command_post: %s\n" % e)
 ```
 
 
@@ -1197,7 +1197,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1219,7 +1219,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
     database_id = "database_id_example" # str | 
 
@@ -1227,7 +1227,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_databases_database_id_delete(server_id, database_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_databases_database_id_delete: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_databases_database_id_delete: %s\n" % e)
 ```
 
 
@@ -1272,7 +1272,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1294,7 +1294,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
     database_id = "database_id_example" # str | 
 
@@ -1302,7 +1302,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_databases_database_id_rotate_password_post(server_id, database_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_databases_database_id_rotate_password_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_databases_database_id_rotate_password_post: %s\n" % e)
 ```
 
 
@@ -1347,7 +1347,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1369,14 +1369,14 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
 
     # example passing only required values which don't have defaults set
     try:
         api_instance.api_client_servers_server_id_databases_get(server_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_databases_get: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_databases_get: %s\n" % e)
 ```
 
 
@@ -1420,7 +1420,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pterodactyl_client.model.api_client_servers_server_id_databases_get_request import ApiClientServersServerIdDatabasesGetRequest
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
@@ -1443,7 +1443,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
     api_client_servers_server_id_databases_get_request = ApiClientServersServerIdDatabasesGetRequest(
         database="database_example",
@@ -1454,7 +1454,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_databases_post(server_id, api_client_servers_server_id_databases_get_request)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_databases_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_databases_post: %s\n" % e)
 ```
 
 
@@ -1499,7 +1499,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pterodactyl_client.model.api_client_servers_server_id_files_compress_post_request import ApiClientServersServerIdFilesCompressPostRequest
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
@@ -1522,7 +1522,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
     api_client_servers_server_id_files_compress_post_request = ApiClientServersServerIdFilesCompressPostRequest(
         root="root_example",
@@ -1535,7 +1535,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_files_compress_post(server_id, api_client_servers_server_id_files_compress_post_request)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_files_compress_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_files_compress_post: %s\n" % e)
 ```
 
 
@@ -1580,7 +1580,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1602,7 +1602,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     file = "file_example" # str | 
     server_id = "server_id_example" # str | 
 
@@ -1610,7 +1610,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_files_contents_get(file, server_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_files_contents_get: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_files_contents_get: %s\n" % e)
 ```
 
 
@@ -1655,7 +1655,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pterodactyl_client.model.api_client_servers_server_id_files_copy_post_request import ApiClientServersServerIdFilesCopyPostRequest
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
@@ -1678,7 +1678,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
     api_client_servers_server_id_files_copy_post_request = ApiClientServersServerIdFilesCopyPostRequest(
         location="location_example",
@@ -1688,7 +1688,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_files_copy_post(server_id, api_client_servers_server_id_files_copy_post_request)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_files_copy_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_files_copy_post: %s\n" % e)
 ```
 
 
@@ -1733,7 +1733,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pterodactyl_client.model.api_client_servers_server_id_files_create_folder_post_request import ApiClientServersServerIdFilesCreateFolderPostRequest
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
@@ -1756,7 +1756,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
     api_client_servers_server_id_files_create_folder_post_request = ApiClientServersServerIdFilesCreateFolderPostRequest(
         root="root_example",
@@ -1767,7 +1767,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_files_create_folder_post(server_id, api_client_servers_server_id_files_create_folder_post_request)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_files_create_folder_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_files_create_folder_post: %s\n" % e)
 ```
 
 
@@ -1812,7 +1812,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pterodactyl_client.model.api_client_servers_server_id_files_decompress_post_request import ApiClientServersServerIdFilesDecompressPostRequest
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
@@ -1835,7 +1835,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
     api_client_servers_server_id_files_decompress_post_request = ApiClientServersServerIdFilesDecompressPostRequest(
         root="root_example",
@@ -1846,7 +1846,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_files_decompress_post(server_id, api_client_servers_server_id_files_decompress_post_request)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_files_decompress_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_files_decompress_post: %s\n" % e)
 ```
 
 
@@ -1891,7 +1891,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pterodactyl_client.model.api_client_servers_server_id_files_compress_post_request import ApiClientServersServerIdFilesCompressPostRequest
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
@@ -1914,7 +1914,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
     api_client_servers_server_id_files_compress_post_request = ApiClientServersServerIdFilesCompressPostRequest(
         root="root_example",
@@ -1927,7 +1927,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_files_delete_post(server_id, api_client_servers_server_id_files_compress_post_request)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_files_delete_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_files_delete_post: %s\n" % e)
 ```
 
 
@@ -1972,7 +1972,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1994,7 +1994,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     file = "file_example" # str | 
     server_id = "server_id_example" # str | 
 
@@ -2002,7 +2002,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_files_download_get(file, server_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_files_download_get: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_files_download_get: %s\n" % e)
 ```
 
 
@@ -2047,7 +2047,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2069,7 +2069,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     directory = "directory_example" # str | 
     server_id = "server_id_example" # str | 
 
@@ -2077,7 +2077,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_files_list_get(directory, server_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_files_list_get: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_files_list_get: %s\n" % e)
 ```
 
 
@@ -2122,7 +2122,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pterodactyl_client.model.api_client_servers_server_id_files_rename_put_request import ApiClientServersServerIdFilesRenamePutRequest
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
@@ -2145,7 +2145,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
     api_client_servers_server_id_files_rename_put_request = ApiClientServersServerIdFilesRenamePutRequest(
         root="root_example",
@@ -2161,7 +2161,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_files_rename_put(server_id, api_client_servers_server_id_files_rename_put_request)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_files_rename_put: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_files_rename_put: %s\n" % e)
 ```
 
 
@@ -2206,7 +2206,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2228,14 +2228,14 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
 
     # example passing only required values which don't have defaults set
     try:
         api_instance.api_client_servers_server_id_files_upload_get(server_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_files_upload_get: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_files_upload_get: %s\n" % e)
 ```
 
 
@@ -2279,7 +2279,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2301,7 +2301,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     file = "file_example" # str | 
     server_id = "server_id_example" # str | 
 
@@ -2309,7 +2309,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_files_write_post(file, server_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_files_write_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_files_write_post: %s\n" % e)
 ```
 
 
@@ -2354,7 +2354,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2376,14 +2376,14 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
 
     # example passing only required values which don't have defaults set
     try:
         api_instance.api_client_servers_server_id_get(server_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_get: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_get: %s\n" % e)
 ```
 
 
@@ -2427,7 +2427,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2449,14 +2449,14 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
 
     # example passing only required values which don't have defaults set
     try:
         api_instance.api_client_servers_server_id_network_allocations_get(server_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_network_allocations_get: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_network_allocations_get: %s\n" % e)
 ```
 
 
@@ -2500,7 +2500,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2522,7 +2522,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     id = "id_example" # str | 
     server_id = "server_id_example" # str | 
     body = {} # {str: (bool, date, datetime, dict, float, int, list, str, none_type)} | 
@@ -2531,7 +2531,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_network_allocations_id_delete(id, server_id, body)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_network_allocations_id_delete: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_network_allocations_id_delete: %s\n" % e)
 ```
 
 
@@ -2577,7 +2577,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pterodactyl_client.model.api_client_servers_server_id_network_allocations_id_delete_request import ApiClientServersServerIdNetworkAllocationsIdDeleteRequest
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
@@ -2600,7 +2600,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     id = "id_example" # str | 
     server_id = "server_id_example" # str | 
     api_client_servers_server_id_network_allocations_id_delete_request = ApiClientServersServerIdNetworkAllocationsIdDeleteRequest(
@@ -2611,7 +2611,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_network_allocations_id_post(id, server_id, api_client_servers_server_id_network_allocations_id_delete_request)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_network_allocations_id_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_network_allocations_id_post: %s\n" % e)
 ```
 
 
@@ -2657,7 +2657,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2679,7 +2679,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     id = "id_example" # str | 
     server_id = "server_id_example" # str | 
     body = {} # {str: (bool, date, datetime, dict, float, int, list, str, none_type)} | 
@@ -2688,7 +2688,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_network_allocations_id_primary_post(id, server_id, body)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_network_allocations_id_primary_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_network_allocations_id_primary_post: %s\n" % e)
 ```
 
 
@@ -2734,7 +2734,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2756,14 +2756,14 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
 
     # example passing only required values which don't have defaults set
     try:
         api_instance.api_client_servers_server_id_network_allocations_post(server_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_network_allocations_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_network_allocations_post: %s\n" % e)
 ```
 
 
@@ -2807,7 +2807,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pterodactyl_client.model.api_client_servers_server_id_power_post_request import ApiClientServersServerIdPowerPostRequest
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
@@ -2830,7 +2830,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
     api_client_servers_server_id_power_post_request = ApiClientServersServerIdPowerPostRequest(
         signal="signal_example",
@@ -2840,7 +2840,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_power_post(server_id, api_client_servers_server_id_power_post_request)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_power_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_power_post: %s\n" % e)
 ```
 
 
@@ -2885,7 +2885,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2907,14 +2907,14 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
 
     # example passing only required values which don't have defaults set
     try:
         api_instance.api_client_servers_server_id_resources_get(server_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_resources_get: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_resources_get: %s\n" % e)
 ```
 
 
@@ -2958,7 +2958,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2980,14 +2980,14 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
 
     # example passing only required values which don't have defaults set
     try:
         api_instance.api_client_servers_server_id_schedules_get(server_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_schedules_get: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_schedules_get: %s\n" % e)
 ```
 
 
@@ -3031,7 +3031,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -3053,7 +3053,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     id = "id_example" # str | 
     server_id = "server_id_example" # str | 
 
@@ -3061,7 +3061,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_schedules_id_delete(id, server_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_schedules_id_delete: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_schedules_id_delete: %s\n" % e)
 ```
 
 
@@ -3106,7 +3106,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -3128,7 +3128,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     id = "id_example" # str | 
     server_id = "server_id_example" # str | 
 
@@ -3136,7 +3136,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_schedules_id_get(id, server_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_schedules_id_get: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_schedules_id_get: %s\n" % e)
 ```
 
 
@@ -3181,7 +3181,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pterodactyl_client.model.api_client_servers_server_id_schedules_id_delete_request import ApiClientServersServerIdSchedulesIdDeleteRequest
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
@@ -3204,7 +3204,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     id = "id_example" # str | 
     server_id = "server_id_example" # str | 
     api_client_servers_server_id_schedules_id_delete_request = ApiClientServersServerIdSchedulesIdDeleteRequest(
@@ -3219,7 +3219,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_schedules_id_post(id, server_id, api_client_servers_server_id_schedules_id_delete_request)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_schedules_id_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_schedules_id_post: %s\n" % e)
 ```
 
 
@@ -3265,7 +3265,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -3287,7 +3287,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     id = "id_example" # str | 
     id1 = "id1_example" # str | 
     server_id = "server_id_example" # str | 
@@ -3296,7 +3296,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_schedules_id_tasks_id1_delete(id, id1, server_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_schedules_id_tasks_id1_delete: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_schedules_id_tasks_id1_delete: %s\n" % e)
 ```
 
 
@@ -3342,7 +3342,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pterodactyl_client.model.api_client_servers_server_id_schedules_id_tasks_post_request import ApiClientServersServerIdSchedulesIdTasksPostRequest
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
@@ -3365,7 +3365,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     id = "id_example" # str | 
     id1 = "id1_example" # str | 
     server_id = "server_id_example" # str | 
@@ -3379,7 +3379,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_schedules_id_tasks_id1_post(id, id1, server_id, api_client_servers_server_id_schedules_id_tasks_post_request)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_schedules_id_tasks_id1_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_schedules_id_tasks_id1_post: %s\n" % e)
 ```
 
 
@@ -3426,7 +3426,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pterodactyl_client.model.api_client_servers_server_id_schedules_id_tasks_post_request import ApiClientServersServerIdSchedulesIdTasksPostRequest
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
@@ -3449,7 +3449,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     id = "id_example" # str | 
     server_id = "server_id_example" # str | 
     api_client_servers_server_id_schedules_id_tasks_post_request = ApiClientServersServerIdSchedulesIdTasksPostRequest(
@@ -3462,7 +3462,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_schedules_id_tasks_post(id, server_id, api_client_servers_server_id_schedules_id_tasks_post_request)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_schedules_id_tasks_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_schedules_id_tasks_post: %s\n" % e)
 ```
 
 
@@ -3508,7 +3508,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pterodactyl_client.model.api_client_servers_server_id_schedules_get_request import ApiClientServersServerIdSchedulesGetRequest
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
@@ -3531,7 +3531,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
     api_client_servers_server_id_schedules_get_request = ApiClientServersServerIdSchedulesGetRequest(
         name="name_example",
@@ -3546,7 +3546,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_schedules_post(server_id, api_client_servers_server_id_schedules_get_request)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_schedules_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_schedules_post: %s\n" % e)
 ```
 
 
@@ -3591,7 +3591,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -3613,7 +3613,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
     body = {} # {str: (bool, date, datetime, dict, float, int, list, str, none_type)} | 
 
@@ -3621,7 +3621,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_settings_reinstall_post(server_id, body)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_settings_reinstall_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_settings_reinstall_post: %s\n" % e)
 ```
 
 
@@ -3666,7 +3666,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pterodactyl_client.model.api_client_servers_server_id_settings_rename_post_request import ApiClientServersServerIdSettingsRenamePostRequest
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
@@ -3689,7 +3689,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
     api_client_servers_server_id_settings_rename_post_request = ApiClientServersServerIdSettingsRenamePostRequest(
         name="name_example",
@@ -3699,7 +3699,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_settings_rename_post(server_id, api_client_servers_server_id_settings_rename_post_request)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_settings_rename_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_settings_rename_post: %s\n" % e)
 ```
 
 
@@ -3744,7 +3744,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -3766,14 +3766,14 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
 
     # example passing only required values which don't have defaults set
     try:
         api_instance.api_client_servers_server_id_startup_get(server_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_startup_get: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_startup_get: %s\n" % e)
 ```
 
 
@@ -3817,7 +3817,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pterodactyl_client.model.api_client_servers_server_id_startup_variable_put_request import ApiClientServersServerIdStartupVariablePutRequest
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
@@ -3840,7 +3840,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
     api_client_servers_server_id_startup_variable_put_request = ApiClientServersServerIdStartupVariablePutRequest(
         key="key_example",
@@ -3851,7 +3851,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_startup_variable_put(server_id, api_client_servers_server_id_startup_variable_put_request)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_startup_variable_put: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_startup_variable_put: %s\n" % e)
 ```
 
 
@@ -3896,7 +3896,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -3918,14 +3918,14 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
 
     # example passing only required values which don't have defaults set
     try:
         api_instance.api_client_servers_server_id_users_get(server_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_users_get: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_users_get: %s\n" % e)
 ```
 
 
@@ -3969,7 +3969,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pterodactyl_client.model.api_client_servers_server_id_users_get_request import ApiClientServersServerIdUsersGetRequest
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
@@ -3992,7 +3992,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
     api_client_servers_server_id_users_get_request = ApiClientServersServerIdUsersGetRequest(
         email="email_example",
@@ -4005,7 +4005,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_users_post(server_id, api_client_servers_server_id_users_get_request)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_users_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_users_post: %s\n" % e)
 ```
 
 
@@ -4050,7 +4050,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -4072,7 +4072,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
     user_id = "user_id_example" # str | 
 
@@ -4080,7 +4080,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_users_user_id_delete(server_id, user_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_users_user_id_delete: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_users_user_id_delete: %s\n" % e)
 ```
 
 
@@ -4125,7 +4125,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -4147,7 +4147,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
     user_id = "user_id_example" # str | 
 
@@ -4155,7 +4155,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_users_user_id_get(server_id, user_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_users_user_id_get: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_users_user_id_get: %s\n" % e)
 ```
 
 
@@ -4200,7 +4200,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pterodactyl_client.model.api_client_servers_server_id_users_user_id_delete_request import ApiClientServersServerIdUsersUserIdDeleteRequest
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
@@ -4223,7 +4223,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
     user_id = "user_id_example" # str | 
     api_client_servers_server_id_users_user_id_delete_request = ApiClientServersServerIdUsersUserIdDeleteRequest(
@@ -4236,7 +4236,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_client_servers_server_id_users_user_id_post(server_id, user_id, api_client_servers_server_id_users_user_id_delete_request)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_users_user_id_post: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_users_user_id_post: %s\n" % e)
 ```
 
 
@@ -4282,7 +4282,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_api
+from pterodactyl_client.api import server_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -4304,14 +4304,14 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_api.ServersApi(api_client)
+    api_instance = server_api.ServerApi(api_client)
     server_id = "server_id_example" # str | 
 
     # example passing only required values which don't have defaults set
     try:
         api_instance.api_client_servers_server_id_websocket_get(server_id)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersApi->api_client_servers_server_id_websocket_get: %s\n" % e)
+        print("Exception when calling ServerApi->api_client_servers_server_id_websocket_get: %s\n" % e)
 ```
 
 

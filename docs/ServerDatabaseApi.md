@@ -1,14 +1,14 @@
-# pterodactyl_client.ServersDatabasesApi
+# pterodactyl_client.ServerDatabaseApi
 
 All URIs are relative to *http://example.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_application_servers_id_databases_get**](ServersDatabasesApi.md#api_application_servers_id_databases_get) | **GET** /api/application/servers/{id}/databases | 
-[**api_application_servers_id_databases_id1_delete**](ServersDatabasesApi.md#api_application_servers_id_databases_id1_delete) | **DELETE** /api/application/servers/{id}/databases/{id1} | 
-[**api_application_servers_id_databases_id1_get**](ServersDatabasesApi.md#api_application_servers_id_databases_id1_get) | **GET** /api/application/servers/{id}/databases/{id1} | 
-[**api_application_servers_id_databases_id1_reset_password_post**](ServersDatabasesApi.md#api_application_servers_id_databases_id1_reset_password_post) | **POST** /api/application/servers/{id}/databases/{id1}/reset-password | 
-[**api_application_servers_id_databases_post**](ServersDatabasesApi.md#api_application_servers_id_databases_post) | **POST** /api/application/servers/{id}/databases | 
+[**api_application_servers_id_databases_get**](ServerDatabaseApi.md#api_application_servers_id_databases_get) | **GET** /api/application/servers/{id}/databases | 
+[**api_application_servers_id_databases_id1_delete**](ServerDatabaseApi.md#api_application_servers_id_databases_id1_delete) | **DELETE** /api/application/servers/{id}/databases/{id1} | 
+[**api_application_servers_id_databases_id1_get**](ServerDatabaseApi.md#api_application_servers_id_databases_id1_get) | **GET** /api/application/servers/{id}/databases/{id1} | 
+[**api_application_servers_id_databases_id1_reset_password_post**](ServerDatabaseApi.md#api_application_servers_id_databases_id1_reset_password_post) | **POST** /api/application/servers/{id}/databases/{id1}/reset-password | 
+[**api_application_servers_id_databases_post**](ServerDatabaseApi.md#api_application_servers_id_databases_post) | **POST** /api/application/servers/{id}/databases | 
 
 
 # **api_application_servers_id_databases_get**
@@ -23,7 +23,7 @@ Method | HTTP request | Description
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_databases_api
+from pterodactyl_client.api import server_database_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -45,7 +45,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_databases_api.ServersDatabasesApi(api_client)
+    api_instance = server_database_api.ServerDatabaseApi(api_client)
     id = "id_example" # str | 
     include = "include_example" # str | 
 
@@ -53,7 +53,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_application_servers_id_databases_get(id, include)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersDatabasesApi->api_application_servers_id_databases_get: %s\n" % e)
+        print("Exception when calling ServerDatabaseApi->api_application_servers_id_databases_get: %s\n" % e)
 ```
 
 
@@ -98,7 +98,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_databases_api
+from pterodactyl_client.api import server_database_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -120,7 +120,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_databases_api.ServersDatabasesApi(api_client)
+    api_instance = server_database_api.ServerDatabaseApi(api_client)
     id = "id_example" # str | 
     id1 = "id1_example" # str | 
 
@@ -128,7 +128,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_application_servers_id_databases_id1_delete(id, id1)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersDatabasesApi->api_application_servers_id_databases_id1_delete: %s\n" % e)
+        print("Exception when calling ServerDatabaseApi->api_application_servers_id_databases_id1_delete: %s\n" % e)
 ```
 
 
@@ -173,7 +173,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_databases_api
+from pterodactyl_client.api import server_database_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -195,7 +195,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_databases_api.ServersDatabasesApi(api_client)
+    api_instance = server_database_api.ServerDatabaseApi(api_client)
     id = "id_example" # str | 
     id1 = "id1_example" # str | 
 
@@ -203,7 +203,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_application_servers_id_databases_id1_get(id, id1)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersDatabasesApi->api_application_servers_id_databases_id1_get: %s\n" % e)
+        print("Exception when calling ServerDatabaseApi->api_application_servers_id_databases_id1_get: %s\n" % e)
 ```
 
 
@@ -248,7 +248,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_databases_api
+from pterodactyl_client.api import server_database_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -270,7 +270,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_databases_api.ServersDatabasesApi(api_client)
+    api_instance = server_database_api.ServerDatabaseApi(api_client)
     id = "id_example" # str | 
     id1 = "id1_example" # str | 
 
@@ -278,7 +278,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_application_servers_id_databases_id1_reset_password_post(id, id1)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersDatabasesApi->api_application_servers_id_databases_id1_reset_password_post: %s\n" % e)
+        print("Exception when calling ServerDatabaseApi->api_application_servers_id_databases_id1_reset_password_post: %s\n" % e)
 ```
 
 
@@ -323,7 +323,7 @@ void (empty response body)
 ```python
 import time
 import pterodactyl_client
-from pterodactyl_client.api import servers_databases_api
+from pterodactyl_client.api import server_database_api
 from pterodactyl_client.model.api_application_servers_id_databases_get_request import ApiApplicationServersIdDatabasesGetRequest
 from pprint import pprint
 # Defining the host is optional and defaults to http://example.com
@@ -346,7 +346,7 @@ configuration.api_key['JWT'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = servers_databases_api.ServersDatabasesApi(api_client)
+    api_instance = server_database_api.ServerDatabaseApi(api_client)
     id = "id_example" # str | 
     api_application_servers_id_databases_get_request = ApiApplicationServersIdDatabasesGetRequest(
         database="database_example",
@@ -358,7 +358,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     try:
         api_instance.api_application_servers_id_databases_post(id, api_application_servers_id_databases_get_request)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling ServersDatabasesApi->api_application_servers_id_databases_post: %s\n" % e)
+        print("Exception when calling ServerDatabaseApi->api_application_servers_id_databases_post: %s\n" % e)
 ```
 
 

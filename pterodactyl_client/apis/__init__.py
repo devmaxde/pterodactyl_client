@@ -21,6 +21,6 @@ from pterodactyl_client.api.locations_api import LocationsApi
 from pterodactyl_client.api.nests_api import NestsApi
 from pterodactyl_client.api.nests_eggs_api import NestsEggsApi
 from pterodactyl_client.api.nodes_api import NodesApi
-from pterodactyl_client.api.servers_api import ServersApi
-from pterodactyl_client.api.servers_databases_api import ServersDatabasesApi
+from pterodactyl_client.api.server_api import ServerApi
+from pterodactyl_client.api.server_database_api import ServerDatabaseApi
 from pterodactyl_client.api.users_api import UsersApi

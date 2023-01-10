@@ -1,6 +1,5 @@
 .gitignore
 .gitlab-ci.yml
-.openapi-generator-ignore
 .travis.yml
 README.md
 docs/AccountApi.md
@@ -43,8 +42,8 @@ docs/LocationsApi.md
 docs/NestsApi.md
 docs/NestsEggsApi.md
 docs/NodesApi.md
-docs/ServersApi.md
-docs/ServersDatabasesApi.md
+docs/ServerApi.md
+docs/ServerDatabaseApi.md
 docs/UsersApi.md
 git_push.sh
 pterodactyl_client/__init__.py
@@ -56,8 +55,8 @@ pterodactyl_client/api/locations_api.py
 pterodactyl_client/api/nests_api.py
 pterodactyl_client/api/nests_eggs_api.py
 pterodactyl_client/api/nodes_api.py
-pterodactyl_client/api/servers_api.py
-pterodactyl_client/api/servers_databases_api.py
+pterodactyl_client/api/server_api.py
+pterodactyl_client/api/server_database_api.py
 pterodactyl_client/api/users_api.py
 pterodactyl_client/api_client.py
 pterodactyl_client/apis/__init__.py
@@ -145,7 +144,7 @@ test/test_locations_api.py
 test/test_nests_api.py
 test/test_nests_eggs_api.py
 test/test_nodes_api.py
-test/test_servers_api.py
-test/test_servers_databases_api.py
+test/test_server_api.py
+test/test_server_database_api.py
 test/test_users_api.py
 tox.ini
