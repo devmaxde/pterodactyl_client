@@ -1,0 +1,2714 @@
+
+openapi: "3.0.0"
+info:
+  version: "1.0"
+  title: "Avantation REST Template"
+  description: "TODO: Add Description"
+servers:
+  -
+    url: "{scheme}://example.com/{basePath}"
+    variables:
+      scheme:
+        enum:
+          - "https"
+          - "http"
+        default: "http"
+      basePath:
+        default: ""
+
+components:
+  schemas:
+    ErrorModel:
+      type: "object"
+      properties:
+        code:
+          type: "string"
+  securitySchemes:
+    JWT:
+      description: "You can create a JSON Web Token (JWT) during auth.\nUsage format: `Bearer <JWT>`\n"
+      name: "Authorization"
+      type: "apiKey"
+      in: "header"
+paths:
+  /api/application/servers:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        - "servers"
+
+      parameters: []
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        - "servers"
+
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                name:
+                  type: "string"
+                user:
+                  type: "number"
+                egg:
+                  type: "number"
+                docker_image:
+                  type: "string"
+                startup:
+                  type: "string"
+                environment:
+                  type: "object"
+                  properties:
+                    BUNGEE_VERSION:
+                      type: "string"
+                    SERVER_JARFILE:
+                      type: "string"
+                limits:
+                  type: "object"
+                  properties:
+                    memory:
+                      type: "number"
+                    swap:
+                      type: "number"
+                    disk:
+                      type: "number"
+                    io:
+                      type: "number"
+                    cpu:
+                      type: "number"
+                feature_limits:
+                  type: "object"
+                  properties:
+                    databases:
+                      type: "number"
+                    backups:
+                      type: "number"
+                allocation:
+                  type: "object"
+                  properties:
+                    default:
+                      type: "number"
+            example:
+              name: "Building"
+              user: 1
+              egg: 1
+              docker_image: "quay.io/pterodactyl/core:java"
+              startup: "java -Xms128M -Xmx128M -jar server.jar"
+              environment:
+                BUNGEE_VERSION: "latest"
+                SERVER_JARFILE: "server.jar"
+              limits:
+                memory: 128
+                swap: 0
+                disk: 512
+                io: 500
+                cpu: 100
+              feature_limits:
+                databases: 5
+                backups: 1
+              allocation:
+                default: 17
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/application/servers/{id}/databases:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        - "servers_databases"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+        -
+          in: "query"
+          name: "include"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers_databases"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                database:
+                  type: "string"
+                remote:
+                  type: "string"
+                host:
+                  type: "number"
+            example:
+              database: "matches"
+              remote: "%"
+              host: 4
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/application/servers/{id}/databases/{id1}:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        - "servers_databases"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+        -
+          in: "path"
+          name: "id1"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    delete:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers_databases"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+        -
+          in: "path"
+          name: "id1"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/application/servers/{id}:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    delete:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/application/servers/external/RemoteId1:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters: []
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/application/servers/{id}/details: {}
+  /api/application/servers/{id}/build: {}
+  /api/application/servers/{id}/startup: {}
+  /api/application/servers/{id}/suspend:
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/application/servers/{id}/unsuspend:
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/application/servers/{id}/reinstall:
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/application/servers/{id}/force:
+    delete:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        -  "servers"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/application/servers/{id}/databases/{id1}/reset-password:
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers_databases"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+        -
+          in: "path"
+          name: "id1"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/application/nests:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "nests"
+
+      parameters: []
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/application/nests/{id}/eggs:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "nests_eggs"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+        -
+          in: "query"
+          name: "include"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/application/nests/{id}/eggs/{id1}:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "nests_eggs"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+        -
+          in: "path"
+          name: "id1"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/application/nests/{id}:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "nests"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/startup:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+        - "client"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "client"
+
+      parameters: []
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+        - "client"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/websocket:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+        - "client"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/resources:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+        - "client"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/command:
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+        - "client"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                command:
+                  type: "string"
+            example:
+              command: "say CodeCo says Hi!"
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/power:
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+        - "client"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                signal:
+                  type: "string"
+            example:
+              signal: "start"
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/permissions:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "client"
+
+      parameters: []
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/databases:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+        - "client"
+        - "databases"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+        - "client"
+        - "databases"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                database:
+                  type: "string"
+                remote:
+                  type: "string"
+            example:
+              database: "bans"
+              remote: "%"
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/files/list:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        -
+          in: "query"
+          name: "directory"
+          schema:
+            type: "string"
+          required: true
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/startup/variable:
+    put:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                key:
+                  type: "string"
+                value:
+                  type: "string"
+            example:
+              key: "SERVER_JARFILE"
+              value: "server.jar"
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/schedules:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                name:
+                  type: "string"
+                minute:
+                  type: "string"
+                hour:
+                  type: "string"
+                day_of_month:
+                  type: "string"
+                day_of_week:
+                  type: "string"
+                is_active:
+                  type: "boolean"
+            example:
+              name: "Minute Hello"
+              minute: "*"
+              hour: "*"
+              day_of_month: "*"
+              day_of_week: "*"
+              is_active: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/network/allocations:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/network/allocations/{id}:
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                notes:
+                  type: "string"
+            example:
+              notes: "Votifier"
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    delete:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties: {}
+            example: {}
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/network/allocations/{id}/primary:
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties: {}
+            example: {}
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/users:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                email:
+                  type: "string"
+                permissions:
+                  type: "array"
+                  items:
+                    type: "string"
+            example:
+              email: "subuser2@example.com"
+              permissions:
+                - "control.console"
+                - "control.start"
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/backups:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/application/users:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "users"
+
+      parameters: []
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "users"
+
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                email:
+                  type: "string"
+                username:
+                  type: "string"
+                first_name:
+                  type: "string"
+                last_name:
+                  type: "string"
+            example:
+              email: "example10@example.com"
+              username: "exampleuser"
+              first_name: "Example"
+              last_name: "User"
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/application/nodes:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "nodes"
+
+      parameters: []
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "nodes"
+
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                name:
+                  type: "string"
+                location_id:
+                  type: "number"
+                fqdn:
+                  type: "string"
+                scheme:
+                  type: "string"
+                memory:
+                  type: "number"
+                memory_overallocate:
+                  type: "number"
+                disk:
+                  type: "number"
+                disk_overallocate:
+                  type: "number"
+                upload_size:
+                  type: "number"
+                daemon_sftp:
+                  type: "number"
+                daemon_listen:
+                  type: "number"
+            example:
+              name: "New Node"
+              location_id: 1
+              fqdn: "node2.example.com"
+              scheme: "https"
+              memory: 10240
+              memory_overallocate: 0
+              disk: 50000
+              disk_overallocate: 0
+              upload_size: 100
+              daemon_sftp: 2022
+              daemon_listen: 8080
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/application/locations:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "locations"
+
+      parameters: []
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "locations"
+
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                short:
+                  type: "string"
+                long:
+                  type: "string"
+            example:
+              short: "GB"
+              long: "London Datacenter"
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/application/locations/{id}:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "locations"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    delete:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "locations"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/application/nodes/{id}:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "nodes"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    delete:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "nodes"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/application/nodes/{id}/configuration:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "nodes"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/application/users/{id}:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "users"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    delete:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "users"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/application/users/external/{remote_id}:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "users"
+
+      parameters:
+        - in: "path"
+          name: "remote_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/application/nodes/{id}/allocations:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "nodes"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "nodes"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                ip:
+                  type: "string"
+                ports:
+                  type: "array"
+                  items:
+                    type: "string"
+            example:
+              ip: "10.0.0.1"
+              ports:
+                - "25565"
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/settings/rename:
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                name:
+                  type: "string"
+            example:
+              name: "Gaming"
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/settings/reinstall:
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties: {}
+            example: {}
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/application/nodes/{id}/allocations/{id1}:
+    delete:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "nodes"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+        -
+          in: "path"
+          name: "id1"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/backups/{backup_id}:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+        - in: "path"
+          name: "backup_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    delete:
+      security:
+        - JWT: [ ]
+      tags:
+        
+        - "servers"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+        - in: "path"
+          name: "backup_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/backups/{backup_id}/download:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+        - in: "path"
+          name: "backup_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/users/{user_id}:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+        - in: "path"
+          name: "user_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+        - in: "path"
+          name: "user_id"
+          schema:
+            type: "string"
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                permissions:
+                  type: "array"
+                  items:
+                    type: "string"
+            example:
+              permissions:
+                - "control.console"
+                - "control.start"
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    delete:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+        - in: "path"
+          name: "user_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/schedules/{id}:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                name:
+                  type: "string"
+                minute:
+                  type: "string"
+                hour:
+                  type: "string"
+                day_of_month:
+                  type: "string"
+                day_of_week:
+                  type: "string"
+            example:
+              name: "Hourly Hello"
+              minute: "0"
+              hour: "*"
+              day_of_month: "*"
+              day_of_week: "*"
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    delete:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/schedules/{id}/tasks:
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                action:
+                  type: "string"
+                payload:
+                  type: "string"
+                time_offset:
+                  type: "string"
+            example:
+              action: "command"
+              payload: "say Hello World"
+              time_offset: "0"
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/schedules/{id}/tasks/{id1}:
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+        -
+          in: "path"
+          name: "id1"
+          schema:
+            type: "string"
+          required: true
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                action:
+                  type: "string"
+                payload:
+                  type: "string"
+                time_offset:
+                  type: "string"
+            example:
+              action: "command"
+              payload: "say Updated Statement!?"
+              time_offset: "0"
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    delete:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        -
+          in: "path"
+          name: "id"
+          schema:
+            type: "string"
+          required: true
+        -
+          in: "path"
+          name: "id1"
+          schema:
+            type: "string"
+          required: true
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/files/contents:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        -
+          in: "query"
+          name: "file"
+          schema:
+            type: "string"
+          required: true
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/files/download:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        -
+          in: "query"
+          name: "file"
+          schema:
+            type: "string"
+          required: true
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/files/rename:
+    put:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                root:
+                  type: "string"
+                files:
+                  type: "array"
+                  items:
+                    type: "object"
+                    properties:
+                      from:
+                        type: "string"
+                      to:
+                        type: "string"
+            example:
+              root: "/"
+              files:
+                -
+                  from: "data"
+                  to: "abc"
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/files/copy:
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                location:
+                  type: "string"
+            example:
+              location: "/server.properties"
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/files/write:
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        -
+          in: "query"
+          name: "file"
+          schema:
+            type: "string"
+          required: true
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/files/compress:
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                root:
+                  type: "string"
+                files:
+                  type: "array"
+                  items:
+                    type: "string"
+            example:
+              root: "/"
+              files:
+                - "abc"
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/files/decompress:
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                root:
+                  type: "string"
+                file:
+                  type: "string"
+            example:
+              root: "/"
+              file: "archive-2020-08-23T220655Z.tar.gz"
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/files/delete:
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                root:
+                  type: "string"
+                files:
+                  type: "array"
+                  items:
+                    type: "string"
+            example:
+              root: "/maps"
+              files:
+                - "worlds"
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/files/create-folder:
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                root:
+                  type: "string"
+                name:
+                  type: "string"
+            example:
+              root: "/maps"
+              name: "worlds"
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/files/upload:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/databases/{database_id}/rotate-password:
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+        - in: "path"
+          name: "database_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/servers/{server_id}/databases/{database_id}:
+    delete:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "servers"
+        - "databases"
+
+      parameters:
+        - in: "path"
+          name: "server_id"
+          schema:
+            type: "string"
+          required: true
+        - in: "path"
+          name: "database_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/account:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "account"
+
+      parameters: []
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/account/two-factor:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "account"
+
+      parameters: []
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "account"
+
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                code:
+                  type: "string"
+            example:
+              code: "505134"
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    delete:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "account"
+
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                password:
+                  type: "string"
+            example:
+              password: "password"
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/account/email:
+    put:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "account"
+
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                email:
+                  type: "string"
+                password:
+                  type: "string"
+            example:
+              email: "example@xample.com"
+              password: "Password"
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/account/password:
+    put:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "account"
+
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                current_password:
+                  type: "string"
+                password:
+                  type: "string"
+                password_confirmation:
+                  type: "string"
+            example:
+              current_password: "Password"
+              password: "password"
+              password_confirmation: "password"
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/account/api-keys:
+    get:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "account"
+
+      parameters: []
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+    post:
+      security:
+        -
+          JWT: []
+      tags:
+        
+        - "account"
+
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                description:
+                  type: "string"
+                allowed_ips:
+                  type: "array"
+                  items:
+                    type: "string"
+            example:
+              description: "Restricted IPs"
+              allowed_ips:
+                - "127.0.0.1"
+                - "192.168.0.1"
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
+  /api/client/account/api-keys/{key_id}:
+    delete:
+      security:
+        -
+          JWT: []
+      tags:
+        - "account"
+
+      parameters:
+        - in: "path"
+          name: "key_id"
+          schema:
+            type: "string"
+          required: true
+      responses:
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              example:
+                message: "Sorry unable to perform operation."
