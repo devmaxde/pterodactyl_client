@@ -24,7 +24,6 @@ Lists allocations added to the node  ## Available include parameters | Parameter
 import time
 import pterodactyl_client
 from pterodactyl_client.api import allocations_api
-from pterodactyl_client.model.int import Int
 from pprint import pprint
 # Defining the host is optional and defaults to https://example.com/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -48,7 +47,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     api_instance = allocations_api.AllocationsApi(api_client)
     accept = "application/json" # str | 
     content_type = "application/json" # str | 
-    node_id =  # Int | 
+    node_id = 1 # int | 
 
     # example passing only required values which don't have defaults set
     try:
@@ -66,7 +65,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accept** | **str**|  |
  **content_type** | **str**|  |
- **node_id** | **Int**|  |
+ **node_id** | **int**|  |
 
 ### Return type
 
@@ -105,7 +104,6 @@ Adds an allocation to the node  ## Fields | Name  | Required? | Type   | Descrip
 import time
 import pterodactyl_client
 from pterodactyl_client.api import allocations_api
-from pterodactyl_client.model.int import Int
 from pterodactyl_client.model.application_nodes_node_id_allocations_post_request import ApplicationNodesNodeIdAllocationsPostRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://example.com/api
@@ -129,7 +127,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = allocations_api.AllocationsApi(api_client)
     accept = "application/json" # str | 
-    node_id =  # Int | 
+    node_id = 1 # int | 
     application_nodes_node_id_allocations_post_request = ApplicationNodesNodeIdAllocationsPostRequest(None) # ApplicationNodesNodeIdAllocationsPostRequest | 
 
     # example passing only required values which don't have defaults set
@@ -147,7 +145,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accept** | **str**|  |
- **node_id** | **Int**|  |
+ **node_id** | **int**|  |
  **application_nodes_node_id_allocations_post_request** | [**ApplicationNodesNodeIdAllocationsPostRequest**](ApplicationNodesNodeIdAllocationsPostRequest.md)|  |
 
 ### Return type
@@ -187,7 +185,6 @@ Deletes the specified allocation  <!-- RESPONSE 204 --> // Successful <!-- ENDRE
 import time
 import pterodactyl_client
 from pterodactyl_client.api import allocations_api
-from pterodactyl_client.model.int import Int
 from pprint import pprint
 # Defining the host is optional and defaults to https://example.com/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -211,8 +208,8 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     api_instance = allocations_api.AllocationsApi(api_client)
     accept = "application/json" # str | 
     content_type = "application/json" # str | 
-    node_id =  # Int | 
-    allocation_id =  # Int | 
+    node_id = 1 # int | 
+    allocation_id = 1 # int | 
 
     # example passing only required values which don't have defaults set
     try:
@@ -230,8 +227,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accept** | **str**|  |
  **content_type** | **str**|  |
- **node_id** | **Int**|  |
- **allocation_id** | **Int**|  |
+ **node_id** | **int**|  |
+ **allocation_id** | **int**|  |
 
 ### Return type
 

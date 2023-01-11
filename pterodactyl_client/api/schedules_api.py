@@ -25,7 +25,6 @@ from pterodactyl_client.model.client_servers_server_id_schedules_post_request im
 from pterodactyl_client.model.client_servers_server_id_schedules_schedule_id_post_request import ClientServersServerIdSchedulesScheduleIdPostRequest
 from pterodactyl_client.model.client_servers_server_id_schedules_schedule_id_tasks_post_request import ClientServersServerIdSchedulesScheduleIdTasksPostRequest
 from pterodactyl_client.model.client_servers_server_id_schedules_schedule_id_tasks_task_id_post_request import ClientServersServerIdSchedulesScheduleIdTasksTaskIdPostRequest
-from pterodactyl_client.model.int import Int
 
 
 class SchedulesApi(object):
@@ -225,7 +224,7 @@ class SchedulesApi(object):
                     'server_id':
                         (str,),
                     'schedule_id':
-                        (Int,),
+                        (int,),
                 },
                 'attribute_map': {
                     'accept': 'Accept',
@@ -299,7 +298,7 @@ class SchedulesApi(object):
                     'server_id':
                         (str,),
                     'schedule_id':
-                        (Int,),
+                        (int,),
                 },
                 'attribute_map': {
                     'accept': 'Accept',
@@ -371,7 +370,7 @@ class SchedulesApi(object):
                     'server_id':
                         (str,),
                     'schedule_id':
-                        (Int,),
+                        (int,),
                     'client_servers_server_id_schedules_schedule_id_post_request':
                         (ClientServersServerIdSchedulesScheduleIdPostRequest,),
                 },
@@ -446,7 +445,7 @@ class SchedulesApi(object):
                     'server_id':
                         (str,),
                     'schedule_id':
-                        (Int,),
+                        (int,),
                     'client_servers_server_id_schedules_schedule_id_tasks_post_request':
                         (ClientServersServerIdSchedulesScheduleIdTasksPostRequest,),
                 },
@@ -525,9 +524,9 @@ class SchedulesApi(object):
                     'server_id':
                         (str,),
                     'schedule_id':
-                        (Int,),
+                        (int,),
                     'task_id':
-                        (Int,),
+                        (int,),
                 },
                 'attribute_map': {
                     'accept': 'Accept',
@@ -603,9 +602,9 @@ class SchedulesApi(object):
                     'server_id':
                         (str,),
                     'schedule_id':
-                        (Int,),
+                        (int,),
                     'task_id':
-                        (Int,),
+                        (int,),
                     'client_servers_server_id_schedules_schedule_id_tasks_task_id_post_request':
                         (ClientServersServerIdSchedulesScheduleIdTasksTaskIdPostRequest,),
                 },
@@ -839,7 +838,7 @@ class SchedulesApi(object):
             accept (str): 
             content_type (str): 
             server_id (str): 
-            schedule_id (Int): 
+            schedule_id (int): 
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -934,7 +933,7 @@ class SchedulesApi(object):
             accept (str): 
             content_type (str): 
             server_id (str): 
-            schedule_id (Int): 
+            schedule_id (int): 
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1028,7 +1027,7 @@ class SchedulesApi(object):
         Args:
             accept (str): 
             server_id (str): 
-            schedule_id (Int): 
+            schedule_id (int): 
             client_servers_server_id_schedules_schedule_id_post_request (ClientServersServerIdSchedulesScheduleIdPostRequest): 
 
         Keyword Args:
@@ -1123,7 +1122,7 @@ class SchedulesApi(object):
         Args:
             accept (str): 
             server_id (str): 
-            schedule_id (Int): 
+            schedule_id (int): 
             client_servers_server_id_schedules_schedule_id_tasks_post_request (ClientServersServerIdSchedulesScheduleIdTasksPostRequest): 
 
         Keyword Args:
@@ -1220,8 +1219,8 @@ class SchedulesApi(object):
             accept (str): 
             content_type (str): 
             server_id (str): 
-            schedule_id (Int): 
-            task_id (Int): 
+            schedule_id (int): 
+            task_id (int): 
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1318,8 +1317,8 @@ class SchedulesApi(object):
         Args:
             accept (str): 
             server_id (str): 
-            schedule_id (Int): 
-            task_id (Int): 
+            schedule_id (int): 
+            task_id (int): 
             client_servers_server_id_schedules_schedule_id_tasks_task_id_post_request (ClientServersServerIdSchedulesScheduleIdTasksTaskIdPostRequest): 
 
         Keyword Args:

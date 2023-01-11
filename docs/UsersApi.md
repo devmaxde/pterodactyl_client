@@ -30,7 +30,6 @@ Retrieves the specified user by its external ID  ## Available include parameters
 import time
 import pterodactyl_client
 from pterodactyl_client.api import users_api
-from pterodactyl_client.model.int import Int
 from pprint import pprint
 # Defining the host is optional and defaults to https://example.com/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -54,7 +53,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     api_instance = users_api.UsersApi(api_client)
     accept = "application/json" # str | 
     content_type = "application/json" # str | 
-    user_id =  # Int | 
+    user_id = 1 # int | 
 
     # example passing only required values which don't have defaults set
     try:
@@ -72,7 +71,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accept** | **str**|  |
  **content_type** | **str**|  |
- **user_id** | **Int**|  |
+ **user_id** | **int**|  |
 
 ### Return type
 
@@ -111,7 +110,6 @@ Deletes the specified user  <!-- RESPONSE 204 --> // Successful <!-- ENDRESPONSE
 import time
 import pterodactyl_client
 from pterodactyl_client.api import users_api
-from pterodactyl_client.model.int import Int
 from pprint import pprint
 # Defining the host is optional and defaults to https://example.com/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -135,7 +133,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     api_instance = users_api.UsersApi(api_client)
     accept = "application/json" # str | 
     content_type = "application/json" # str | 
-    user_id =  # Int | 
+    user_id = 1 # int | 
 
     # example passing only required values which don't have defaults set
     try:
@@ -153,7 +151,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accept** | **str**|  |
  **content_type** | **str**|  |
- **user_id** | **Int**|  |
+ **user_id** | **int**|  |
 
 ### Return type
 
@@ -192,7 +190,6 @@ Retrieves the specified user  ## Available include parameters | Parameter | Desc
 import time
 import pterodactyl_client
 from pterodactyl_client.api import users_api
-from pterodactyl_client.model.int import Int
 from pprint import pprint
 # Defining the host is optional and defaults to https://example.com/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -216,7 +213,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     api_instance = users_api.UsersApi(api_client)
     accept = "application/json" # str | 
     content_type = "application/json" # str | 
-    user_id =  # Int | 
+    user_id = 1 # int | 
 
     # example passing only required values which don't have defaults set
     try:
@@ -234,7 +231,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accept** | **str**|  |
  **content_type** | **str**|  |
- **user_id** | **Int**|  |
+ **user_id** | **int**|  |
 
 ### Return type
 
@@ -274,7 +271,6 @@ import time
 import pterodactyl_client
 from pterodactyl_client.api import users_api
 from pterodactyl_client.model.application_users_user_id_patch_request import ApplicationUsersUserIdPatchRequest
-from pterodactyl_client.model.int import Int
 from pprint import pprint
 # Defining the host is optional and defaults to https://example.com/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -297,7 +293,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
     accept = "application/json" # str | 
-    user_id =  # Int | 
+    user_id = 1 # int | 
     application_users_user_id_patch_request = ApplicationUsersUserIdPatchRequest(None) # ApplicationUsersUserIdPatchRequest | 
 
     # example passing only required values which don't have defaults set
@@ -315,7 +311,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accept** | **str**|  |
- **user_id** | **Int**|  |
+ **user_id** | **int**|  |
  **application_users_user_id_patch_request** | [**ApplicationUsersUserIdPatchRequest**](ApplicationUsersUserIdPatchRequest.md)|  |
 
 ### Return type
@@ -516,7 +512,6 @@ Removes the specified user from the server  <!-- RESPONSE 204 --> // Successful 
 import time
 import pterodactyl_client
 from pterodactyl_client.api import users_api
-from pterodactyl_client.model.int import Int
 from pprint import pprint
 # Defining the host is optional and defaults to https://example.com/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -541,7 +536,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     accept = "application/json" # str | 
     content_type = "application/json" # str | 
     server_id = "server_id_example" # str | 
-    user_id =  # Int | 
+    user_id = 1 # int | 
 
     # example passing only required values which don't have defaults set
     try:
@@ -560,7 +555,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  |
  **content_type** | **str**|  |
  **server_id** | **str**|  |
- **user_id** | **Int**|  |
+ **user_id** | **int**|  |
 
 ### Return type
 
@@ -599,7 +594,6 @@ Retrieves information about a specific user  <!-- RESPONSE 200 --> {   \"object\
 import time
 import pterodactyl_client
 from pterodactyl_client.api import users_api
-from pterodactyl_client.model.int import Int
 from pprint import pprint
 # Defining the host is optional and defaults to https://example.com/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -624,7 +618,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     accept = "application/json" # str | 
     content_type = "application/json" # str | 
     server_id = "server_id_example" # str | 
-    user_id =  # Int | 
+    user_id = 1 # int | 
 
     # example passing only required values which don't have defaults set
     try:
@@ -643,7 +637,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  |
  **content_type** | **str**|  |
  **server_id** | **str**|  |
- **user_id** | **Int**|  |
+ **user_id** | **int**|  |
 
 ### Return type
 
@@ -683,7 +677,6 @@ import time
 import pterodactyl_client
 from pterodactyl_client.api import users_api
 from pterodactyl_client.model.client_servers_server_id_users_user_id_post_request import ClientServersServerIdUsersUserIdPostRequest
-from pterodactyl_client.model.int import Int
 from pprint import pprint
 # Defining the host is optional and defaults to https://example.com/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -707,7 +700,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     api_instance = users_api.UsersApi(api_client)
     accept = "application/json" # str | 
     server_id = "server_id_example" # str | 
-    user_id =  # Int | 
+    user_id = 1 # int | 
     client_servers_server_id_users_user_id_post_request = ClientServersServerIdUsersUserIdPostRequest(None) # ClientServersServerIdUsersUserIdPostRequest | 
 
     # example passing only required values which don't have defaults set
@@ -726,7 +719,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accept** | **str**|  |
  **server_id** | **str**|  |
- **user_id** | **Int**|  |
+ **user_id** | **int**|  |
  **client_servers_server_id_users_user_id_post_request** | [**ClientServersServerIdUsersUserIdPostRequest**](ClientServersServerIdUsersUserIdPostRequest.md)|  |
 
 ### Return type

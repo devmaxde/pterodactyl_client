@@ -24,7 +24,6 @@ Deletes the specified location  <!-- RESPONSE 204 --> // Successful <!-- ENDRESP
 import time
 import pterodactyl_client
 from pterodactyl_client.api import locations_api
-from pterodactyl_client.model.int import Int
 from pprint import pprint
 # Defining the host is optional and defaults to https://example.com/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -48,7 +47,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     api_instance = locations_api.LocationsApi(api_client)
     accept = "application/json" # str | 
     content_type = "application/json" # str | 
-    location_id =  # Int | 
+    location_id = 1 # int | 
 
     # example passing only required values which don't have defaults set
     try:
@@ -66,7 +65,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accept** | **str**|  |
  **content_type** | **str**|  |
- **location_id** | **Int**|  |
+ **location_id** | **int**|  |
 
 ### Return type
 
@@ -105,7 +104,6 @@ Retrieves the specified location  # Available include parameters | Parameter | D
 import time
 import pterodactyl_client
 from pterodactyl_client.api import locations_api
-from pterodactyl_client.model.int import Int
 from pprint import pprint
 # Defining the host is optional and defaults to https://example.com/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -129,7 +127,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     api_instance = locations_api.LocationsApi(api_client)
     accept = "application/json" # str | 
     content_type = "application/json" # str | 
-    location_id =  # Int | 
+    location_id = 1 # int | 
 
     # example passing only required values which don't have defaults set
     try:
@@ -147,7 +145,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accept** | **str**|  |
  **content_type** | **str**|  |
- **location_id** | **Int**|  |
+ **location_id** | **int**|  |
 
 ### Return type
 
@@ -187,7 +185,6 @@ import time
 import pterodactyl_client
 from pterodactyl_client.api import locations_api
 from pterodactyl_client.model.application_locations_location_id_patch_request import ApplicationLocationsLocationIdPatchRequest
-from pterodactyl_client.model.int import Int
 from pprint import pprint
 # Defining the host is optional and defaults to https://example.com/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -210,7 +207,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = locations_api.LocationsApi(api_client)
     accept = "application/json" # str | 
-    location_id =  # Int | 
+    location_id = 1 # int | 
     application_locations_location_id_patch_request = ApplicationLocationsLocationIdPatchRequest(None) # ApplicationLocationsLocationIdPatchRequest | 
 
     # example passing only required values which don't have defaults set
@@ -228,7 +225,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accept** | **str**|  |
- **location_id** | **Int**|  |
+ **location_id** | **int**|  |
  **application_locations_location_id_patch_request** | [**ApplicationLocationsLocationIdPatchRequest**](ApplicationLocationsLocationIdPatchRequest.md)|  |
 
 ### Return type

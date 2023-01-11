@@ -22,7 +22,6 @@ from pterodactyl_client.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from pterodactyl_client.model.client_servers_server_id_network_allocations_allocation_id_post_request import ClientServersServerIdNetworkAllocationsAllocationIdPostRequest
-from pterodactyl_client.model.int import Int
 
 
 class NetworkApi(object):
@@ -226,7 +225,7 @@ class NetworkApi(object):
                     'server_id':
                         (str,),
                     'allocation_id':
-                        (Int,),
+                        (int,),
                 },
                 'attribute_map': {
                     'content_type': 'Content-Type',
@@ -298,7 +297,7 @@ class NetworkApi(object):
                     'server_id':
                         (str,),
                     'allocation_id':
-                        (Int,),
+                        (int,),
                     'client_servers_server_id_network_allocations_allocation_id_post_request':
                         (ClientServersServerIdNetworkAllocationsAllocationIdPostRequest,),
                 },
@@ -380,7 +379,7 @@ class NetworkApi(object):
                     'server_id':
                         (str,),
                     'allocation_id':
-                        (Int,),
+                        (int,),
                 },
                 'attribute_map': {
                     'content_type': 'Content-Type',
@@ -608,7 +607,7 @@ class NetworkApi(object):
         Args:
             accept (str): 
             server_id (str): 
-            allocation_id (Int): 
+            allocation_id (int): 
             content_type (str): . defaults to "application/json", must be one of ["application/json"]
 
         Keyword Args:
@@ -703,7 +702,7 @@ class NetworkApi(object):
         Args:
             accept (str): 
             server_id (str): 
-            allocation_id (Int): 
+            allocation_id (int): 
             client_servers_server_id_network_allocations_allocation_id_post_request (ClientServersServerIdNetworkAllocationsAllocationIdPostRequest): 
 
         Keyword Args:
@@ -798,7 +797,7 @@ class NetworkApi(object):
         Args:
             accept (str): 
             server_id (str): 
-            allocation_id (Int): 
+            allocation_id (int): 
             content_type (str): . defaults to "application/json", must be one of ["application/json"]
 
         Keyword Args:

@@ -22,7 +22,6 @@ from pterodactyl_client.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from pterodactyl_client.model.application_nodes_node_id_allocations_post_request import ApplicationNodesNodeIdAllocationsPostRequest
-from pterodactyl_client.model.int import Int
 
 
 class AllocationsApi(object):
@@ -81,7 +80,7 @@ class AllocationsApi(object):
                     'content_type':
                         (str,),
                     'node_id':
-                        (Int,),
+                        (int,),
                 },
                 'attribute_map': {
                     'accept': 'Accept',
@@ -147,7 +146,7 @@ class AllocationsApi(object):
                     'accept':
                         (str,),
                     'node_id':
-                        (Int,),
+                        (int,),
                     'application_nodes_node_id_allocations_post_request':
                         (ApplicationNodesNodeIdAllocationsPostRequest,),
                 },
@@ -220,9 +219,9 @@ class AllocationsApi(object):
                     'content_type':
                         (str,),
                     'node_id':
-                        (Int,),
+                        (int,),
                     'allocation_id':
-                        (Int,),
+                        (int,),
                 },
                 'attribute_map': {
                     'accept': 'Accept',
@@ -267,7 +266,7 @@ class AllocationsApi(object):
         Args:
             accept (str): 
             content_type (str): 
-            node_id (Int): 
+            node_id (int): 
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -357,7 +356,7 @@ class AllocationsApi(object):
 
         Args:
             accept (str): 
-            node_id (Int): 
+            node_id (int): 
             application_nodes_node_id_allocations_post_request (ApplicationNodesNodeIdAllocationsPostRequest): 
 
         Keyword Args:
@@ -450,8 +449,8 @@ class AllocationsApi(object):
         Args:
             accept (str): 
             content_type (str): 
-            node_id (Int): 
-            allocation_id (Int): 
+            node_id (int): 
+            allocation_id (int): 
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status

@@ -22,7 +22,6 @@ from pterodactyl_client.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from pterodactyl_client.model.application_servers_server_id_databases_post_request import ApplicationServersServerIdDatabasesPostRequest
-from pterodactyl_client.model.int import Int
 
 
 class DatabaseManagementApi(object):
@@ -233,7 +232,7 @@ class DatabaseManagementApi(object):
                     'server_id':
                         (str,),
                     'database_id':
-                        (Int,),
+                        (int,),
                 },
                 'attribute_map': {
                     'accept': 'Accept',
@@ -307,7 +306,7 @@ class DatabaseManagementApi(object):
                     'server_id':
                         (str,),
                     'database_id':
-                        (Int,),
+                        (int,),
                 },
                 'attribute_map': {
                     'accept': 'Accept',
@@ -381,7 +380,7 @@ class DatabaseManagementApi(object):
                     'server_id':
                         (str,),
                     'database_id':
-                        (Int,),
+                        (int,),
                 },
                 'attribute_map': {
                     'accept': 'Accept',
@@ -615,7 +614,7 @@ class DatabaseManagementApi(object):
             accept (str): 
             content_type (str): 
             server_id (str): 
-            database_id (Int): 
+            database_id (int): 
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -710,7 +709,7 @@ class DatabaseManagementApi(object):
             accept (str): 
             content_type (str): 
             server_id (str): 
-            database_id (Int): 
+            database_id (int): 
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -805,7 +804,7 @@ class DatabaseManagementApi(object):
             accept (str): 
             content_type (str): 
             server_id (str): 
-            database_id (Int): 
+            database_id (int): 
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status

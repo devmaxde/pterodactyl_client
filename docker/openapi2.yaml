@@ -1376,7 +1376,7 @@ paths:
         name: location_id
         required: true
         schema:
-          type: int
+          type: integer
       responses:
         '200':
           content:
@@ -1585,7 +1585,7 @@ paths:
         name: nest_id
         required: true
         schema:
-          type: int
+          type: integer
       responses:
         '200':
           content:
@@ -1912,7 +1912,7 @@ paths:
         name: nest_id
         required: true
         schema:
-          type: int
+          type: integer
       responses:
         '200':
           content:
@@ -1992,13 +1992,13 @@ paths:
         name: nest_id
         required: true
         schema:
-          type: int
+          type: integer
       - description: ''
         in: path
         name: egg_id
         required: true
         schema:
-          type: int
+          type: integer
       responses:
         '200':
           content:
@@ -2188,7 +2188,7 @@ paths:
         name: node_id
         required: true
         schema:
-          type: int
+          type: integer
       responses:
         '200':
           content:
@@ -2427,7 +2427,7 @@ paths:
         name: node_id
         required: true
         schema:
-          type: int
+          type: integer
       responses:
         '200':
           content:
@@ -2541,13 +2541,13 @@ paths:
         name: node_id
         required: true
         schema:
-          type: int
+          type: integer
       - description: ''
         in: path
         name: allocation_id
         required: true
         schema:
-          type: int
+          type: integer
       responses:
         '200':
           content:
@@ -2600,7 +2600,7 @@ paths:
         name: node_id
         required: true
         schema:
-          type: int
+          type: integer
       responses:
         '200':
           content:
@@ -3296,7 +3296,7 @@ paths:
         name: database_id
         required: true
         schema:
-          type: int
+          type: integer
       responses:
         '200':
           content:
@@ -3398,7 +3398,7 @@ paths:
         name: database_id
         required: true
         schema:
-          type: int
+          type: integer
       responses:
         '200':
           content:
@@ -3982,7 +3982,7 @@ paths:
         name: user_id
         required: true
         schema:
-          type: int
+          type: integer
       responses:
         '200':
           content:
@@ -4033,7 +4033,7 @@ paths:
         name: user_id
         required: true
         schema:
-          type: int
+          type: integer
       responses:
         '200':
           content:
@@ -4844,7 +4844,7 @@ paths:
         name: database_id
         required: true
         schema:
-          type: int
+          type: integer
       responses:
         '200':
           content:
@@ -4893,7 +4893,7 @@ paths:
         name: database_id
         required: true
         schema:
-          type: int
+          type: integer
       responses:
         '200':
           content:
@@ -5861,7 +5861,7 @@ paths:
         name: allocation_id
         required: true
         schema:
-          type: int
+          type: integer
       responses:
         '200':
           content:
@@ -5963,7 +5963,7 @@ paths:
         name: allocation_id
         required: true
         schema:
-          type: int
+          type: integer
       responses:
         '200':
           content:
@@ -6285,7 +6285,7 @@ paths:
         name: schedule_id
         required: true
         schema:
-          type: int
+          type: integer
       responses:
         '200':
           content:
@@ -6466,7 +6466,7 @@ paths:
         name: schedule_id
         required: true
         schema:
-          type: int
+          type: integer
       requestBody:
         content:
           application/json:
@@ -6540,14 +6540,14 @@ paths:
         name: schedule_id
         required: true
         schema:
-          type: int
+          type: integer
       - &id021
         description: ''
         in: path
         name: task_id
         required: true
         schema:
-          type: int
+          type: integer
       responses:
         '200':
           content:
@@ -7034,7 +7034,7 @@ paths:
         name: user_id
         required: true
         schema:
-          type: int
+          type: integer
       responses:
         '200':
           content:
@@ -7224,42 +7224,3 @@ servers:
   variables: {}
 - url: https://example.com/api/client
   variables: {}
-tags:
-- description: ''
-  name: '[ /{server}/databases ] Database Management'
-- description: ''
-  name: '[ /{nest}/eggs ] Eggs Management'
-- description: ''
-  name: '[ /users ] Users'
-- description: ''
-  name: '[ /nodes ] Nodes'
-- description: ''
-  name: '[ /locations ] Locations'
-- description: ''
-  name: '[ /servers ] Servers'
-- description: ''
-  name: '[ /nests ] Nests'
-- description: ''
-  name: '[ /databases ] Databases'
-- description: ''
-  name: '[ /files ] File Manager'
-- description: ''
-  name: '[ /schedules ] Schedules'
-- description: ''
-  name: '[ /network ] Network'
-- description: ''
-  name: '[ /backups ] Backups'
-- description: ''
-  name: '[ /startup ] Startup'
-- description: ''
-  name: '[ /settings ] Settings'
-- description: ''
-  name: '[ /account ] Account'
-- description: ''
-  name: '[ /servers/{server} ] Server'
-- description: ''
-  name: '[ /{node}/allocations ] Allocations'
-- description: ''
-  name: '[ /api/client ] Client'
-- description: ''
-  name: '[ /api/application] Application'

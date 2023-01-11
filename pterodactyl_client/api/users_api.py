@@ -24,7 +24,6 @@ from pterodactyl_client.model_utils import (  # noqa: F401
 from pterodactyl_client.model.application_users_user_id_patch_request import ApplicationUsersUserIdPatchRequest
 from pterodactyl_client.model.client_servers_server_id_users_post_request import ClientServersServerIdUsersPostRequest
 from pterodactyl_client.model.client_servers_server_id_users_user_id_post_request import ClientServersServerIdUsersUserIdPostRequest
-from pterodactyl_client.model.int import Int
 
 
 class UsersApi(object):
@@ -83,7 +82,7 @@ class UsersApi(object):
                     'content_type':
                         (str,),
                     'user_id':
-                        (Int,),
+                        (int,),
                 },
                 'attribute_map': {
                     'accept': 'Accept',
@@ -151,7 +150,7 @@ class UsersApi(object):
                     'content_type':
                         (str,),
                     'user_id':
-                        (Int,),
+                        (int,),
                 },
                 'attribute_map': {
                     'accept': 'Accept',
@@ -219,7 +218,7 @@ class UsersApi(object):
                     'content_type':
                         (str,),
                     'user_id':
-                        (Int,),
+                        (int,),
                 },
                 'attribute_map': {
                     'accept': 'Accept',
@@ -285,7 +284,7 @@ class UsersApi(object):
                     'accept':
                         (str,),
                     'user_id':
-                        (Int,),
+                        (int,),
                     'application_users_user_id_patch_request':
                         (ApplicationUsersUserIdPatchRequest,),
                 },
@@ -497,7 +496,7 @@ class UsersApi(object):
                     'server_id':
                         (str,),
                     'user_id':
-                        (Int,),
+                        (int,),
                 },
                 'attribute_map': {
                     'accept': 'Accept',
@@ -571,7 +570,7 @@ class UsersApi(object):
                     'server_id':
                         (str,),
                     'user_id':
-                        (Int,),
+                        (int,),
                 },
                 'attribute_map': {
                     'accept': 'Accept',
@@ -643,7 +642,7 @@ class UsersApi(object):
                     'server_id':
                         (str,),
                     'user_id':
-                        (Int,),
+                        (int,),
                     'client_servers_server_id_users_user_id_post_request':
                         (ClientServersServerIdUsersUserIdPostRequest,),
                 },
@@ -691,7 +690,7 @@ class UsersApi(object):
         Args:
             accept (str): 
             content_type (str): 
-            user_id (Int): 
+            user_id (int): 
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -782,7 +781,7 @@ class UsersApi(object):
         Args:
             accept (str): 
             content_type (str): 
-            user_id (Int): 
+            user_id (int): 
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -873,7 +872,7 @@ class UsersApi(object):
         Args:
             accept (str): 
             content_type (str): 
-            user_id (Int): 
+            user_id (int): 
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -963,7 +962,7 @@ class UsersApi(object):
 
         Args:
             accept (str): 
-            user_id (Int): 
+            user_id (int): 
             application_users_user_id_patch_request (ApplicationUsersUserIdPatchRequest): 
 
         Keyword Args:
@@ -1239,7 +1238,7 @@ class UsersApi(object):
             accept (str): 
             content_type (str): 
             server_id (str): 
-            user_id (Int): 
+            user_id (int): 
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1334,7 +1333,7 @@ class UsersApi(object):
             accept (str): 
             content_type (str): 
             server_id (str): 
-            user_id (Int): 
+            user_id (int): 
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1428,7 +1427,7 @@ class UsersApi(object):
         Args:
             accept (str): 
             server_id (str): 
-            user_id (Int): 
+            user_id (int): 
             client_servers_server_id_users_user_id_post_request (ClientServersServerIdUsersUserIdPostRequest): 
 
         Keyword Args:

@@ -186,7 +186,6 @@ Deletes the specified non-primary allocation  <!-- RESPONSE 204 --> // Successfu
 import time
 import pterodactyl_client
 from pterodactyl_client.api import network_api
-from pterodactyl_client.model.int import Int
 from pprint import pprint
 # Defining the host is optional and defaults to https://example.com/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -210,7 +209,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     api_instance = network_api.NetworkApi(api_client)
     accept = "application/json" # str | 
     server_id = "server_id_example" # str | 
-    allocation_id =  # Int | 
+    allocation_id = 1 # int | 
 
     # example passing only required values which don't have defaults set
     try:
@@ -228,7 +227,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accept** | **str**|  |
  **server_id** | **str**|  |
- **allocation_id** | **Int**|  |
+ **allocation_id** | **int**|  |
  **content_type** | **str**|  | defaults to "application/json"
 
 ### Return type
@@ -269,7 +268,6 @@ import time
 import pterodactyl_client
 from pterodactyl_client.api import network_api
 from pterodactyl_client.model.client_servers_server_id_network_allocations_allocation_id_post_request import ClientServersServerIdNetworkAllocationsAllocationIdPostRequest
-from pterodactyl_client.model.int import Int
 from pprint import pprint
 # Defining the host is optional and defaults to https://example.com/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -293,7 +291,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     api_instance = network_api.NetworkApi(api_client)
     accept = "application/json" # str | 
     server_id = "server_id_example" # str | 
-    allocation_id =  # Int | 
+    allocation_id = 1 # int | 
     client_servers_server_id_network_allocations_allocation_id_post_request = ClientServersServerIdNetworkAllocationsAllocationIdPostRequest(None) # ClientServersServerIdNetworkAllocationsAllocationIdPostRequest | 
 
     # example passing only required values which don't have defaults set
@@ -312,7 +310,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accept** | **str**|  |
  **server_id** | **str**|  |
- **allocation_id** | **Int**|  |
+ **allocation_id** | **int**|  |
  **client_servers_server_id_network_allocations_allocation_id_post_request** | [**ClientServersServerIdNetworkAllocationsAllocationIdPostRequest**](ClientServersServerIdNetworkAllocationsAllocationIdPostRequest.md)|  |
 
 ### Return type
@@ -352,7 +350,6 @@ Sets the primary allocation  <!-- RESPONSE 200 --> {   \"object\": \"allocation\
 import time
 import pterodactyl_client
 from pterodactyl_client.api import network_api
-from pterodactyl_client.model.int import Int
 from pprint import pprint
 # Defining the host is optional and defaults to https://example.com/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -376,7 +373,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     api_instance = network_api.NetworkApi(api_client)
     accept = "application/json" # str | 
     server_id = "server_id_example" # str | 
-    allocation_id =  # Int | 
+    allocation_id = 1 # int | 
 
     # example passing only required values which don't have defaults set
     try:
@@ -394,7 +391,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accept** | **str**|  |
  **server_id** | **str**|  |
- **allocation_id** | **Int**|  |
+ **allocation_id** | **int**|  |
  **content_type** | **str**|  | defaults to "application/json"
 
 ### Return type

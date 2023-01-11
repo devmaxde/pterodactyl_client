@@ -190,7 +190,6 @@ Deletes the specified schedule  <!-- RESPONSE 204 --> // Successful <!-- ENDRESP
 import time
 import pterodactyl_client
 from pterodactyl_client.api import schedules_api
-from pterodactyl_client.model.int import Int
 from pprint import pprint
 # Defining the host is optional and defaults to https://example.com/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -215,7 +214,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     accept = "application/json" # str | 
     content_type = "application/json" # str | 
     server_id = "server_id_example" # str | 
-    schedule_id =  # Int | 
+    schedule_id = 1 # int | 
 
     # example passing only required values which don't have defaults set
     try:
@@ -234,7 +233,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  |
  **content_type** | **str**|  |
  **server_id** | **str**|  |
- **schedule_id** | **Int**|  |
+ **schedule_id** | **int**|  |
 
 ### Return type
 
@@ -273,7 +272,6 @@ Retrieves specific schedule  <!-- RESPONSE 200 --> {   \"object\": \"server_sche
 import time
 import pterodactyl_client
 from pterodactyl_client.api import schedules_api
-from pterodactyl_client.model.int import Int
 from pprint import pprint
 # Defining the host is optional and defaults to https://example.com/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -298,7 +296,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     accept = "application/json" # str | 
     content_type = "application/json" # str | 
     server_id = "server_id_example" # str | 
-    schedule_id =  # Int | 
+    schedule_id = 1 # int | 
 
     # example passing only required values which don't have defaults set
     try:
@@ -317,7 +315,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  |
  **content_type** | **str**|  |
  **server_id** | **str**|  |
- **schedule_id** | **Int**|  |
+ **schedule_id** | **int**|  |
 
 ### Return type
 
@@ -356,7 +354,6 @@ Updates the specified schedule  ## Fields | Name         | Required? | Type    |
 import time
 import pterodactyl_client
 from pterodactyl_client.api import schedules_api
-from pterodactyl_client.model.int import Int
 from pterodactyl_client.model.client_servers_server_id_schedules_schedule_id_post_request import ClientServersServerIdSchedulesScheduleIdPostRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://example.com/api
@@ -381,7 +378,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     api_instance = schedules_api.SchedulesApi(api_client)
     accept = "application/json" # str | 
     server_id = "server_id_example" # str | 
-    schedule_id =  # Int | 
+    schedule_id = 1 # int | 
     client_servers_server_id_schedules_schedule_id_post_request = ClientServersServerIdSchedulesScheduleIdPostRequest(None) # ClientServersServerIdSchedulesScheduleIdPostRequest | 
 
     # example passing only required values which don't have defaults set
@@ -400,7 +397,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accept** | **str**|  |
  **server_id** | **str**|  |
- **schedule_id** | **Int**|  |
+ **schedule_id** | **int**|  |
  **client_servers_server_id_schedules_schedule_id_post_request** | [**ClientServersServerIdSchedulesScheduleIdPostRequest**](ClientServersServerIdSchedulesScheduleIdPostRequest.md)|  |
 
 ### Return type
@@ -440,7 +437,6 @@ Creates a new task on the specified schedule  ## Fields | Name        | Required
 import time
 import pterodactyl_client
 from pterodactyl_client.api import schedules_api
-from pterodactyl_client.model.int import Int
 from pterodactyl_client.model.client_servers_server_id_schedules_schedule_id_tasks_post_request import ClientServersServerIdSchedulesScheduleIdTasksPostRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://example.com/api
@@ -465,7 +461,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     api_instance = schedules_api.SchedulesApi(api_client)
     accept = "application/json" # str | 
     server_id = "server_id_example" # str | 
-    schedule_id =  # Int | 
+    schedule_id = 1 # int | 
     client_servers_server_id_schedules_schedule_id_tasks_post_request = ClientServersServerIdSchedulesScheduleIdTasksPostRequest(None) # ClientServersServerIdSchedulesScheduleIdTasksPostRequest | 
 
     # example passing only required values which don't have defaults set
@@ -484,7 +480,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accept** | **str**|  |
  **server_id** | **str**|  |
- **schedule_id** | **Int**|  |
+ **schedule_id** | **int**|  |
  **client_servers_server_id_schedules_schedule_id_tasks_post_request** | [**ClientServersServerIdSchedulesScheduleIdTasksPostRequest**](ClientServersServerIdSchedulesScheduleIdTasksPostRequest.md)|  |
 
 ### Return type
@@ -524,7 +520,6 @@ Deletes the specified task  <!-- RESPONSE 204 --> // Successful <!-- ENDRESPONSE
 import time
 import pterodactyl_client
 from pterodactyl_client.api import schedules_api
-from pterodactyl_client.model.int import Int
 from pprint import pprint
 # Defining the host is optional and defaults to https://example.com/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -549,8 +544,8 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     accept = "application/json" # str | 
     content_type = "application/json" # str | 
     server_id = "server_id_example" # str | 
-    schedule_id =  # Int | 
-    task_id =  # Int | 
+    schedule_id = 1 # int | 
+    task_id = 1 # int | 
 
     # example passing only required values which don't have defaults set
     try:
@@ -569,8 +564,8 @@ Name | Type | Description  | Notes
  **accept** | **str**|  |
  **content_type** | **str**|  |
  **server_id** | **str**|  |
- **schedule_id** | **Int**|  |
- **task_id** | **Int**|  |
+ **schedule_id** | **int**|  |
+ **task_id** | **int**|  |
 
 ### Return type
 
@@ -609,7 +604,6 @@ Updates the specified task  ## Fields | Name        | Required? | Type   | Descr
 import time
 import pterodactyl_client
 from pterodactyl_client.api import schedules_api
-from pterodactyl_client.model.int import Int
 from pterodactyl_client.model.client_servers_server_id_schedules_schedule_id_tasks_task_id_post_request import ClientServersServerIdSchedulesScheduleIdTasksTaskIdPostRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://example.com/api
@@ -634,8 +628,8 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     api_instance = schedules_api.SchedulesApi(api_client)
     accept = "application/json" # str | 
     server_id = "server_id_example" # str | 
-    schedule_id =  # Int | 
-    task_id =  # Int | 
+    schedule_id = 1 # int | 
+    task_id = 1 # int | 
     client_servers_server_id_schedules_schedule_id_tasks_task_id_post_request = ClientServersServerIdSchedulesScheduleIdTasksTaskIdPostRequest(None) # ClientServersServerIdSchedulesScheduleIdTasksTaskIdPostRequest | 
 
     # example passing only required values which don't have defaults set
@@ -654,8 +648,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accept** | **str**|  |
  **server_id** | **str**|  |
- **schedule_id** | **Int**|  |
- **task_id** | **Int**|  |
+ **schedule_id** | **int**|  |
+ **task_id** | **int**|  |
  **client_servers_server_id_schedules_schedule_id_tasks_task_id_post_request** | [**ClientServersServerIdSchedulesScheduleIdTasksTaskIdPostRequest**](ClientServersServerIdSchedulesScheduleIdTasksTaskIdPostRequest.md)|  |
 
 ### Return type

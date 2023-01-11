@@ -21,7 +21,6 @@ from pterodactyl_client.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from pterodactyl_client.model.int import Int
 
 
 class EggsManagementApi(object):
@@ -81,7 +80,7 @@ class EggsManagementApi(object):
                     'content_type':
                         (str,),
                     'nest_id':
-                        (Int,),
+                        (int,),
                     'include':
                         (str,),
                 },
@@ -155,9 +154,9 @@ class EggsManagementApi(object):
                     'content_type':
                         (str,),
                     'nest_id':
-                        (Int,),
+                        (int,),
                     'egg_id':
-                        (Int,),
+                        (int,),
                 },
                 'attribute_map': {
                     'accept': 'Accept',
@@ -202,7 +201,7 @@ class EggsManagementApi(object):
         Args:
             accept (str): 
             content_type (str): 
-            nest_id (Int): 
+            nest_id (int): 
 
         Keyword Args:
             include (str): [optional]
@@ -295,8 +294,8 @@ class EggsManagementApi(object):
         Args:
             accept (str): 
             content_type (str): 
-            nest_id (Int): 
-            egg_id (Int): 
+            nest_id (int): 
+            egg_id (int): 
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status

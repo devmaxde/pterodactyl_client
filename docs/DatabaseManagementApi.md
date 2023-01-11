@@ -200,7 +200,6 @@ Deletes the specified database  <!-- RESPONSE 204 --> // Successful <!-- ENDRESP
 import time
 import pterodactyl_client
 from pterodactyl_client.api import database_management_api
-from pterodactyl_client.model.int import Int
 from pprint import pprint
 # Defining the host is optional and defaults to https://example.com/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -225,7 +224,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     accept = "application/json" # str | 
     content_type = "application/json" # str | 
     server_id = "server_id_example" # str | 
-    database_id =  # Int | 
+    database_id = 1 # int | 
 
     # example passing only required values which don't have defaults set
     try:
@@ -244,7 +243,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  |
  **content_type** | **str**|  |
  **server_id** | **str**|  |
- **database_id** | **Int**|  |
+ **database_id** | **int**|  |
 
 ### Return type
 
@@ -283,7 +282,6 @@ Retrieves the specified database  ## Available include parameters | Parameter | 
 import time
 import pterodactyl_client
 from pterodactyl_client.api import database_management_api
-from pterodactyl_client.model.int import Int
 from pprint import pprint
 # Defining the host is optional and defaults to https://example.com/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -308,7 +306,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     accept = "application/json" # str | 
     content_type = "application/json" # str | 
     server_id = "server_id_example" # str | 
-    database_id =  # Int | 
+    database_id = 1 # int | 
 
     # example passing only required values which don't have defaults set
     try:
@@ -327,7 +325,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  |
  **content_type** | **str**|  |
  **server_id** | **str**|  |
- **database_id** | **Int**|  |
+ **database_id** | **int**|  |
 
 ### Return type
 
@@ -366,7 +364,6 @@ Rotates the password of the database  <!-- RESPONSE 204 --> // Successful <!-- E
 import time
 import pterodactyl_client
 from pterodactyl_client.api import database_management_api
-from pterodactyl_client.model.int import Int
 from pprint import pprint
 # Defining the host is optional and defaults to https://example.com/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -391,7 +388,7 @@ with pterodactyl_client.ApiClient(configuration) as api_client:
     accept = "application/json" # str | 
     content_type = "application/json" # str | 
     server_id = "server_id_example" # str | 
-    database_id =  # Int | 
+    database_id = 1 # int | 
 
     # example passing only required values which don't have defaults set
     try:
@@ -410,7 +407,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  |
  **content_type** | **str**|  |
  **server_id** | **str**|  |
- **database_id** | **Int**|  |
+ **database_id** | **int**|  |
 
 ### Return type
 

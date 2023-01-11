@@ -22,7 +22,6 @@ from pterodactyl_client.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from pterodactyl_client.model.application_nodes_node_id_patch_request import ApplicationNodesNodeIdPatchRequest
-from pterodactyl_client.model.int import Int
 
 
 class NodesApi(object):
@@ -81,7 +80,7 @@ class NodesApi(object):
                     'content_type':
                         (str,),
                     'node_id':
-                        (Int,),
+                        (int,),
                 },
                 'attribute_map': {
                     'accept': 'Accept',
@@ -149,7 +148,7 @@ class NodesApi(object):
                     'content_type':
                         (str,),
                     'node_id':
-                        (Int,),
+                        (int,),
                 },
                 'attribute_map': {
                     'accept': 'Accept',
@@ -217,7 +216,7 @@ class NodesApi(object):
                     'content_type':
                         (str,),
                     'node_id':
-                        (Int,),
+                        (int,),
                 },
                 'attribute_map': {
                     'accept': 'Accept',
@@ -283,7 +282,7 @@ class NodesApi(object):
                     'accept':
                         (str,),
                     'node_id':
-                        (Int,),
+                        (int,),
                     'application_nodes_node_id_patch_request':
                         (ApplicationNodesNodeIdPatchRequest,),
                 },
@@ -329,7 +328,7 @@ class NodesApi(object):
         Args:
             accept (str): 
             content_type (str): 
-            node_id (Int): 
+            node_id (int): 
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -420,7 +419,7 @@ class NodesApi(object):
         Args:
             accept (str): 
             content_type (str): 
-            node_id (Int): 
+            node_id (int): 
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -511,7 +510,7 @@ class NodesApi(object):
         Args:
             accept (str): 
             content_type (str): 
-            node_id (Int): 
+            node_id (int): 
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -601,7 +600,7 @@ class NodesApi(object):
 
         Args:
             accept (str): 
-            node_id (Int): 
+            node_id (int): 
             application_nodes_node_id_patch_request (ApplicationNodesNodeIdPatchRequest): 
 
         Keyword Args:

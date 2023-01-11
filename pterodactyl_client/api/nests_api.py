@@ -21,7 +21,6 @@ from pterodactyl_client.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from pterodactyl_client.model.int import Int
 
 
 class NestsApi(object):
@@ -80,7 +79,7 @@ class NestsApi(object):
                     'content_type':
                         (str,),
                     'nest_id':
-                        (Int,),
+                        (int,),
                 },
                 'attribute_map': {
                     'accept': 'Accept',
@@ -123,7 +122,7 @@ class NestsApi(object):
         Args:
             accept (str): 
             content_type (str): 
-            nest_id (Int): 
+            nest_id (int): 
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
