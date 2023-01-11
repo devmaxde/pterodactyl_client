@@ -10,7 +10,7 @@ servers:
 - url: https://example.com/api/client
   variables: {}
 paths:
-  /application/servers/5/databases:
+  /application/servers/{server_id}/databases:
     get:
       tags:
       - '[ /{server}/databases ] Database Management'
@@ -111,14 +111,17 @@ paths:
         <!-- ENDRESPONSE -->
       operationId: '[/]Listdatabases'
       parameters:
-      - name: Accept
+      - in: "path"
+        name: "id"
+        schema:
+          type: "string"
+        required: true
+      - name: id
         in: header
         description: ''
         required: true
-        style: simple
         schema:
           type: string
-          example: application/json
       - name: Content-Type
         in: header
         description: ''
@@ -226,7 +229,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /application/servers/5/databases/1:
+  /application/servers/{server_id}/databases/{database_id}:
     get:
       tags:
       - '[ /{server}/databases ] Database Management'
@@ -339,7 +342,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /application/servers/5/databases/1/reset-password:
+  /application/servers/{server_id}/databases/{database_id}/reset-password:
     post:
       tags:
       - '[ /{server}/databases ] Database Management'
@@ -384,7 +387,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /application/nests/1/eggs:
+  /application/nests/{nest_id}/eggs:
     get:
       tags:
       - '[ /{nest}/eggs ] Eggs Management'
@@ -739,8 +742,8 @@ paths:
                         "attributes": {
                           "id": 5,
                           "external_id": "RemoteId1",
-                          "uuid": "1a7ce997-259b-452e-8b4e-cecc464142ca",
-                          "identifier": "1a7ce997",
+                          "uuid": "{server_id}-259b-452e-8b4e-cecc464142ca",
+                          "identifier": "{server_id}",
                           "name": "Wuhu Island",
                           "description": "Matt from Wii Sports",
                           "suspended": false,
@@ -772,7 +775,7 @@ paths:
                               "VANILLA_VERSION": "latest",
                               "STARTUP": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -jar {{SERVER_JARFILE}}",
                               "P_SERVER_LOCATION": "Test",
-                              "P_SERVER_UUID": "1a7ce997-259b-452e-8b4e-cecc464142ca"
+                              "P_SERVER_UUID": "{server_id}-259b-452e-8b4e-cecc464142ca"
                             }
                           },
                           "updated_at": "2020-06-13T04:20:53+00:00",
@@ -824,7 +827,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /application/nests/1/eggs/1:
+  /application/nests/{nest_id}/eggs/{egg_id}:
     get:
       tags:
       - '[ /{nest}/eggs ] Eggs Management'
@@ -1278,7 +1281,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /application/users/1:
+  /application/users/{user_id}:
     get:
       tags:
       - '[ /users ] Users'
@@ -1348,7 +1351,125 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /application/users/external/RemoteId1:
+    patch:
+      tags:
+        - '[ /users ] Users'
+      summary: '[ / ] Update user'
+      description: >-
+        Updates the user information
+
+
+        <!-- RESPONSE 200 -->
+
+        {
+          "object": "user",
+          "attributes": {
+            "id": 9,
+            "external_id": null,
+            "uuid": "dac03ece-fd51-4e4b-bd4f-a79e3b2794f9",
+            "username": "exampleuser",
+            "email": "example10@example.com",
+            "first_name": "Example",
+            "last_name": "User",
+            "language": "en",
+            "root_admin": false,
+            "2fa": false,
+            "created_at": "2020-10-29T01:25:12+00:00",
+            "updated_at": "2020-10-29T01:28:29+00:00"
+          }
+        }
+
+        <!-- ENDRESPONSE -->
+      operationId: '[/]Updateuser'
+      parameters:
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: '#/components/schemas/UpdateuserRequest'
+                - example:
+                    email: example10@example.com
+                    username: exampleuser
+                    first_name: Example
+                    last_name: User
+                    language: en
+                    password: New Password
+            example:
+              email: example10@example.com
+              username: exampleuser
+              first_name: Example
+              last_name: User
+              language: en
+              password: New Password
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: { }
+          content:
+            text/plain:
+              schema: { }
+      deprecated: false
+      security:
+        - bearer: [ ]
+      servers:
+        - url: https://pterodactyl.file.properties/api
+          variables: { }
+    delete:
+      tags:
+        - '[ /users ] Users'
+      summary: '[ /{user} ] Delete user'
+      description: >-
+        Deletes the specified user
+
+
+        <!-- RESPONSE 204 -->
+
+        // Successful
+
+        <!-- ENDRESPONSE -->
+      operationId: '[/{user}]Deleteuser'
+      parameters:
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+        - name: Content-Type
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+      responses:
+        '200':
+          description: ''
+          headers: { }
+          content:
+            text/plain:
+              schema: { }
+      deprecated: false
+      security:
+        - bearer: [ ]
+      servers:
+        - url: https://pterodactyl.file.properties/api
+          variables: { }
+  /application/users/external/{user_id}:
     get:
       tags:
       - '[ /users ] Users'
@@ -1418,127 +1539,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /application/users/9:
-    patch:
-      tags:
-      - '[ /users ] Users'
-      summary: '[ / ] Update user'
-      description: >-
-        Updates the user information
-
-
-        <!-- RESPONSE 200 -->
-
-        {
-          "object": "user",
-          "attributes": {
-            "id": 9,
-            "external_id": null,
-            "uuid": "dac03ece-fd51-4e4b-bd4f-a79e3b2794f9",
-            "username": "exampleuser",
-            "email": "example10@example.com",
-            "first_name": "Example",
-            "last_name": "User",
-            "language": "en",
-            "root_admin": false,
-            "2fa": false,
-            "created_at": "2020-10-29T01:25:12+00:00",
-            "updated_at": "2020-10-29T01:28:29+00:00"
-          }
-        }
-
-        <!-- ENDRESPONSE -->
-      operationId: '[/]Updateuser'
-      parameters:
-      - name: Accept
-        in: header
-        description: ''
-        required: true
-        style: simple
-        schema:
-          type: string
-          example: application/json
-      requestBody:
-        description: ''
-        content:
-          application/json:
-            schema:
-              allOf:
-              - $ref: '#/components/schemas/UpdateuserRequest'
-              - example:
-                  email: example10@example.com
-                  username: exampleuser
-                  first_name: Example
-                  last_name: User
-                  language: en
-                  password: New Password
-            example:
-              email: example10@example.com
-              username: exampleuser
-              first_name: Example
-              last_name: User
-              language: en
-              password: New Password
-        required: true
-      responses:
-        '200':
-          description: ''
-          headers: {}
-          content:
-            text/plain:
-              schema: {}
-      deprecated: false
-      security:
-      - bearer: []
-      servers:
-      - url: https://pterodactyl.file.properties/api
-        variables: {}
-  /application/users/8:
-    delete:
-      tags:
-      - '[ /users ] Users'
-      summary: '[ /{user} ] Delete user'
-      description: >-
-        Deletes the specified user
-
-
-        <!-- RESPONSE 204 -->
-
-        // Successful
-
-        <!-- ENDRESPONSE -->
-      operationId: '[/{user}]Deleteuser'
-      parameters:
-      - name: Accept
-        in: header
-        description: ''
-        required: true
-        style: simple
-        schema:
-          type: string
-          example: application/json
-      - name: Content-Type
-        in: header
-        description: ''
-        required: true
-        style: simple
-        schema:
-          type: string
-          example: application/json
-      responses:
-        '200':
-          description: ''
-          headers: {}
-          content:
-            text/plain:
-              schema: {}
-      deprecated: false
-      security:
-      - bearer: []
-      servers:
-      - url: https://pterodactyl.file.properties/api
-        variables: {}
-  /client/servers/1a7ce997/users:
+  /client/servers/{server_id}/users:
     get:
       tags:
       - '[ /users ] Users'
@@ -1777,7 +1778,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/users/60a7aec3-e17d-4aa9-abb3-56d944d204b4:
+  /client/servers/{server_id}/users/{user_id}:
     get:
       tags:
       - '[ /users ] Users'
@@ -2178,7 +2179,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /application/nodes/1:
+  /application/nodes/{node_id}:
     get:
       tags:
       - '[ /nodes ] Nodes'
@@ -2407,7 +2408,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /application/nodes/1/configuration:
+  /application/nodes/{node_id}/configuration:
     get:
       tags:
       - '[ /nodes ] Nodes'
@@ -2597,7 +2598,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /application/locations/1:
+  /application/locations/{location_id}:
     get:
       tags:
       - '[ /locations ] Locations'
@@ -2721,10 +2722,9 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /application/locations/3:
     delete:
       tags:
-      - '[ /locations ] Locations'
+        - '[ /locations ] Locations'
       summary: '[ /{location} ] Delete location'
       description: >-
         Deletes the specified location
@@ -2737,35 +2737,35 @@ paths:
         <!-- ENDRESPONSE -->
       operationId: '[/{location}]Deletelocation'
       parameters:
-      - name: Accept
-        in: header
-        description: ''
-        required: true
-        style: simple
-        schema:
-          type: string
-          example: application/json
-      - name: Content-Type
-        in: header
-        description: ''
-        required: true
-        style: simple
-        schema:
-          type: string
-          example: application/json
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+        - name: Content-Type
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
       responses:
         '200':
           description: ''
-          headers: {}
+          headers: { }
           content:
             text/plain:
-              schema: {}
+              schema: { }
       deprecated: false
       security:
-      - bearer: []
+        - bearer: [ ]
       servers:
-      - url: https://pterodactyl.file.properties/api
-        variables: {}
+        - url: https://pterodactyl.file.properties/api
+          variables: { }
   /application/servers:
     get:
       tags:
@@ -2785,8 +2785,8 @@ paths:
               "attributes": {
                 "id": 5,
                 "external_id": "RemoteId1",
-                "uuid": "1a7ce997-259b-452e-8b4e-cecc464142ca",
-                "identifier": "1a7ce997",
+                "uuid": "{server_id}-259b-452e-8b4e-cecc464142ca",
+                "identifier": "{server_id}",
                 "name": "Wuhu Island",
                 "description": "Matt from Wii Sports",
                 "suspended": false,
@@ -2818,7 +2818,7 @@ paths:
                     "VANILLA_VERSION": "latest",
                     "STARTUP": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -jar {{SERVER_JARFILE}}",
                     "P_SERVER_LOCATION": "Test",
-                    "P_SERVER_UUID": "1a7ce997-259b-452e-8b4e-cecc464142ca"
+                    "P_SERVER_UUID": "{server_id}-259b-452e-8b4e-cecc464142ca"
                   }
                 },
                 "updated_at": "2020-06-13T04:20:53+00:00",
@@ -3033,7 +3033,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /application/servers/5:
+  /application/servers/{server_id}:
     get:
       tags:
       - '[ /servers ] Servers'
@@ -3076,8 +3076,8 @@ paths:
           "attributes": {
             "id": 5,
             "external_id": "RemoteId1",
-            "uuid": "1a7ce997-259b-452e-8b4e-cecc464142ca",
-            "identifier": "1a7ce997",
+            "uuid": "{server_id}-259b-452e-8b4e-cecc464142ca",
+            "identifier": "{server_id}",
             "name": "Gaming",
             "description": "Matt from Wii Sports",
             "suspended": false,
@@ -3109,7 +3109,7 @@ paths:
                 "VANILLA_VERSION": "latest",
                 "STARTUP": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -jar {{SERVER_JARFILE}}",
                 "P_SERVER_LOCATION": "GB",
-                "P_SERVER_UUID": "1a7ce997-259b-452e-8b4e-cecc464142ca",
+                "P_SERVER_UUID": "{server_id}-259b-452e-8b4e-cecc464142ca",
                 "P_SERVER_ALLOCATION_LIMIT": 5
               }
             },
@@ -3150,7 +3150,51 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /application/servers/external/RemoteId1:
+    delete:
+      tags:
+      - '[ /servers ] Servers'
+      summary: '[ /{server} ] Delete server'
+      description: >-
+        Deletes the specified server
+
+
+        <!-- RESPONSE 204 -->
+
+        // Successful
+
+        <!-- ENDRESPONSE -->
+      operationId: '[/{server}]Deleteserver'
+      parameters:
+      - name: Accept
+        in: header
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: application/json
+      - name: Content-Type
+        in: header
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: application/json
+      responses:
+        '200':
+          description: ''
+          headers: {}
+          content:
+            text/plain:
+              schema: {}
+      deprecated: false
+      security:
+      - bearer: []
+      servers:
+      - url: https://pterodactyl.file.properties/api
+        variables: {}
+  /application/servers/external/{server_id}:
     get:
       tags:
       - '[ /servers ] Servers'
@@ -3193,8 +3237,8 @@ paths:
           "attributes": {
             "id": 5,
             "external_id": "RemoteId1",
-            "uuid": "1a7ce997-259b-452e-8b4e-cecc464142ca",
-            "identifier": "1a7ce997",
+            "uuid": "{server_id}-259b-452e-8b4e-cecc464142ca",
+            "identifier": "{server_id}",
             "name": "Gaming",
             "description": "Matt from Wii Sports",
             "suspended": false,
@@ -3226,7 +3270,7 @@ paths:
                 "VANILLA_VERSION": "latest",
                 "STARTUP": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -jar {{SERVER_JARFILE}}",
                 "P_SERVER_LOCATION": "GB",
-                "P_SERVER_UUID": "1a7ce997-259b-452e-8b4e-cecc464142ca",
+                "P_SERVER_UUID": "{server_id}-259b-452e-8b4e-cecc464142ca",
                 "P_SERVER_ALLOCATION_LIMIT": 5
               }
             },
@@ -3267,7 +3311,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /application/servers/5/details:
+  /application/servers/{server_id}/details:
     patch:
       tags:
       - '[ /servers ] Servers'
@@ -3298,8 +3342,8 @@ paths:
           "attributes": {
             "id": 5,
             "external_id": "RemoteID1",
-            "uuid": "1a7ce997-259b-452e-8b4e-cecc464142ca",
-            "identifier": "1a7ce997",
+            "uuid": "{server_id}-259b-452e-8b4e-cecc464142ca",
+            "identifier": "{server_id}",
             "name": "Gaming",
             "description": "Matt from Wii Sports",
             "suspended": false,
@@ -3330,7 +3374,7 @@ paths:
                 "VANILLA_VERSION": "latest",
                 "STARTUP": "java -Xms128M -Xmx2048M -jar server.jar",
                 "P_SERVER_LOCATION": "GB",
-                "P_SERVER_UUID": "1a7ce997-259b-452e-8b4e-cecc464142ca",
+                "P_SERVER_UUID": "{server_id}-259b-452e-8b4e-cecc464142ca",
                 "P_SERVER_ALLOCATION_LIMIT": 5
               }
             },
@@ -3381,7 +3425,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /application/servers/5/build:
+  /application/servers/{server_id}/build:
     patch:
       tags:
       - '[ /servers ] Servers'
@@ -3426,8 +3470,8 @@ paths:
           "attributes": {
             "id": 5,
             "external_id": "RemoteID1",
-            "uuid": "1a7ce997-259b-452e-8b4e-cecc464142ca",
-            "identifier": "1a7ce997",
+            "uuid": "{server_id}-259b-452e-8b4e-cecc464142ca",
+            "identifier": "{server_id}",
             "name": "Gaming",
             "description": "Matt from Wii Sports",
             "suspended": false,
@@ -3458,7 +3502,7 @@ paths:
                 "VANILLA_VERSION": "latest",
                 "STARTUP": "java -Xms128M -Xmx2048M -jar server.jar",
                 "P_SERVER_LOCATION": "GB",
-                "P_SERVER_UUID": "1a7ce997-259b-452e-8b4e-cecc464142ca",
+                "P_SERVER_UUID": "{server_id}-259b-452e-8b4e-cecc464142ca",
                 "P_SERVER_ALLOCATION_LIMIT": 5
               }
             },
@@ -3523,7 +3567,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /application/servers/5/startup:
+  /application/servers/{server_id}/startup:
     patch:
       tags:
       - '[ /servers ] Servers'
@@ -3556,8 +3600,8 @@ paths:
           "attributes": {
             "id": 5,
             "external_id": "RemoteID1",
-            "uuid": "1a7ce997-259b-452e-8b4e-cecc464142ca",
-            "identifier": "1a7ce997",
+            "uuid": "{server_id}-259b-452e-8b4e-cecc464142ca",
+            "identifier": "{server_id}",
             "name": "Gaming",
             "description": "Matt from Wii Sports",
             "suspended": false,
@@ -3588,7 +3632,7 @@ paths:
                 "VANILLA_VERSION": "latest",
                 "STARTUP": "java -Xms128M -Xmx2048M -jar server.jar",
                 "P_SERVER_LOCATION": "GB",
-                "P_SERVER_UUID": "1a7ce997-259b-452e-8b4e-cecc464142ca",
+                "P_SERVER_UUID": "{server_id}-259b-452e-8b4e-cecc464142ca",
                 "P_SERVER_ALLOCATION_LIMIT": 5
               }
             },
@@ -3645,7 +3689,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /application/servers/5/suspend:
+  /application/servers/{server_id}/suspend:
     post:
       tags:
       - '[ /servers ] Servers'
@@ -3690,7 +3734,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /application/servers/5/unsuspend:
+  /application/servers/{server_id}/unsuspend:
     post:
       tags:
       - '[ /servers ] Servers'
@@ -3727,7 +3771,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /application/servers/5/reinstall:
+  /application/servers/{server_id}/reinstall:
     post:
       tags:
       - '[ /servers ] Servers'
@@ -3772,52 +3816,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /application/servers/1:
-    delete:
-      tags:
-      - '[ /servers ] Servers'
-      summary: '[ /{server} ] Delete server'
-      description: >-
-        Deletes the specified server
-
-
-        <!-- RESPONSE 204 -->
-
-        // Successful
-
-        <!-- ENDRESPONSE -->
-      operationId: '[/{server}]Deleteserver'
-      parameters:
-      - name: Accept
-        in: header
-        description: ''
-        required: true
-        style: simple
-        schema:
-          type: string
-          example: application/json
-      - name: Content-Type
-        in: header
-        description: ''
-        required: true
-        style: simple
-        schema:
-          type: string
-          example: application/json
-      responses:
-        '200':
-          description: ''
-          headers: {}
-          content:
-            text/plain:
-              schema: {}
-      deprecated: false
-      security:
-      - bearer: []
-      servers:
-      - url: https://pterodactyl.file.properties/api
-        variables: {}
-  /application/servers/1/force:
+  /application/servers/{server_id}/force:
     delete:
       tags:
       - '[ /servers ] Servers'
@@ -3980,7 +3979,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /application/nests/1:
+  /application/nests/{nest_id}:
     get:
       tags:
       - '[ /nests ] Nests'
@@ -4047,7 +4046,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/databases:
+  /client/servers/{server_id}/databases:
     get:
       tags:
       - '[ /databases ] Databases'
@@ -4204,7 +4203,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/databases/bEY4yAD5/rotate-password:
+  /client/servers/{server_id}/databases/{database_id}/rotate-password:
     post:
       tags:
       - '[ /databases ] Databases'
@@ -4262,7 +4261,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/databases/y9YVxO4V:
+  /client/servers/{server_id}/databases/{database_id}:
     delete:
       tags:
       - '[ /databases ] Databases'
@@ -4307,7 +4306,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/files/list:
+  /client/servers/{server_id}/files/list:
     get:
       tags:
       - '[ /files ] File Manager'
@@ -4678,7 +4677,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/files/contents:
+  /client/servers/{server_id}/files/contents:
     get:
       tags:
       - '[ /files ] File Manager'
@@ -4720,7 +4719,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/files/download:
+  /client/servers/{server_id}/files/download:
     get:
       tags:
       - '[ /files ] File Manager'
@@ -4784,7 +4783,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/files/rename:
+  /client/servers/{server_id}/files/rename:
     put:
       tags:
       - '[ /files ] File Manager'
@@ -4839,7 +4838,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/files/copy:
+  /client/servers/{server_id}/files/copy:
     post:
       tags:
       - '[ /files ] File Manager'
@@ -4888,7 +4887,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/files/write:
+  /client/servers/{server_id}/files/write:
     post:
       tags:
       - '[ /files ] File Manager'
@@ -4962,7 +4961,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/files/compress:
+  /client/servers/{server_id}/files/compress:
     post:
       tags:
       - '[ /files ] File Manager'
@@ -5028,7 +5027,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/files/decompress:
+  /client/servers/{server_id}/files/decompress:
     post:
       tags:
       - '[ /files ] File Manager'
@@ -5079,7 +5078,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/files/delete:
+  /client/servers/{server_id}/files/delete:
     post:
       tags:
       - '[ /files ] File Manager'
@@ -5132,7 +5131,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/files/create-folder:
+  /client/servers/{server_id}/files/create-folder:
     post:
       tags:
       - '[ /files ] File Manager'
@@ -5183,7 +5182,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/files/upload:
+  /client/servers/{server_id}/files/upload:
     get:
       tags:
       - '[ /files ] File Manager'
@@ -5233,7 +5232,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/schedules:
+  /client/servers/{server_id}/schedules:
     get:
       tags:
       - '[ /schedules ] Schedules'
@@ -5435,7 +5434,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/schedules/1:
+  /client/servers/{server_id}/schedules/{schedule_id}:
     get:
       tags:
       - '[ /schedules ] Schedules'
@@ -5531,7 +5530,6 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/schedules/2:
     post:
       tags:
       - '[ /schedules ] Schedules'
@@ -5675,7 +5673,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/schedules/7/tasks:
+  /client/servers/{server_id}/schedules/{schedule_id}/tasks:
     post:
       tags:
       - '[ /schedules ] Schedules'
@@ -5766,7 +5764,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/schedules/7/tasks/6:
+  /client/servers/{server_id}/schedules/{schedule_id}/tasks/{task_id}:
     post:
       tags:
       - '[ /schedules ] Schedules'
@@ -5857,7 +5855,6 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/schedules/2/tasks/3:
     delete:
       tags:
       - '[ /schedules ] Schedules'
@@ -5902,7 +5899,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/network/allocations:
+  /client/servers/{server_id}/network/allocations:
     get:
       tags:
       - '[ /network ] Network'
@@ -6027,7 +6024,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/network/allocations/2:
+  /client/servers/{server_id}/network/allocations/{allocation_id}:
     post:
       tags:
       - '[ /network ] Network'
@@ -6155,7 +6152,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/network/allocations/1/primary:
+  /client/servers/{server_id}/network/allocations/{allocation_id}/primary:
     post:
       tags:
       - '[ /network ] Network'
@@ -6211,7 +6208,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/backups:
+  /client/servers/{server_id}/backups:
     get:
       tags:
       - '[ /backups ] Backups'
@@ -6349,7 +6346,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/backups/904df120-a66f-4375-a4ae-40eedbeae630:
+  /client/servers/{server_id}/backups/{backup_id}:
     get:
       tags:
       - '[ /backups ] Backups'
@@ -6405,7 +6402,51 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/backups/904df120-a66f-4375-a4ae-40eedbeae630/download:
+    delete:
+      tags:
+      - '[ /backups ] Backups'
+      summary: '[ /{backup} ] Delete backup'
+      description: >-
+        Deletes the specified backup
+
+
+        <!-- RESPONSE 204 -->
+
+        // Successful
+
+        <!-- ENDRESPONSE -->
+      operationId: '[/{backup}]Deletebackup'
+      parameters:
+      - name: Accept
+        in: header
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: application/json
+      - name: Content-Type
+        in: header
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: application/json
+      responses:
+        '200':
+          description: ''
+          headers: {}
+          content:
+            text/plain:
+              schema: {}
+      deprecated: false
+      security:
+      - bearer: []
+      servers:
+      - url: https://pterodactyl.file.properties/api
+        variables: {}
+  /client/servers/{server_id}/backups/{backup_id}/download:
     get:
       tags:
       - '[ /backups ] Backups'
@@ -6455,52 +6496,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/backups/63087048-eada-419c-ad72-803c1c949cac:
-    delete:
-      tags:
-      - '[ /backups ] Backups'
-      summary: '[ /{backup} ] Delete backup'
-      description: >-
-        Deletes the specified backup
-
-
-        <!-- RESPONSE 204 -->
-
-        // Successful
-
-        <!-- ENDRESPONSE -->
-      operationId: '[/{backup}]Deletebackup'
-      parameters:
-      - name: Accept
-        in: header
-        description: ''
-        required: true
-        style: simple
-        schema:
-          type: string
-          example: application/json
-      - name: Content-Type
-        in: header
-        description: ''
-        required: true
-        style: simple
-        schema:
-          type: string
-          example: application/json
-      responses:
-        '200':
-          description: ''
-          headers: {}
-          content:
-            text/plain:
-              schema: {}
-      deprecated: false
-      security:
-      - bearer: []
-      servers:
-      - url: https://pterodactyl.file.properties/api
-        variables: {}
-  /client/servers/1a7ce997/startup:
+  /client/servers/{server_id}/startup:
     get:
       tags:
       - '[ /startup ] Startup'
@@ -6569,7 +6565,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/startup/variable:
+  /client/servers/{server_id}/startup/variable:
     put:
       tags:
       - '[ /startup ] Startup'
@@ -6631,7 +6627,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/settings/rename:
+  /client/servers/{server_id}/settings/rename:
     post:
       tags:
       - '[ /settings ] Settings'
@@ -6689,7 +6685,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/settings/reinstall:
+  /client/servers/{server_id}/settings/reinstall:
     post:
       tags:
       - '[ /settings ] Settings'
@@ -7305,7 +7301,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api/client
         variables: {}
-  /account/api-keys/NWKMYMT2Mrav0Iq2:
+  /account/api-keys/{api_key_id}:
     delete:
       tags:
       - '[ /account ] Account'
@@ -7367,7 +7363,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api/client
         variables: {}
-  /client/servers/1a7ce997:
+  /client/servers/{server_id}:
     get:
       tags:
       - '[ /servers/{server} ] Server'
@@ -7393,8 +7389,8 @@ paths:
           "object": "server",
           "attributes": {
             "server_owner": true,
-            "identifier": "1a7ce997",
-            "uuid": "1a7ce997-259b-452e-8b4e-cecc464142ca",
+            "identifier": "{server_id}",
+            "uuid": "{server_id}-259b-452e-8b4e-cecc464142ca",
             "name": "Wuhu Island",
             "node": "Test",
             "sftp_details": {
@@ -7488,7 +7484,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/websocket:
+  /client/servers/{server_id}/websocket:
     get:
       tags:
       - '[ /servers/{server} ] Server'
@@ -7502,7 +7498,7 @@ paths:
         {
           "data": {
             "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6Ij...",
-            "socket": "wss:\/\/pterodactyl.file.properties:8080\/api\/servers\/1a7ce997-259b-452e-8b4e-cecc464142ca\/ws"
+            "socket": "wss:\/\/pterodactyl.file.properties:8080\/api\/servers\/{server_id}-259b-452e-8b4e-cecc464142ca\/ws"
           }
         }
 
@@ -7511,7 +7507,7 @@ paths:
 
         ## How to connect
 
-        1. Connect to the websocket address (in this example "wss://pterodactyl.file.properties:8080/api/servers/1a7ce997-259b-452e-8b4e-cecc464142ca/ws")
+        1. Connect to the websocket address (in this example "wss://pterodactyl.file.properties:8080/api/servers/{server_id}-259b-452e-8b4e-cecc464142ca/ws")
 
         2. Send the token to the websocket like this: `{"event":"auth","args":["eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6Ij..."]}`
 
@@ -7576,7 +7572,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/resources:
+  /client/servers/{server_id}/resources:
     get:
       tags:
       - '[ /servers/{server} ] Server'
@@ -7634,7 +7630,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/command:
+  /client/servers/{server_id}/command:
     post:
       tags:
       - '[ /servers/{server} ] Server'
@@ -7710,7 +7706,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /client/servers/1a7ce997/power:
+  /client/servers/{server_id}/power:
     post:
       tags:
       - '[ /servers/{server} ] Server'
@@ -7784,7 +7780,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /application/nodes/1/allocations:
+  /application/nodes/{node_id}/allocations:
     get:
       tags:
       - '[ /{node}/allocations ] Allocations'
@@ -8104,7 +8100,7 @@ paths:
       servers:
       - url: https://pterodactyl.file.properties/api
         variables: {}
-  /application/nodes/1/allocations/18:
+  /application/nodes/{node_id}/allocations/{allocation_id}:
     delete:
       tags:
       - '[ /{node}/allocations ] Allocations'
@@ -8178,8 +8174,8 @@ paths:
               "object": "server",
               "attributes": {
                 "server_owner": true,
-                "identifier": "1a7ce997",
-                "uuid": "1a7ce997-259b-452e-8b4e-cecc464142ca",
+                "identifier": "{server_id}",
+                "uuid": "{server_id}-259b-452e-8b4e-cecc464142ca",
                 "name": "Gaming",
                 "node": "Test",
                 "sftp_details": {
