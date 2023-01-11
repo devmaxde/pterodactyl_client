@@ -6,7 +6,7 @@
 # raise a `RecursionError`.
 # In order to avoid this, import only the API that you directly need like:
 #
-#   from pterodactyl_client.api.account_account_api import AccountAccountApi
+#   from pterodactyl_client.api.account_api import AccountApi
 #
 # or import this package, but before doing it, use:
 #
@@ -14,21 +14,27 @@
 #   sys.setrecursionlimit(n)
 
 # Import APIs into API package:
+from pterodactyl_client.api.account_api import AccountApi
+from pterodactyl_client.api.allocations_api import AllocationsApi
+from pterodactyl_client.api.backups_api import BackupsApi
+from pterodactyl_client.api.database_management_api import DatabaseManagementApi
+from pterodactyl_client.api.databases_api import DatabasesApi
+from pterodactyl_client.api.eggs_management_api import EggsManagementApi
+from pterodactyl_client.api.file_manager_api import FileManagerApi
+from pterodactyl_client.api.locations_api import LocationsApi
+from pterodactyl_client.api.nests_api import NestsApi
+from pterodactyl_client.api.network_api import NetworkApi
+from pterodactyl_client.api.nodes_api import NodesApi
+from pterodactyl_client.api.schedules_api import SchedulesApi
+from pterodactyl_client.api.server_api import ServerApi
+from pterodactyl_client.api.servers_api import ServersApi
+from pterodactyl_client.api.settings_api import SettingsApi
+from pterodactyl_client.api.startup_api import StartupApi
+from pterodactyl_client.api.users_api import UsersApi
 from pterodactyl_client.api.account_account_api import AccountAccountApi
 from pterodactyl_client.api.api_client_client_api import ApiClientClientApi
-from pterodactyl_client.api.backups_backups_api import BackupsBackupsApi
-from pterodactyl_client.api.databases_databases_api import DatabasesDatabasesApi
-from pterodactyl_client.api.files_file_manager_api import FilesFileManagerApi
 from pterodactyl_client.api.locations_locations_api import LocationsLocationsApi
-from pterodactyl_client.api.nest_eggs_eggs_management_api import NestEggsEggsManagementApi
 from pterodactyl_client.api.nests_nests_api import NestsNestsApi
-from pterodactyl_client.api.network_network_api import NetworkNetworkApi
-from pterodactyl_client.api.node_allocations_allocations_api import NodeAllocationsAllocationsApi
 from pterodactyl_client.api.nodes_nodes_api import NodesNodesApi
-from pterodactyl_client.api.schedules_schedules_api import SchedulesSchedulesApi
-from pterodactyl_client.api.server_databases_database_management_api import ServerDatabasesDatabaseManagementApi
 from pterodactyl_client.api.servers_servers_api import ServersServersApi
-from pterodactyl_client.api.servers_server_server_api import ServersServerServerApi
-from pterodactyl_client.api.settings_settings_api import SettingsSettingsApi
-from pterodactyl_client.api.startup_startup_api import StartupStartupApi
 from pterodactyl_client.api.users_users_api import UsersUsersApi

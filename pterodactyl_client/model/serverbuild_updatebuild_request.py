@@ -82,13 +82,13 @@ class ServerbuildUpdatebuildRequest(ModelNormal):
         """
         return {
             'allocation': (int,),  # noqa: E501
+            'cpu': (int,),  # noqa: E501
+            'disk': (int,),  # noqa: E501
+            'feature_limits': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'io': (int,),  # noqa: E501
             'memory': (int,),  # noqa: E501
             'swap': (int,),  # noqa: E501
-            'disk': (int,),  # noqa: E501
-            'io': (int,),  # noqa: E501
-            'cpu': (int,),  # noqa: E501
             'threads': (str, none_type,),  # noqa: E501
-            'feature_limits': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
         }
 
     @cached_property
@@ -98,13 +98,13 @@ class ServerbuildUpdatebuildRequest(ModelNormal):
 
     attribute_map = {
         'allocation': 'allocation',  # noqa: E501
+        'cpu': 'cpu',  # noqa: E501
+        'disk': 'disk',  # noqa: E501
+        'feature_limits': 'feature_limits',  # noqa: E501
+        'io': 'io',  # noqa: E501
         'memory': 'memory',  # noqa: E501
         'swap': 'swap',  # noqa: E501
-        'disk': 'disk',  # noqa: E501
-        'io': 'io',  # noqa: E501
-        'cpu': 'cpu',  # noqa: E501
         'threads': 'threads',  # noqa: E501
-        'feature_limits': 'feature_limits',  # noqa: E501
     }
 
     read_only_vars = {
@@ -114,18 +114,18 @@ class ServerbuildUpdatebuildRequest(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, allocation, memory, swap, disk, io, cpu, threads, feature_limits, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, allocation, cpu, disk, feature_limits, io, memory, swap, threads, *args, **kwargs):  # noqa: E501
         """ServerbuildUpdatebuildRequest - a model defined in OpenAPI
 
         Args:
             allocation (int):
+            cpu (int):
+            disk (int):
+            feature_limits ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}):
+            io (int):
             memory (int):
             swap (int):
-            disk (int):
-            io (int):
-            cpu (int):
             threads (str, none_type):
-            feature_limits ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -190,13 +190,13 @@ class ServerbuildUpdatebuildRequest(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.allocation = allocation
+        self.cpu = cpu
+        self.disk = disk
+        self.feature_limits = feature_limits
+        self.io = io
         self.memory = memory
         self.swap = swap
-        self.disk = disk
-        self.io = io
-        self.cpu = cpu
         self.threads = threads
-        self.feature_limits = feature_limits
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -217,18 +217,18 @@ class ServerbuildUpdatebuildRequest(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, allocation, memory, swap, disk, io, cpu, threads, feature_limits, *args, **kwargs):  # noqa: E501
+    def __init__(self, allocation, cpu, disk, feature_limits, io, memory, swap, threads, *args, **kwargs):  # noqa: E501
         """ServerbuildUpdatebuildRequest - a model defined in OpenAPI
 
         Args:
             allocation (int):
+            cpu (int):
+            disk (int):
+            feature_limits ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}):
+            io (int):
             memory (int):
             swap (int):
-            disk (int):
-            io (int):
-            cpu (int):
             threads (str, none_type):
-            feature_limits ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -291,13 +291,13 @@ class ServerbuildUpdatebuildRequest(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.allocation = allocation
+        self.cpu = cpu
+        self.disk = disk
+        self.feature_limits = feature_limits
+        self.io = io
         self.memory = memory
         self.swap = swap
-        self.disk = disk
-        self.io = io
-        self.cpu = cpu
         self.threads = threads
-        self.feature_limits = feature_limits
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

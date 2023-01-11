@@ -12,10 +12,6 @@ import sys
 import unittest
 
 import pterodactyl_client
-from pterodactyl_client.model.from_pterodactyl_client_model_schedule_updateschedule_request_import_schedule_updateschedule_request import FromPterodactylClientModelScheduleUpdatescheduleRequestImportScheduleUpdatescheduleRequest
-from pterodactyl_client.model.globals_schedule_updateschedule_request_schedule_updateschedule_request import GlobalsScheduleUpdatescheduleRequestScheduleUpdatescheduleRequest
-globals()['from pterodactyl_client.model.schedule_updateschedule_request import ScheduleUpdatescheduleRequest'] = from pterodactyl_client.model.schedule_updateschedule_request import ScheduleUpdatescheduleRequest
-globals()['globals()['ScheduleUpdatescheduleRequest'] = ScheduleUpdatescheduleRequest'] = globals()['ScheduleUpdatescheduleRequest'] = ScheduleUpdatescheduleRequest
 from pterodactyl_client.model.schedule_updateschedule_request import ScheduleUpdatescheduleRequest
 
 

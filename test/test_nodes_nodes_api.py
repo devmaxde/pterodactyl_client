@@ -37,34 +37,6 @@ class TestNodesNodesApi(unittest.TestCase):
         """
         pass
 
-    def test___node_configuration_nodeconfiguration(self):
-        """Test case for __node_configuration_nodeconfiguration
-
-        [ /{node}/configuration ] Node configuration  # noqa: E501
-        """
-        pass
-
-    def test___node_deletenode(self):
-        """Test case for __node_deletenode
-
-        [ /{node} ] Delete node  # noqa: E501
-        """
-        pass
-
-    def test___node_nodedetails(self):
-        """Test case for __node_nodedetails
-
-        [ /{node} ] Node details  # noqa: E501
-        """
-        pass
-
-    def test___node_updatenode(self):
-        """Test case for __node_updatenode
-
-        [ /{node} ] Update node  # noqa: E501
-        """
-        pass
-
 
 if __name__ == '__main__':
     unittest.main()

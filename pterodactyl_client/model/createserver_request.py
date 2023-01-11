@@ -89,15 +89,15 @@ class CreateserverRequest(ModelComposed):
         """
         lazy_import()
         return {
-            'name': (str,),  # noqa: E501
-            'user': (int,),  # noqa: E501
-            'egg': (int,),  # noqa: E501
-            'docker_image': (str,),  # noqa: E501
-            'startup': (str,),  # noqa: E501
-            'environment': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
-            'limits': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
-            'feature_limits': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
             'allocation': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'docker_image': (str,),  # noqa: E501
+            'egg': (int,),  # noqa: E501
+            'environment': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'feature_limits': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'limits': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'name': (str,),  # noqa: E501
+            'startup': (str,),  # noqa: E501
+            'user': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -106,15 +106,15 @@ class CreateserverRequest(ModelComposed):
 
 
     attribute_map = {
-        'name': 'name',  # noqa: E501
-        'user': 'user',  # noqa: E501
-        'egg': 'egg',  # noqa: E501
-        'docker_image': 'docker_image',  # noqa: E501
-        'startup': 'startup',  # noqa: E501
-        'environment': 'environment',  # noqa: E501
-        'limits': 'limits',  # noqa: E501
-        'feature_limits': 'feature_limits',  # noqa: E501
         'allocation': 'allocation',  # noqa: E501
+        'docker_image': 'docker_image',  # noqa: E501
+        'egg': 'egg',  # noqa: E501
+        'environment': 'environment',  # noqa: E501
+        'feature_limits': 'feature_limits',  # noqa: E501
+        'limits': 'limits',  # noqa: E501
+        'name': 'name',  # noqa: E501
+        'startup': 'startup',  # noqa: E501
+        'user': 'user',  # noqa: E501
     }
 
     read_only_vars = {
@@ -126,15 +126,15 @@ class CreateserverRequest(ModelComposed):
         """CreateserverRequest - a model defined in OpenAPI
 
         Keyword Args:
-            name (str):
-            user (int):
-            egg (int):
-            docker_image (str):
-            startup (str):
-            environment ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}):
-            limits ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}):
-            feature_limits ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}):
             allocation ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}):
+            docker_image (str):
+            egg (int):
+            environment ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}):
+            feature_limits ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}):
+            limits ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}):
+            name (str):
+            startup (str):
+            user (int):
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -238,15 +238,15 @@ class CreateserverRequest(ModelComposed):
         """CreateserverRequest - a model defined in OpenAPI
 
         Keyword Args:
-            name (str):
-            user (int):
-            egg (int):
-            docker_image (str):
-            startup (str):
-            environment ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}):
-            limits ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}):
-            feature_limits ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}):
             allocation ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}):
+            docker_image (str):
+            egg (int):
+            environment ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}):
+            feature_limits ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}):
+            limits ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}):
+            name (str):
+            startup (str):
+            user (int):
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.

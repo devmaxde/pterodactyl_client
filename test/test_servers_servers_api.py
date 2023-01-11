@@ -30,80 +30,10 @@ class TestServersServersApi(unittest.TestCase):
         """
         pass
 
-    def test___external_external_id_serverdetails(self):
-        """Test case for __external_external_id_serverdetails
-
-        [ /external/{external_id} ] Server details  # noqa: E501
-        """
-        pass
-
     def test___listservers(self):
         """Test case for __listservers
 
         [ / ] List servers  # noqa: E501
-        """
-        pass
-
-    def test___server_build_updatebuild(self):
-        """Test case for __server_build_updatebuild
-
-        [ /{server}/build ] Update build  # noqa: E501
-        """
-        pass
-
-    def test___server_deleteserver(self):
-        """Test case for __server_deleteserver
-
-        [ /{server} ] Delete server  # noqa: E501
-        """
-        pass
-
-    def test___server_details_updatedetails(self):
-        """Test case for __server_details_updatedetails
-
-        [ /{server}/details ] Update details  # noqa: E501
-        """
-        pass
-
-    def test___server_force_forcedeleteserver(self):
-        """Test case for __server_force_forcedeleteserver
-
-        [ /{server}/{force?} ] Force delete server  # noqa: E501
-        """
-        pass
-
-    def test___server_reinstall_reinstallserver(self):
-        """Test case for __server_reinstall_reinstallserver
-
-        [ /{server}/reinstall ] Reinstall server  # noqa: E501
-        """
-        pass
-
-    def test___server_serverdetails(self):
-        """Test case for __server_serverdetails
-
-        [ /{server} ] Server details  # noqa: E501
-        """
-        pass
-
-    def test___server_startup_updatestartup(self):
-        """Test case for __server_startup_updatestartup
-
-        [ /{server}/startup ] Update startup  # noqa: E501
-        """
-        pass
-
-    def test___server_suspend_suspendserver(self):
-        """Test case for __server_suspend_suspendserver
-
-        [ /{server}/suspend ] Suspend server  # noqa: E501
-        """
-        pass
-
-    def test___server_unsuspend_unsuspendserver(self):
-        """Test case for __server_unsuspend_unsuspendserver
-
-        [ /{server}/unsuspend ] Unsuspend server  # noqa: E501
         """
         pass
 

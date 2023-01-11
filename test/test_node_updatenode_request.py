@@ -12,10 +12,6 @@ import sys
 import unittest
 
 import pterodactyl_client
-from pterodactyl_client.model.from_pterodactyl_client_model_node_updatenode_request_import_node_updatenode_request import FromPterodactylClientModelNodeUpdatenodeRequestImportNodeUpdatenodeRequest
-from pterodactyl_client.model.globals_node_updatenode_request_node_updatenode_request import GlobalsNodeUpdatenodeRequestNodeUpdatenodeRequest
-globals()['from pterodactyl_client.model.node_updatenode_request import NodeUpdatenodeRequest'] = from pterodactyl_client.model.node_updatenode_request import NodeUpdatenodeRequest
-globals()['globals()['NodeUpdatenodeRequest'] = NodeUpdatenodeRequest'] = globals()['NodeUpdatenodeRequest'] = NodeUpdatenodeRequest
 from pterodactyl_client.model.node_updatenode_request import NodeUpdatenodeRequest
 
 

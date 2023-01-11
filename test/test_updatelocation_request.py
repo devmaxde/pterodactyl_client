@@ -12,10 +12,6 @@ import sys
 import unittest
 
 import pterodactyl_client
-from pterodactyl_client.model.from_pterodactyl_client_model_updatelocation_request_import_updatelocation_request import FromPterodactylClientModelUpdatelocationRequestImportUpdatelocationRequest
-from pterodactyl_client.model.globals_updatelocation_request_updatelocation_request import GlobalsUpdatelocationRequestUpdatelocationRequest
-globals()['from pterodactyl_client.model.updatelocation_request import UpdatelocationRequest'] = from pterodactyl_client.model.updatelocation_request import UpdatelocationRequest
-globals()['globals()['UpdatelocationRequest'] = UpdatelocationRequest'] = globals()['UpdatelocationRequest'] = UpdatelocationRequest
 from pterodactyl_client.model.updatelocation_request import UpdatelocationRequest
 
 

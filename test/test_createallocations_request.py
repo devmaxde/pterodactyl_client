@@ -12,10 +12,6 @@ import sys
 import unittest
 
 import pterodactyl_client
-from pterodactyl_client.model.from_pterodactyl_client_model_createallocations_request_import_createallocations_request import FromPterodactylClientModelCreateallocationsRequestImportCreateallocationsRequest
-from pterodactyl_client.model.globals_createallocations_request_createallocations_request import GlobalsCreateallocationsRequestCreateallocationsRequest
-globals()['from pterodactyl_client.model.createallocations_request import CreateallocationsRequest'] = from pterodactyl_client.model.createallocations_request import CreateallocationsRequest
-globals()['globals()['CreateallocationsRequest'] = CreateallocationsRequest'] = globals()['CreateallocationsRequest'] = CreateallocationsRequest
 from pterodactyl_client.model.createallocations_request import CreateallocationsRequest
 
 

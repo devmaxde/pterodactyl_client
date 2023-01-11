@@ -12,10 +12,6 @@ import sys
 import unittest
 
 import pterodactyl_client
-from pterodactyl_client.model.from_pterodactyl_client_model_command_sendcommand_request_import_command_sendcommand_request import FromPterodactylClientModelCommandSendcommandRequestImportCommandSendcommandRequest
-from pterodactyl_client.model.globals_command_sendcommand_request_command_sendcommand_request import GlobalsCommandSendcommandRequestCommandSendcommandRequest
-globals()['from pterodactyl_client.model.command_sendcommand_request import CommandSendcommandRequest'] = from pterodactyl_client.model.command_sendcommand_request import CommandSendcommandRequest
-globals()['globals()['CommandSendcommandRequest'] = CommandSendcommandRequest'] = globals()['CommandSendcommandRequest'] = CommandSendcommandRequest
 from pterodactyl_client.model.command_sendcommand_request import CommandSendcommandRequest
 
 

@@ -12,10 +12,6 @@ import sys
 import unittest
 
 import pterodactyl_client
-from pterodactyl_client.model.from_pterodactyl_client_model_createdatabase_request_import_createdatabase_request import FromPterodactylClientModelCreatedatabaseRequestImportCreatedatabaseRequest
-from pterodactyl_client.model.globals_createdatabase_request_createdatabase_request import GlobalsCreatedatabaseRequestCreatedatabaseRequest
-globals()['from pterodactyl_client.model.createdatabase_request import CreatedatabaseRequest'] = from pterodactyl_client.model.createdatabase_request import CreatedatabaseRequest
-globals()['globals()['CreatedatabaseRequest'] = CreatedatabaseRequest'] = globals()['CreatedatabaseRequest'] = CreatedatabaseRequest
 from pterodactyl_client.model.createdatabase_request import CreatedatabaseRequest
 
 

@@ -23,13 +23,6 @@ class TestUsersUsersApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test___create_user1(self):
-        """Test case for __create_user1
-
-        [ / ] Create User1  # noqa: E501
-        """
-        pass
-
     def test___createuser(self):
         """Test case for __createuser
 
@@ -37,66 +30,10 @@ class TestUsersUsersApi(unittest.TestCase):
         """
         pass
 
-    def test___external_external_id_userdetails(self):
-        """Test case for __external_external_id_userdetails
-
-        [ /external/{external_id} ] User details  # noqa: E501
-        """
-        pass
-
-    def test___list_users1(self):
-        """Test case for __list_users1
-
-        [ / ] List Users1  # noqa: E501
-        """
-        pass
-
     def test___listusers(self):
         """Test case for __listusers
 
         [ / ] List users  # noqa: E501
-        """
-        pass
-
-    def test___subuser_deleteuser(self):
-        """Test case for __subuser_deleteuser
-
-        [ /{subuser} ] Delete user  # noqa: E501
-        """
-        pass
-
-    def test___subuser_updateuser(self):
-        """Test case for __subuser_updateuser
-
-        [ /{subuser} ] Update user  # noqa: E501
-        """
-        pass
-
-    def test___subuser_userdetails(self):
-        """Test case for __subuser_userdetails
-
-        [ /{subuser} ] User details  # noqa: E501
-        """
-        pass
-
-    def test___updateuser(self):
-        """Test case for __updateuser
-
-        [ / ] Update user  # noqa: E501
-        """
-        pass
-
-    def test___user_deleteuser(self):
-        """Test case for __user_deleteuser
-
-        [ /{user} ] Delete user  # noqa: E501
-        """
-        pass
-
-    def test___user_userdetails(self):
-        """Test case for __user_userdetails
-
-        [ /{user} ] User details  # noqa: E501
         """
         pass
 

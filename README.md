@@ -107,11 +107,7 @@ Please follow the [installation procedure](#installation--usage) and then run th
 import time
 import pterodactyl_client
 from pprint import pprint
-from pterodactyl_client.api import account_account_api
-from pterodactyl_client.model.api_keys_create_ap_ikey_request import ApiKeysCreateAPIkeyRequest
-from pterodactyl_client.model.email_updateemail_request import EmailUpdateemailRequest
-from pterodactyl_client.model.password_updatepassword_request import PasswordUpdatepasswordRequest
-from pterodactyl_client.model.two_factor_enable2_fa_request import TwoFactorEnable2FARequest
+from pterodactyl_client.api import account_api
 # Defining the host is optional and defaults to https://example.com/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pterodactyl_client.Configuration(
@@ -132,16 +128,17 @@ configuration = pterodactyl_client.Configuration(
 # Enter a context with an instance of the API client
 with pterodactyl_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = account_account_api.AccountAccountApi(api_client)
+    api_instance = account_api.AccountApi(api_client)
     accept = "application/json" # str | 
     content_type = "application/json" # str | 
+    api_key_id = "api_key_id_example" # str | 
 
     try:
-        # [ / ] Account details
-        api_response = api_instance.__accountdetails(accept, content_type)
+        # [ /api-keys/{identifier} ] Delete API key
+        api_response = api_instance.account_api_keysapi_key_id_delete(accept, content_type, api_key_id)
         pprint(api_response)
     except pterodactyl_client.ApiException as e:
-        print("Exception when calling AccountAccountApi->__accountdetails: %s\n" % e)
+        print("Exception when calling AccountApi->account_api_keysapi_key_id_delete: %s\n" % e)
 ```
 
 ## Documentation for API Endpoints
@@ -150,9 +147,88 @@ All URIs are relative to *https://example.com/api*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AccountApi* | [**account_api_keysapi_key_id_delete**](docs/AccountApi.md#account_api_keysapi_key_id_delete) | **DELETE** /account/api-keys/{api_key_id} | [ /api-keys/{identifier} ] Delete API key
+*AllocationsApi* | [**application_nodesnode_id_allocations_get**](docs/AllocationsApi.md#application_nodesnode_id_allocations_get) | **GET** /application/nodes/{node_id}/allocations | [ / ] List allocations
+*AllocationsApi* | [**application_nodesnode_id_allocations_post**](docs/AllocationsApi.md#application_nodesnode_id_allocations_post) | **POST** /application/nodes/{node_id}/allocations | [ / ] Create allocations
+*AllocationsApi* | [**application_nodesnode_id_allocationsallocation_id_delete**](docs/AllocationsApi.md#application_nodesnode_id_allocationsallocation_id_delete) | **DELETE** /application/nodes/{node_id}/allocations/{allocation_id} | [ /{allocation} ] Delete allocation
+*BackupsApi* | [**client_serversserver_id_backups_get**](docs/BackupsApi.md#client_serversserver_id_backups_get) | **GET** /client/servers/{server_id}/backups | [ / ] List backups
+*BackupsApi* | [**client_serversserver_id_backups_post**](docs/BackupsApi.md#client_serversserver_id_backups_post) | **POST** /client/servers/{server_id}/backups | [ / ] Create backup
+*BackupsApi* | [**client_serversserver_id_backupsbackup_id_delete**](docs/BackupsApi.md#client_serversserver_id_backupsbackup_id_delete) | **DELETE** /client/servers/{server_id}/backups/{backup_id} | [ /{backup} ] Delete backup
+*BackupsApi* | [**client_serversserver_id_backupsbackup_id_download_get**](docs/BackupsApi.md#client_serversserver_id_backupsbackup_id_download_get) | **GET** /client/servers/{server_id}/backups/{backup_id}/download | [ /{backup}/download ] Download backup
+*BackupsApi* | [**client_serversserver_id_backupsbackup_id_get**](docs/BackupsApi.md#client_serversserver_id_backupsbackup_id_get) | **GET** /client/servers/{server_id}/backups/{backup_id} | [ /{backup} ] Backup details
+*DatabaseManagementApi* | [**application_serversserver_id_databases_get**](docs/DatabaseManagementApi.md#application_serversserver_id_databases_get) | **GET** /application/servers/{server_id}/databases | [ / ] List databases
+*DatabaseManagementApi* | [**application_serversserver_id_databases_post**](docs/DatabaseManagementApi.md#application_serversserver_id_databases_post) | **POST** /application/servers/{server_id}/databases | [ / ] Create database
+*DatabaseManagementApi* | [**application_serversserver_id_databasesdatabase_id_delete**](docs/DatabaseManagementApi.md#application_serversserver_id_databasesdatabase_id_delete) | **DELETE** /application/servers/{server_id}/databases/{database_id} | [ /{database} ] Delete database
+*DatabaseManagementApi* | [**application_serversserver_id_databasesdatabase_id_get**](docs/DatabaseManagementApi.md#application_serversserver_id_databasesdatabase_id_get) | **GET** /application/servers/{server_id}/databases/{database_id} | [ /{database} ] Database details
+*DatabaseManagementApi* | [**application_serversserver_id_databasesdatabase_id_reset_password_post**](docs/DatabaseManagementApi.md#application_serversserver_id_databasesdatabase_id_reset_password_post) | **POST** /application/servers/{server_id}/databases/{database_id}/reset-password | [ /{database}/reset-password ] Reset password
+*DatabasesApi* | [**client_serversserver_id_databases_get**](docs/DatabasesApi.md#client_serversserver_id_databases_get) | **GET** /client/servers/{server_id}/databases | [ / ] List databases
+*DatabasesApi* | [**client_serversserver_id_databases_post**](docs/DatabasesApi.md#client_serversserver_id_databases_post) | **POST** /client/servers/{server_id}/databases | [ / ] Create database
+*DatabasesApi* | [**client_serversserver_id_databasesdatabase_id_delete**](docs/DatabasesApi.md#client_serversserver_id_databasesdatabase_id_delete) | **DELETE** /client/servers/{server_id}/databases/{database_id} | [ /{database} ] Delete database
+*DatabasesApi* | [**client_serversserver_id_databasesdatabase_id_rotate_password_post**](docs/DatabasesApi.md#client_serversserver_id_databasesdatabase_id_rotate_password_post) | **POST** /client/servers/{server_id}/databases/{database_id}/rotate-password | [ /{database}/rotate-password ] Rotate password
+*EggsManagementApi* | [**application_nestsnest_id_eggs_get**](docs/EggsManagementApi.md#application_nestsnest_id_eggs_get) | **GET** /application/nests/{nest_id}/eggs | [ / ] List eggs
+*EggsManagementApi* | [**application_nestsnest_id_eggsegg_id_get**](docs/EggsManagementApi.md#application_nestsnest_id_eggsegg_id_get) | **GET** /application/nests/{nest_id}/eggs/{egg_id} | [ /{egg} ] Egg details
+*FileManagerApi* | [**client_serversserver_id_files_compress_post**](docs/FileManagerApi.md#client_serversserver_id_files_compress_post) | **POST** /client/servers/{server_id}/files/compress | [ /compress ] Compress file
+*FileManagerApi* | [**client_serversserver_id_files_contents_get**](docs/FileManagerApi.md#client_serversserver_id_files_contents_get) | **GET** /client/servers/{server_id}/files/contents | [ /contents ] Get file contents
+*FileManagerApi* | [**client_serversserver_id_files_copy_post**](docs/FileManagerApi.md#client_serversserver_id_files_copy_post) | **POST** /client/servers/{server_id}/files/copy | [ /copy ] Copy file
+*FileManagerApi* | [**client_serversserver_id_files_create_folder_post**](docs/FileManagerApi.md#client_serversserver_id_files_create_folder_post) | **POST** /client/servers/{server_id}/files/create-folder | [ /create-folder ] Create folder
+*FileManagerApi* | [**client_serversserver_id_files_decompress_post**](docs/FileManagerApi.md#client_serversserver_id_files_decompress_post) | **POST** /client/servers/{server_id}/files/decompress | [ /decompress ] Decompress file
+*FileManagerApi* | [**client_serversserver_id_files_delete_post**](docs/FileManagerApi.md#client_serversserver_id_files_delete_post) | **POST** /client/servers/{server_id}/files/delete | [ /delete] Delete file
+*FileManagerApi* | [**client_serversserver_id_files_download_get**](docs/FileManagerApi.md#client_serversserver_id_files_download_get) | **GET** /client/servers/{server_id}/files/download | [ /download ] Download file
+*FileManagerApi* | [**client_serversserver_id_files_list_get**](docs/FileManagerApi.md#client_serversserver_id_files_list_get) | **GET** /client/servers/{server_id}/files/list | [ /list ] List files
+*FileManagerApi* | [**client_serversserver_id_files_rename_put**](docs/FileManagerApi.md#client_serversserver_id_files_rename_put) | **PUT** /client/servers/{server_id}/files/rename | [ /rename ] Rename file
+*FileManagerApi* | [**client_serversserver_id_files_upload_get**](docs/FileManagerApi.md#client_serversserver_id_files_upload_get) | **GET** /client/servers/{server_id}/files/upload | [ /upload ] Upload file
+*FileManagerApi* | [**client_serversserver_id_files_write_post**](docs/FileManagerApi.md#client_serversserver_id_files_write_post) | **POST** /client/servers/{server_id}/files/write | [ /write ] Write file
+*LocationsApi* | [**application_locationslocation_id_delete**](docs/LocationsApi.md#application_locationslocation_id_delete) | **DELETE** /application/locations/{location_id} | [ /{location} ] Delete location
+*LocationsApi* | [**application_locationslocation_id_get**](docs/LocationsApi.md#application_locationslocation_id_get) | **GET** /application/locations/{location_id} | [ /{location} ] Location details
+*LocationsApi* | [**application_locationslocation_id_patch**](docs/LocationsApi.md#application_locationslocation_id_patch) | **PATCH** /application/locations/{location_id} | [ / ] Update location
+*NestsApi* | [**application_nestsnest_id_get**](docs/NestsApi.md#application_nestsnest_id_get) | **GET** /application/nests/{nest_id} | [ /{nest} ] Nest details
+*NetworkApi* | [**client_serversserver_id_network_allocations_get**](docs/NetworkApi.md#client_serversserver_id_network_allocations_get) | **GET** /client/servers/{server_id}/network/allocations | [ /allocations ] List allocations
+*NetworkApi* | [**client_serversserver_id_network_allocations_post**](docs/NetworkApi.md#client_serversserver_id_network_allocations_post) | **POST** /client/servers/{server_id}/network/allocations | [ /allocations ] Assign allocation
+*NetworkApi* | [**client_serversserver_id_network_allocationsallocation_id_delete**](docs/NetworkApi.md#client_serversserver_id_network_allocationsallocation_id_delete) | **DELETE** /client/servers/{server_id}/network/allocations/{allocation_id} | [ /allocations/{allocation} ] Unassign allocation
+*NetworkApi* | [**client_serversserver_id_network_allocationsallocation_id_post**](docs/NetworkApi.md#client_serversserver_id_network_allocationsallocation_id_post) | **POST** /client/servers/{server_id}/network/allocations/{allocation_id} | [ /allocations/{allocation} ] Set allocation note
+*NetworkApi* | [**client_serversserver_id_network_allocationsallocation_id_primary_post**](docs/NetworkApi.md#client_serversserver_id_network_allocationsallocation_id_primary_post) | **POST** /client/servers/{server_id}/network/allocations/{allocation_id}/primary | [ /allocations/{allocation}/primary ] Set primary allocation
+*NodesApi* | [**application_nodesnode_id_configuration_get**](docs/NodesApi.md#application_nodesnode_id_configuration_get) | **GET** /application/nodes/{node_id}/configuration | [ /{node}/configuration ] Node configuration
+*NodesApi* | [**application_nodesnode_id_delete**](docs/NodesApi.md#application_nodesnode_id_delete) | **DELETE** /application/nodes/{node_id} | [ /{node} ] Delete node
+*NodesApi* | [**application_nodesnode_id_get**](docs/NodesApi.md#application_nodesnode_id_get) | **GET** /application/nodes/{node_id} | [ /{node} ] Node details
+*NodesApi* | [**application_nodesnode_id_patch**](docs/NodesApi.md#application_nodesnode_id_patch) | **PATCH** /application/nodes/{node_id} | [ /{node} ] Update node
+*SchedulesApi* | [**client_serversserver_id_schedules_get**](docs/SchedulesApi.md#client_serversserver_id_schedules_get) | **GET** /client/servers/{server_id}/schedules | [ / ] List schedules
+*SchedulesApi* | [**client_serversserver_id_schedules_post**](docs/SchedulesApi.md#client_serversserver_id_schedules_post) | **POST** /client/servers/{server_id}/schedules | [ / ] Create schedule
+*SchedulesApi* | [**client_serversserver_id_schedulesschedule_id_delete**](docs/SchedulesApi.md#client_serversserver_id_schedulesschedule_id_delete) | **DELETE** /client/servers/{server_id}/schedules/{schedule_id} | [ /{schedule} ] Delete schedule
+*SchedulesApi* | [**client_serversserver_id_schedulesschedule_id_get**](docs/SchedulesApi.md#client_serversserver_id_schedulesschedule_id_get) | **GET** /client/servers/{server_id}/schedules/{schedule_id} | [ /{schedule} ] Schedule details
+*SchedulesApi* | [**client_serversserver_id_schedulesschedule_id_post**](docs/SchedulesApi.md#client_serversserver_id_schedulesschedule_id_post) | **POST** /client/servers/{server_id}/schedules/{schedule_id} | [ /{schedule} ] Update schedule
+*SchedulesApi* | [**client_serversserver_id_schedulesschedule_id_tasks_post**](docs/SchedulesApi.md#client_serversserver_id_schedulesschedule_id_tasks_post) | **POST** /client/servers/{server_id}/schedules/{schedule_id}/tasks | [ /{schedule}/tasks ] Create task
+*SchedulesApi* | [**client_serversserver_id_schedulesschedule_id_taskstask_id_delete**](docs/SchedulesApi.md#client_serversserver_id_schedulesschedule_id_taskstask_id_delete) | **DELETE** /client/servers/{server_id}/schedules/{schedule_id}/tasks/{task_id} | [ /{schedule}/tasks/{task} ] Delete  task
+*SchedulesApi* | [**client_serversserver_id_schedulesschedule_id_taskstask_id_post**](docs/SchedulesApi.md#client_serversserver_id_schedulesschedule_id_taskstask_id_post) | **POST** /client/servers/{server_id}/schedules/{schedule_id}/tasks/{task_id} | [ /{schedule}/tasks/{task} ] Update task
+*ServerApi* | [**client_serversserver_id_command_post**](docs/ServerApi.md#client_serversserver_id_command_post) | **POST** /client/servers/{server_id}/command | [ /command ] Send command
+*ServerApi* | [**client_serversserver_id_get**](docs/ServerApi.md#client_serversserver_id_get) | **GET** /client/servers/{server_id} | [ / ] Server details
+*ServerApi* | [**client_serversserver_id_power_post**](docs/ServerApi.md#client_serversserver_id_power_post) | **POST** /client/servers/{server_id}/power | [ /power ] Change power state
+*ServerApi* | [**client_serversserver_id_resources_get**](docs/ServerApi.md#client_serversserver_id_resources_get) | **GET** /client/servers/{server_id}/resources | [ /resources ] Resource usage
+*ServerApi* | [**client_serversserver_id_websocket_get**](docs/ServerApi.md#client_serversserver_id_websocket_get) | **GET** /client/servers/{server_id}/websocket | [ /websocket ] Console details
+*ServersApi* | [**application_servers_externalserver_id_get**](docs/ServersApi.md#application_servers_externalserver_id_get) | **GET** /application/servers/external/{server_id} | [ /external/{external_id} ] Server details
+*ServersApi* | [**application_serversserver_id_build_patch**](docs/ServersApi.md#application_serversserver_id_build_patch) | **PATCH** /application/servers/{server_id}/build | [ /{server}/build ] Update build
+*ServersApi* | [**application_serversserver_id_delete**](docs/ServersApi.md#application_serversserver_id_delete) | **DELETE** /application/servers/{server_id} | [ /{server} ] Delete server
+*ServersApi* | [**application_serversserver_id_details_patch**](docs/ServersApi.md#application_serversserver_id_details_patch) | **PATCH** /application/servers/{server_id}/details | [ /{server}/details ] Update details
+*ServersApi* | [**application_serversserver_id_force_delete**](docs/ServersApi.md#application_serversserver_id_force_delete) | **DELETE** /application/servers/{server_id}/force | [ /{server}/{force?} ] Force delete server
+*ServersApi* | [**application_serversserver_id_get**](docs/ServersApi.md#application_serversserver_id_get) | **GET** /application/servers/{server_id} | [ /{server} ] Server details
+*ServersApi* | [**application_serversserver_id_reinstall_post**](docs/ServersApi.md#application_serversserver_id_reinstall_post) | **POST** /application/servers/{server_id}/reinstall | [ /{server}/reinstall ] Reinstall server
+*ServersApi* | [**application_serversserver_id_startup_patch**](docs/ServersApi.md#application_serversserver_id_startup_patch) | **PATCH** /application/servers/{server_id}/startup | [ /{server}/startup ] Update startup
+*ServersApi* | [**application_serversserver_id_suspend_post**](docs/ServersApi.md#application_serversserver_id_suspend_post) | **POST** /application/servers/{server_id}/suspend | [ /{server}/suspend ] Suspend server
+*ServersApi* | [**application_serversserver_id_unsuspend_post**](docs/ServersApi.md#application_serversserver_id_unsuspend_post) | **POST** /application/servers/{server_id}/unsuspend | [ /{server}/unsuspend ] Unsuspend server
+*SettingsApi* | [**client_serversserver_id_settings_reinstall_post**](docs/SettingsApi.md#client_serversserver_id_settings_reinstall_post) | **POST** /client/servers/{server_id}/settings/reinstall | [ /reinstall ] Reinstall server
+*SettingsApi* | [**client_serversserver_id_settings_rename_post**](docs/SettingsApi.md#client_serversserver_id_settings_rename_post) | **POST** /client/servers/{server_id}/settings/rename | [ /rename ] Rename server
+*StartupApi* | [**client_serversserver_id_startup_get**](docs/StartupApi.md#client_serversserver_id_startup_get) | **GET** /client/servers/{server_id}/startup | [ / ] List Variables
+*StartupApi* | [**client_serversserver_id_startup_variable_put**](docs/StartupApi.md#client_serversserver_id_startup_variable_put) | **PUT** /client/servers/{server_id}/startup/variable | [ /variable ] Update Variable
+*UsersApi* | [**application_users_externaluser_id_get**](docs/UsersApi.md#application_users_externaluser_id_get) | **GET** /application/users/external/{user_id} | [ /external/{external_id} ] User details
+*UsersApi* | [**application_usersuser_id_delete**](docs/UsersApi.md#application_usersuser_id_delete) | **DELETE** /application/users/{user_id} | [ /{user} ] Delete user
+*UsersApi* | [**application_usersuser_id_get**](docs/UsersApi.md#application_usersuser_id_get) | **GET** /application/users/{user_id} | [ /{user} ] User details
+*UsersApi* | [**application_usersuser_id_patch**](docs/UsersApi.md#application_usersuser_id_patch) | **PATCH** /application/users/{user_id} | [ / ] Update user
+*UsersApi* | [**client_serversserver_id_users_get**](docs/UsersApi.md#client_serversserver_id_users_get) | **GET** /client/servers/{server_id}/users | [ / ] List Users1
+*UsersApi* | [**client_serversserver_id_users_post**](docs/UsersApi.md#client_serversserver_id_users_post) | **POST** /client/servers/{server_id}/users | [ / ] Create User1
+*UsersApi* | [**client_serversserver_id_usersuser_id_delete**](docs/UsersApi.md#client_serversserver_id_usersuser_id_delete) | **DELETE** /client/servers/{server_id}/users/{user_id} | [ /{subuser} ] Delete user
+*UsersApi* | [**client_serversserver_id_usersuser_id_get**](docs/UsersApi.md#client_serversserver_id_usersuser_id_get) | **GET** /client/servers/{server_id}/users/{user_id} | [ /{subuser} ] User details
+*UsersApi* | [**client_serversserver_id_usersuser_id_post**](docs/UsersApi.md#client_serversserver_id_usersuser_id_post) | **POST** /client/servers/{server_id}/users/{user_id} | [ /{subuser} ] Update user
 *AccountAccountApi* | [**__accountdetails**](docs/AccountAccountApi.md#__accountdetails) | **GET** /account | [ / ] Account details
 *AccountAccountApi* | [**__api_keys_create_ap_ikey**](docs/AccountAccountApi.md#__api_keys_create_ap_ikey) | **POST** /account/api-keys | [ /api-keys ] Create API key
-*AccountAccountApi* | [**__api_keys_identifier_delete_ap_ikey**](docs/AccountAccountApi.md#__api_keys_identifier_delete_ap_ikey) | **DELETE** /account/api-keys/NWKMYMT2Mrav0Iq2 | [ /api-keys/{identifier} ] Delete API key
 *AccountAccountApi* | [**__api_keys_list_ap_ikeys**](docs/AccountAccountApi.md#__api_keys_list_ap_ikeys) | **GET** /account/api-keys | [ /api-keys ] List API keys
 *AccountAccountApi* | [**__email_updateemail**](docs/AccountAccountApi.md#__email_updateemail) | **PUT** /account/email | [ /email ] Update email
 *AccountAccountApi* | [**__password_updatepassword**](docs/AccountAccountApi.md#__password_updatepassword) | **PUT** /account/password | [ /password ] Update password
@@ -161,106 +237,51 @@ Class | Method | HTTP request | Description
 *AccountAccountApi* | [**__two_factor_enable2_fa**](docs/AccountAccountApi.md#__two_factor_enable2_fa) | **POST** /account/two-factor | [ /two-factor ] Enable 2FA
 *ApiClientClientApi* | [**__permissions_showpermissions**](docs/ApiClientClientApi.md#__permissions_showpermissions) | **GET** /client/permissions | [ /permissions ] Show permissions
 *ApiClientClientApi* | [**get__listservers**](docs/ApiClientClientApi.md#get__listservers) | **GET** /client | [ / ] List servers
-*BackupsBackupsApi* | [**__backup_backupdetails**](docs/BackupsBackupsApi.md#__backup_backupdetails) | **GET** /client/servers/1a7ce997/backups/904df120-a66f-4375-a4ae-40eedbeae630 | [ /{backup} ] Backup details
-*BackupsBackupsApi* | [**__backup_deletebackup**](docs/BackupsBackupsApi.md#__backup_deletebackup) | **DELETE** /client/servers/1a7ce997/backups/63087048-eada-419c-ad72-803c1c949cac | [ /{backup} ] Delete backup
-*BackupsBackupsApi* | [**__backup_download_downloadbackup**](docs/BackupsBackupsApi.md#__backup_download_downloadbackup) | **GET** /client/servers/1a7ce997/backups/904df120-a66f-4375-a4ae-40eedbeae630/download | [ /{backup}/download ] Download backup
-*BackupsBackupsApi* | [**__createbackup**](docs/BackupsBackupsApi.md#__createbackup) | **POST** /client/servers/1a7ce997/backups | [ / ] Create backup
-*BackupsBackupsApi* | [**__listbackups**](docs/BackupsBackupsApi.md#__listbackups) | **GET** /client/servers/1a7ce997/backups | [ / ] List backups
-*DatabasesDatabasesApi* | [**__database_rotate_password_rotatepassword**](docs/DatabasesDatabasesApi.md#__database_rotate_password_rotatepassword) | **POST** /client/servers/1a7ce997/databases/bEY4yAD5/rotate-password | [ /{database}/rotate-password ] Rotate password
-*DatabasesDatabasesApi* | [**delete__database_deletedatabase**](docs/DatabasesDatabasesApi.md#delete__database_deletedatabase) | **DELETE** /client/servers/1a7ce997/databases/y9YVxO4V | [ /{database} ] Delete database
-*DatabasesDatabasesApi* | [**get__listdatabases**](docs/DatabasesDatabasesApi.md#get__listdatabases) | **GET** /client/servers/1a7ce997/databases | [ / ] List databases
-*DatabasesDatabasesApi* | [**post__createdatabase**](docs/DatabasesDatabasesApi.md#post__createdatabase) | **POST** /client/servers/1a7ce997/databases | [ / ] Create database
-*FilesFileManagerApi* | [**__compress_compressfile**](docs/FilesFileManagerApi.md#__compress_compressfile) | **POST** /client/servers/1a7ce997/files/compress | [ /compress ] Compress file
-*FilesFileManagerApi* | [**__contents_getfilecontents**](docs/FilesFileManagerApi.md#__contents_getfilecontents) | **GET** /client/servers/1a7ce997/files/contents | [ /contents ] Get file contents
-*FilesFileManagerApi* | [**__copy_copyfile**](docs/FilesFileManagerApi.md#__copy_copyfile) | **POST** /client/servers/1a7ce997/files/copy | [ /copy ] Copy file
-*FilesFileManagerApi* | [**__create_folder_createfolder**](docs/FilesFileManagerApi.md#__create_folder_createfolder) | **POST** /client/servers/1a7ce997/files/create-folder | [ /create-folder ] Create folder
-*FilesFileManagerApi* | [**__decompress_decompressfile**](docs/FilesFileManagerApi.md#__decompress_decompressfile) | **POST** /client/servers/1a7ce997/files/decompress | [ /decompress ] Decompress file
-*FilesFileManagerApi* | [**__delete_deletefile**](docs/FilesFileManagerApi.md#__delete_deletefile) | **POST** /client/servers/1a7ce997/files/delete | [ /delete] Delete file
-*FilesFileManagerApi* | [**__download_downloadfile**](docs/FilesFileManagerApi.md#__download_downloadfile) | **GET** /client/servers/1a7ce997/files/download | [ /download ] Download file
-*FilesFileManagerApi* | [**__list_listfiles**](docs/FilesFileManagerApi.md#__list_listfiles) | **GET** /client/servers/1a7ce997/files/list | [ /list ] List files
-*FilesFileManagerApi* | [**__rename_renamefile**](docs/FilesFileManagerApi.md#__rename_renamefile) | **PUT** /client/servers/1a7ce997/files/rename | [ /rename ] Rename file
-*FilesFileManagerApi* | [**__upload_uploadfile**](docs/FilesFileManagerApi.md#__upload_uploadfile) | **GET** /client/servers/1a7ce997/files/upload | [ /upload ] Upload file
-*FilesFileManagerApi* | [**__write_writefile**](docs/FilesFileManagerApi.md#__write_writefile) | **POST** /client/servers/1a7ce997/files/write | [ /write ] Write file
 *LocationsLocationsApi* | [**__createlocation**](docs/LocationsLocationsApi.md#__createlocation) | **POST** /application/locations | [ / ] Create location
 *LocationsLocationsApi* | [**__listlocations**](docs/LocationsLocationsApi.md#__listlocations) | **GET** /application/locations | [ / ] List locations
-*LocationsLocationsApi* | [**__location_deletelocation**](docs/LocationsLocationsApi.md#__location_deletelocation) | **DELETE** /application/locations/3 | [ /{location} ] Delete location
-*LocationsLocationsApi* | [**__location_locationdetails**](docs/LocationsLocationsApi.md#__location_locationdetails) | **GET** /application/locations/1 | [ /{location} ] Location details
-*LocationsLocationsApi* | [**__updatelocation**](docs/LocationsLocationsApi.md#__updatelocation) | **PATCH** /application/locations/1 | [ / ] Update location
-*NestEggsEggsManagementApi* | [**__egg_eggdetails**](docs/NestEggsEggsManagementApi.md#__egg_eggdetails) | **GET** /application/nests/1/eggs/1 | [ /{egg} ] Egg details
-*NestEggsEggsManagementApi* | [**__listeggs**](docs/NestEggsEggsManagementApi.md#__listeggs) | **GET** /application/nests/1/eggs | [ / ] List eggs
 *NestsNestsApi* | [**__listnests**](docs/NestsNestsApi.md#__listnests) | **GET** /application/nests | [ / ] List nests
-*NestsNestsApi* | [**__nest_nestdetails**](docs/NestsNestsApi.md#__nest_nestdetails) | **GET** /application/nests/1 | [ /{nest} ] Nest details
-*NetworkNetworkApi* | [**__allocations_allocation_primary_setprimaryallocation**](docs/NetworkNetworkApi.md#__allocations_allocation_primary_setprimaryallocation) | **POST** /client/servers/1a7ce997/network/allocations/1/primary | [ /allocations/{allocation}/primary ] Set primary allocation
-*NetworkNetworkApi* | [**__allocations_allocation_setallocationnote**](docs/NetworkNetworkApi.md#__allocations_allocation_setallocationnote) | **POST** /client/servers/1a7ce997/network/allocations/2 | [ /allocations/{allocation} ] Set allocation note
-*NetworkNetworkApi* | [**__allocations_allocation_unassignallocation**](docs/NetworkNetworkApi.md#__allocations_allocation_unassignallocation) | **DELETE** /client/servers/1a7ce997/network/allocations/2 | [ /allocations/{allocation} ] Unassign allocation
-*NetworkNetworkApi* | [**__allocations_assignallocation**](docs/NetworkNetworkApi.md#__allocations_assignallocation) | **POST** /client/servers/1a7ce997/network/allocations | [ /allocations ] Assign allocation
-*NetworkNetworkApi* | [**__allocations_listallocations**](docs/NetworkNetworkApi.md#__allocations_listallocations) | **GET** /client/servers/1a7ce997/network/allocations | [ /allocations ] List allocations
-*NodeAllocationsAllocationsApi* | [**__allocation_deleteallocation**](docs/NodeAllocationsAllocationsApi.md#__allocation_deleteallocation) | **DELETE** /application/nodes/1/allocations/18 | [ /{allocation} ] Delete allocation
-*NodeAllocationsAllocationsApi* | [**__createallocations**](docs/NodeAllocationsAllocationsApi.md#__createallocations) | **POST** /application/nodes/1/allocations | [ / ] Create allocations
-*NodeAllocationsAllocationsApi* | [**__listallocations**](docs/NodeAllocationsAllocationsApi.md#__listallocations) | **GET** /application/nodes/1/allocations | [ / ] List allocations
 *NodesNodesApi* | [**__createnode**](docs/NodesNodesApi.md#__createnode) | **POST** /application/nodes | [ / ] Create node
 *NodesNodesApi* | [**__listnodes**](docs/NodesNodesApi.md#__listnodes) | **GET** /application/nodes | [ / ] List nodes
-*NodesNodesApi* | [**__node_configuration_nodeconfiguration**](docs/NodesNodesApi.md#__node_configuration_nodeconfiguration) | **GET** /application/nodes/1/configuration | [ /{node}/configuration ] Node configuration
-*NodesNodesApi* | [**__node_deletenode**](docs/NodesNodesApi.md#__node_deletenode) | **DELETE** /application/nodes/1 | [ /{node} ] Delete node
-*NodesNodesApi* | [**__node_nodedetails**](docs/NodesNodesApi.md#__node_nodedetails) | **GET** /application/nodes/1 | [ /{node} ] Node details
-*NodesNodesApi* | [**__node_updatenode**](docs/NodesNodesApi.md#__node_updatenode) | **PATCH** /application/nodes/1 | [ /{node} ] Update node
-*SchedulesSchedulesApi* | [**__createschedule**](docs/SchedulesSchedulesApi.md#__createschedule) | **POST** /client/servers/1a7ce997/schedules | [ / ] Create schedule
-*SchedulesSchedulesApi* | [**__listschedules**](docs/SchedulesSchedulesApi.md#__listschedules) | **GET** /client/servers/1a7ce997/schedules | [ / ] List schedules
-*SchedulesSchedulesApi* | [**__schedule_deleteschedule**](docs/SchedulesSchedulesApi.md#__schedule_deleteschedule) | **DELETE** /client/servers/1a7ce997/schedules/2 | [ /{schedule} ] Delete schedule
-*SchedulesSchedulesApi* | [**__schedule_scheduledetails**](docs/SchedulesSchedulesApi.md#__schedule_scheduledetails) | **GET** /client/servers/1a7ce997/schedules/1 | [ /{schedule} ] Schedule details
-*SchedulesSchedulesApi* | [**__schedule_tasks_createtask**](docs/SchedulesSchedulesApi.md#__schedule_tasks_createtask) | **POST** /client/servers/1a7ce997/schedules/7/tasks | [ /{schedule}/tasks ] Create task
-*SchedulesSchedulesApi* | [**__schedule_tasks_task_deletetask**](docs/SchedulesSchedulesApi.md#__schedule_tasks_task_deletetask) | **DELETE** /client/servers/1a7ce997/schedules/2/tasks/3 | [ /{schedule}/tasks/{task} ] Delete  task
-*SchedulesSchedulesApi* | [**__schedule_tasks_task_updatetask**](docs/SchedulesSchedulesApi.md#__schedule_tasks_task_updatetask) | **POST** /client/servers/1a7ce997/schedules/7/tasks/6 | [ /{schedule}/tasks/{task} ] Update task
-*SchedulesSchedulesApi* | [**__schedule_updateschedule**](docs/SchedulesSchedulesApi.md#__schedule_updateschedule) | **POST** /client/servers/1a7ce997/schedules/2 | [ /{schedule} ] Update schedule
-*ServerDatabasesDatabaseManagementApi* | [**__createdatabase**](docs/ServerDatabasesDatabaseManagementApi.md#__createdatabase) | **POST** /application/servers/5/databases | [ / ] Create database
-*ServerDatabasesDatabaseManagementApi* | [**__database_databasedetails**](docs/ServerDatabasesDatabaseManagementApi.md#__database_databasedetails) | **GET** /application/servers/5/databases/1 | [ /{database} ] Database details
-*ServerDatabasesDatabaseManagementApi* | [**__database_deletedatabase**](docs/ServerDatabasesDatabaseManagementApi.md#__database_deletedatabase) | **DELETE** /application/servers/5/databases/1 | [ /{database} ] Delete database
-*ServerDatabasesDatabaseManagementApi* | [**__database_reset_password_resetpassword**](docs/ServerDatabasesDatabaseManagementApi.md#__database_reset_password_resetpassword) | **POST** /application/servers/5/databases/1/reset-password | [ /{database}/reset-password ] Reset password
-*ServerDatabasesDatabaseManagementApi* | [**__listdatabases**](docs/ServerDatabasesDatabaseManagementApi.md#__listdatabases) | **GET** /application/servers/5/databases | [ / ] List databases
 *ServersServersApi* | [**__createserver**](docs/ServersServersApi.md#__createserver) | **POST** /application/servers | [ / ] Create server
-*ServersServersApi* | [**__external_external_id_serverdetails**](docs/ServersServersApi.md#__external_external_id_serverdetails) | **GET** /application/servers/external/RemoteId1 | [ /external/{external_id} ] Server details
 *ServersServersApi* | [**__listservers**](docs/ServersServersApi.md#__listservers) | **GET** /application/servers | [ / ] List servers
-*ServersServersApi* | [**__server_build_updatebuild**](docs/ServersServersApi.md#__server_build_updatebuild) | **PATCH** /application/servers/5/build | [ /{server}/build ] Update build
-*ServersServersApi* | [**__server_deleteserver**](docs/ServersServersApi.md#__server_deleteserver) | **DELETE** /application/servers/1 | [ /{server} ] Delete server
-*ServersServersApi* | [**__server_details_updatedetails**](docs/ServersServersApi.md#__server_details_updatedetails) | **PATCH** /application/servers/5/details | [ /{server}/details ] Update details
-*ServersServersApi* | [**__server_force_forcedeleteserver**](docs/ServersServersApi.md#__server_force_forcedeleteserver) | **DELETE** /application/servers/1/force | [ /{server}/{force?} ] Force delete server
-*ServersServersApi* | [**__server_reinstall_reinstallserver**](docs/ServersServersApi.md#__server_reinstall_reinstallserver) | **POST** /application/servers/5/reinstall | [ /{server}/reinstall ] Reinstall server
-*ServersServersApi* | [**__server_serverdetails**](docs/ServersServersApi.md#__server_serverdetails) | **GET** /application/servers/5 | [ /{server} ] Server details
-*ServersServersApi* | [**__server_startup_updatestartup**](docs/ServersServersApi.md#__server_startup_updatestartup) | **PATCH** /application/servers/5/startup | [ /{server}/startup ] Update startup
-*ServersServersApi* | [**__server_suspend_suspendserver**](docs/ServersServersApi.md#__server_suspend_suspendserver) | **POST** /application/servers/5/suspend | [ /{server}/suspend ] Suspend server
-*ServersServersApi* | [**__server_unsuspend_unsuspendserver**](docs/ServersServersApi.md#__server_unsuspend_unsuspendserver) | **POST** /application/servers/5/unsuspend | [ /{server}/unsuspend ] Unsuspend server
-*ServersServerServerApi* | [**__command_sendcommand**](docs/ServersServerServerApi.md#__command_sendcommand) | **POST** /client/servers/1a7ce997/command | [ /command ] Send command
-*ServersServerServerApi* | [**__power_changepowerstate**](docs/ServersServerServerApi.md#__power_changepowerstate) | **POST** /client/servers/1a7ce997/power | [ /power ] Change power state
-*ServersServerServerApi* | [**__resources_resourceusage**](docs/ServersServerServerApi.md#__resources_resourceusage) | **GET** /client/servers/1a7ce997/resources | [ /resources ] Resource usage
-*ServersServerServerApi* | [**__serverdetails**](docs/ServersServerServerApi.md#__serverdetails) | **GET** /client/servers/1a7ce997 | [ / ] Server details
-*ServersServerServerApi* | [**__websocket_consoledetails**](docs/ServersServerServerApi.md#__websocket_consoledetails) | **GET** /client/servers/1a7ce997/websocket | [ /websocket ] Console details
-*SettingsSettingsApi* | [**__reinstall_reinstallserver**](docs/SettingsSettingsApi.md#__reinstall_reinstallserver) | **POST** /client/servers/1a7ce997/settings/reinstall | [ /reinstall ] Reinstall server
-*SettingsSettingsApi* | [**__rename_renameserver**](docs/SettingsSettingsApi.md#__rename_renameserver) | **POST** /client/servers/1a7ce997/settings/rename | [ /rename ] Rename server
-*StartupStartupApi* | [**__list_variables**](docs/StartupStartupApi.md#__list_variables) | **GET** /client/servers/1a7ce997/startup | [ / ] List Variables
-*StartupStartupApi* | [**__variable_update_variable**](docs/StartupStartupApi.md#__variable_update_variable) | **PUT** /client/servers/1a7ce997/startup/variable | [ /variable ] Update Variable
-*UsersUsersApi* | [**__create_user1**](docs/UsersUsersApi.md#__create_user1) | **POST** /client/servers/1a7ce997/users | [ / ] Create User1
 *UsersUsersApi* | [**__createuser**](docs/UsersUsersApi.md#__createuser) | **POST** /application/users | [ / ] Create user
-*UsersUsersApi* | [**__external_external_id_userdetails**](docs/UsersUsersApi.md#__external_external_id_userdetails) | **GET** /application/users/external/RemoteId1 | [ /external/{external_id} ] User details
-*UsersUsersApi* | [**__list_users1**](docs/UsersUsersApi.md#__list_users1) | **GET** /client/servers/1a7ce997/users | [ / ] List Users1
 *UsersUsersApi* | [**__listusers**](docs/UsersUsersApi.md#__listusers) | **GET** /application/users | [ / ] List users
-*UsersUsersApi* | [**__subuser_deleteuser**](docs/UsersUsersApi.md#__subuser_deleteuser) | **DELETE** /client/servers/1a7ce997/users/60a7aec3-e17d-4aa9-abb3-56d944d204b4 | [ /{subuser} ] Delete user
-*UsersUsersApi* | [**__subuser_updateuser**](docs/UsersUsersApi.md#__subuser_updateuser) | **POST** /client/servers/1a7ce997/users/60a7aec3-e17d-4aa9-abb3-56d944d204b4 | [ /{subuser} ] Update user
-*UsersUsersApi* | [**__subuser_userdetails**](docs/UsersUsersApi.md#__subuser_userdetails) | **GET** /client/servers/1a7ce997/users/60a7aec3-e17d-4aa9-abb3-56d944d204b4 | [ /{subuser} ] User details
-*UsersUsersApi* | [**__updateuser**](docs/UsersUsersApi.md#__updateuser) | **PATCH** /application/users/9 | [ / ] Update user
-*UsersUsersApi* | [**__user_deleteuser**](docs/UsersUsersApi.md#__user_deleteuser) | **DELETE** /application/users/8 | [ /{user} ] Delete user
-*UsersUsersApi* | [**__user_userdetails**](docs/UsersUsersApi.md#__user_userdetails) | **GET** /application/users/1 | [ /{user} ] User details
 
 
 ## Documentation For Models
 
- - [AllocationsAllocationSetallocationnoteRequest](docs/AllocationsAllocationSetallocationnoteRequest.md)
  - [AllocationsallocationSetallocationnoteRequest](docs/AllocationsallocationSetallocationnoteRequest.md)
  - [ApiKeysCreateAPIkeyRequest](docs/ApiKeysCreateAPIkeyRequest.md)
+ - [ApplicationLocationsLocationIdPatchRequest](docs/ApplicationLocationsLocationIdPatchRequest.md)
+ - [ApplicationNodesNodeIdAllocationsPostRequest](docs/ApplicationNodesNodeIdAllocationsPostRequest.md)
+ - [ApplicationNodesNodeIdPatchRequest](docs/ApplicationNodesNodeIdPatchRequest.md)
+ - [ApplicationServersServerIdBuildPatchRequest](docs/ApplicationServersServerIdBuildPatchRequest.md)
+ - [ApplicationServersServerIdDatabasesPostRequest](docs/ApplicationServersServerIdDatabasesPostRequest.md)
+ - [ApplicationServersServerIdDetailsPatchRequest](docs/ApplicationServersServerIdDetailsPatchRequest.md)
+ - [ApplicationServersServerIdStartupPatchRequest](docs/ApplicationServersServerIdStartupPatchRequest.md)
+ - [ApplicationUsersUserIdPatchRequest](docs/ApplicationUsersUserIdPatchRequest.md)
+ - [ClientServersServerIdCommandPostRequest](docs/ClientServersServerIdCommandPostRequest.md)
+ - [ClientServersServerIdDatabasesPostRequest](docs/ClientServersServerIdDatabasesPostRequest.md)
+ - [ClientServersServerIdFilesCompressPostRequest](docs/ClientServersServerIdFilesCompressPostRequest.md)
+ - [ClientServersServerIdFilesCopyPostRequest](docs/ClientServersServerIdFilesCopyPostRequest.md)
+ - [ClientServersServerIdFilesCreateFolderPostRequest](docs/ClientServersServerIdFilesCreateFolderPostRequest.md)
+ - [ClientServersServerIdFilesDecompressPostRequest](docs/ClientServersServerIdFilesDecompressPostRequest.md)
+ - [ClientServersServerIdFilesDeletePostRequest](docs/ClientServersServerIdFilesDeletePostRequest.md)
+ - [ClientServersServerIdFilesRenamePutRequest](docs/ClientServersServerIdFilesRenamePutRequest.md)
+ - [ClientServersServerIdNetworkAllocationsAllocationIdPostRequest](docs/ClientServersServerIdNetworkAllocationsAllocationIdPostRequest.md)
+ - [ClientServersServerIdPowerPostRequest](docs/ClientServersServerIdPowerPostRequest.md)
+ - [ClientServersServerIdSchedulesPostRequest](docs/ClientServersServerIdSchedulesPostRequest.md)
+ - [ClientServersServerIdSchedulesScheduleIdPostRequest](docs/ClientServersServerIdSchedulesScheduleIdPostRequest.md)
+ - [ClientServersServerIdSchedulesScheduleIdTasksPostRequest](docs/ClientServersServerIdSchedulesScheduleIdTasksPostRequest.md)
+ - [ClientServersServerIdSchedulesScheduleIdTasksTaskIdPostRequest](docs/ClientServersServerIdSchedulesScheduleIdTasksTaskIdPostRequest.md)
+ - [ClientServersServerIdSettingsRenamePostRequest](docs/ClientServersServerIdSettingsRenamePostRequest.md)
+ - [ClientServersServerIdStartupVariablePutRequest](docs/ClientServersServerIdStartupVariablePutRequest.md)
+ - [ClientServersServerIdUsersPostRequest](docs/ClientServersServerIdUsersPostRequest.md)
+ - [ClientServersServerIdUsersUserIdPostRequest](docs/ClientServersServerIdUsersUserIdPostRequest.md)
  - [CommandSendcommandRequest](docs/CommandSendcommandRequest.md)
  - [CompressCompressfileRequest](docs/CompressCompressfileRequest.md)
  - [CopyCopyfileRequest](docs/CopyCopyfileRequest.md)
  - [CreateFolderCreatefolderRequest](docs/CreateFolderCreatefolderRequest.md)
- - [CreateUser1Request](docs/CreateUser1Request.md)
  - [CreateUserRequest1](docs/CreateUserRequest1.md)
  - [CreateallocationsRequest](docs/CreateallocationsRequest.md)
  - [CreatedatabaseRequest](docs/CreatedatabaseRequest.md)
@@ -275,18 +296,12 @@ Class | Method | HTTP request | Description
  - [EmailUpdateemailRequest](docs/EmailUpdateemailRequest.md)
  - [NodeUpdatenodeRequest](docs/NodeUpdatenodeRequest.md)
  - [PasswordUpdatepasswordRequest](docs/PasswordUpdatepasswordRequest.md)
- - [PostCreatedatabaseRequest](docs/PostCreatedatabaseRequest.md)
  - [PowerChangepowerstateRequest](docs/PowerChangepowerstateRequest.md)
  - [RenameRenamefileRequest](docs/RenameRenamefileRequest.md)
  - [RenameRenameserverRequest](docs/RenameRenameserverRequest.md)
- - [ScheduleTasksCreatetaskRequest](docs/ScheduleTasksCreatetaskRequest.md)
- - [ScheduleTasksTaskUpdatetaskRequest](docs/ScheduleTasksTaskUpdatetaskRequest.md)
  - [ScheduleUpdatescheduleRequest](docs/ScheduleUpdatescheduleRequest.md)
  - [ScheduletasksCreatetaskRequest](docs/ScheduletasksCreatetaskRequest.md)
  - [ScheduletaskstaskUpdatetaskRequest](docs/ScheduletaskstaskUpdatetaskRequest.md)
- - [ServerBuildUpdatebuildRequest](docs/ServerBuildUpdatebuildRequest.md)
- - [ServerDetailsUpdatedetailsRequest](docs/ServerDetailsUpdatedetailsRequest.md)
- - [ServerStartupUpdatestartupRequest](docs/ServerStartupUpdatestartupRequest.md)
  - [ServerbuildUpdatebuildRequest](docs/ServerbuildUpdatebuildRequest.md)
  - [ServerdetailsUpdatedetailsRequest](docs/ServerdetailsUpdatedetailsRequest.md)
  - [ServerstartupUpdatestartupRequest](docs/ServerstartupUpdatestartupRequest.md)

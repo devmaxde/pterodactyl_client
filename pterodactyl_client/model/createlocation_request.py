@@ -89,8 +89,8 @@ class CreatelocationRequest(ModelComposed):
         """
         lazy_import()
         return {
-            'short': (str,),  # noqa: E501
             'long': (str,),  # noqa: E501
+            'short': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -99,8 +99,8 @@ class CreatelocationRequest(ModelComposed):
 
 
     attribute_map = {
-        'short': 'short',  # noqa: E501
         'long': 'long',  # noqa: E501
+        'short': 'short',  # noqa: E501
     }
 
     read_only_vars = {
@@ -112,8 +112,8 @@ class CreatelocationRequest(ModelComposed):
         """CreatelocationRequest - a model defined in OpenAPI
 
         Keyword Args:
-            short (str):
             long (str):
+            short (str):
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -217,8 +217,8 @@ class CreatelocationRequest(ModelComposed):
         """CreatelocationRequest - a model defined in OpenAPI
 
         Keyword Args:
-            short (str):
             long (str):
+            short (str):
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.

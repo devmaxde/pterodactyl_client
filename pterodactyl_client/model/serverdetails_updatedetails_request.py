@@ -81,10 +81,10 @@ class ServerdetailsUpdatedetailsRequest(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'description': (str,),  # noqa: E501
+            'external_id': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'user': (int,),  # noqa: E501
-            'external_id': (str,),  # noqa: E501
-            'description': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -93,10 +93,10 @@ class ServerdetailsUpdatedetailsRequest(ModelNormal):
 
 
     attribute_map = {
+        'description': 'description',  # noqa: E501
+        'external_id': 'external_id',  # noqa: E501
         'name': 'name',  # noqa: E501
         'user': 'user',  # noqa: E501
-        'external_id': 'external_id',  # noqa: E501
-        'description': 'description',  # noqa: E501
     }
 
     read_only_vars = {
@@ -106,14 +106,14 @@ class ServerdetailsUpdatedetailsRequest(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, user, external_id, description, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, description, external_id, name, user, *args, **kwargs):  # noqa: E501
         """ServerdetailsUpdatedetailsRequest - a model defined in OpenAPI
 
         Args:
+            description (str):
+            external_id (str):
             name (str):
             user (int):
-            external_id (str):
-            description (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -177,10 +177,10 @@ class ServerdetailsUpdatedetailsRequest(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.description = description
+        self.external_id = external_id
         self.name = name
         self.user = user
-        self.external_id = external_id
-        self.description = description
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -201,14 +201,14 @@ class ServerdetailsUpdatedetailsRequest(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, user, external_id, description, *args, **kwargs):  # noqa: E501
+    def __init__(self, description, external_id, name, user, *args, **kwargs):  # noqa: E501
         """ServerdetailsUpdatedetailsRequest - a model defined in OpenAPI
 
         Args:
+            description (str):
+            external_id (str):
             name (str):
             user (int):
-            external_id (str):
-            description (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -270,10 +270,10 @@ class ServerdetailsUpdatedetailsRequest(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.description = description
+        self.external_id = external_id
         self.name = name
         self.user = user
-        self.external_id = external_id
-        self.description = description
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

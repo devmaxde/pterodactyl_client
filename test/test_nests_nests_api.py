@@ -30,13 +30,6 @@ class TestNestsNestsApi(unittest.TestCase):
         """
         pass
 
-    def test___nest_nestdetails(self):
-        """Test case for __nest_nestdetails
-
-        [ /{nest} ] Nest details  # noqa: E501
-        """
-        pass
-
 
 if __name__ == '__main__':
     unittest.main()

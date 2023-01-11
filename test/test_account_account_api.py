@@ -37,13 +37,6 @@ class TestAccountAccountApi(unittest.TestCase):
         """
         pass
 
-    def test___api_keys_identifier_delete_ap_ikey(self):
-        """Test case for __api_keys_identifier_delete_ap_ikey
-
-        [ /api-keys/{identifier} ] Delete API key  # noqa: E501
-        """
-        pass
-
     def test___api_keys_list_ap_ikeys(self):
         """Test case for __api_keys_list_ap_ikeys
 

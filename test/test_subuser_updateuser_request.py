@@ -12,10 +12,6 @@ import sys
 import unittest
 
 import pterodactyl_client
-from pterodactyl_client.model.from_pterodactyl_client_model_subuser_updateuser_request_import_subuser_updateuser_request import FromPterodactylClientModelSubuserUpdateuserRequestImportSubuserUpdateuserRequest
-from pterodactyl_client.model.globals_subuser_updateuser_request_subuser_updateuser_request import GlobalsSubuserUpdateuserRequestSubuserUpdateuserRequest
-globals()['from pterodactyl_client.model.subuser_updateuser_request import SubuserUpdateuserRequest'] = from pterodactyl_client.model.subuser_updateuser_request import SubuserUpdateuserRequest
-globals()['globals()['SubuserUpdateuserRequest'] = SubuserUpdateuserRequest'] = globals()['SubuserUpdateuserRequest'] = SubuserUpdateuserRequest
 from pterodactyl_client.model.subuser_updateuser_request import SubuserUpdateuserRequest
 
 

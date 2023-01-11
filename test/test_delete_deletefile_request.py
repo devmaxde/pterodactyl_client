@@ -12,10 +12,6 @@ import sys
 import unittest
 
 import pterodactyl_client
-from pterodactyl_client.model.from_pterodactyl_client_model_delete_deletefile_request_import_delete_deletefile_request import FromPterodactylClientModelDeleteDeletefileRequestImportDeleteDeletefileRequest
-from pterodactyl_client.model.globals_delete_deletefile_request_delete_deletefile_request import GlobalsDeleteDeletefileRequestDeleteDeletefileRequest
-globals()['from pterodactyl_client.model.delete_deletefile_request import DeleteDeletefileRequest'] = from pterodactyl_client.model.delete_deletefile_request import DeleteDeletefileRequest
-globals()['globals()['DeleteDeletefileRequest'] = DeleteDeletefileRequest'] = globals()['DeleteDeletefileRequest'] = DeleteDeletefileRequest
 from pterodactyl_client.model.delete_deletefile_request import DeleteDeletefileRequest
 
 

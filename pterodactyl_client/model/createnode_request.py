@@ -89,17 +89,17 @@ class CreatenodeRequest(ModelComposed):
         """
         lazy_import()
         return {
-            'name': (str,),  # noqa: E501
-            'location_id': (int,),  # noqa: E501
-            'fqdn': (str,),  # noqa: E501
-            'scheme': (str,),  # noqa: E501
-            'memory': (int,),  # noqa: E501
-            'memory_overallocate': (int,),  # noqa: E501
+            'daemon_listen': (int,),  # noqa: E501
+            'daemon_sftp': (int,),  # noqa: E501
             'disk': (int,),  # noqa: E501
             'disk_overallocate': (int,),  # noqa: E501
+            'fqdn': (str,),  # noqa: E501
+            'location_id': (int,),  # noqa: E501
+            'memory': (int,),  # noqa: E501
+            'memory_overallocate': (int,),  # noqa: E501
+            'name': (str,),  # noqa: E501
+            'scheme': (str,),  # noqa: E501
             'upload_size': (int,),  # noqa: E501
-            'daemon_sftp': (int,),  # noqa: E501
-            'daemon_listen': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -108,17 +108,17 @@ class CreatenodeRequest(ModelComposed):
 
 
     attribute_map = {
-        'name': 'name',  # noqa: E501
-        'location_id': 'location_id',  # noqa: E501
-        'fqdn': 'fqdn',  # noqa: E501
-        'scheme': 'scheme',  # noqa: E501
-        'memory': 'memory',  # noqa: E501
-        'memory_overallocate': 'memory_overallocate',  # noqa: E501
+        'daemon_listen': 'daemon_listen',  # noqa: E501
+        'daemon_sftp': 'daemon_sftp',  # noqa: E501
         'disk': 'disk',  # noqa: E501
         'disk_overallocate': 'disk_overallocate',  # noqa: E501
+        'fqdn': 'fqdn',  # noqa: E501
+        'location_id': 'location_id',  # noqa: E501
+        'memory': 'memory',  # noqa: E501
+        'memory_overallocate': 'memory_overallocate',  # noqa: E501
+        'name': 'name',  # noqa: E501
+        'scheme': 'scheme',  # noqa: E501
         'upload_size': 'upload_size',  # noqa: E501
-        'daemon_sftp': 'daemon_sftp',  # noqa: E501
-        'daemon_listen': 'daemon_listen',  # noqa: E501
     }
 
     read_only_vars = {
@@ -130,17 +130,17 @@ class CreatenodeRequest(ModelComposed):
         """CreatenodeRequest - a model defined in OpenAPI
 
         Keyword Args:
-            name (str):
-            location_id (int):
-            fqdn (str):
-            scheme (str):
-            memory (int):
-            memory_overallocate (int):
+            daemon_listen (int):
+            daemon_sftp (int):
             disk (int):
             disk_overallocate (int):
+            fqdn (str):
+            location_id (int):
+            memory (int):
+            memory_overallocate (int):
+            name (str):
+            scheme (str):
             upload_size (int):
-            daemon_sftp (int):
-            daemon_listen (int):
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -244,17 +244,17 @@ class CreatenodeRequest(ModelComposed):
         """CreatenodeRequest - a model defined in OpenAPI
 
         Keyword Args:
-            name (str):
-            location_id (int):
-            fqdn (str):
-            scheme (str):
-            memory (int):
-            memory_overallocate (int):
+            daemon_listen (int):
+            daemon_sftp (int):
             disk (int):
             disk_overallocate (int):
+            fqdn (str):
+            location_id (int):
+            memory (int):
+            memory_overallocate (int):
+            name (str):
+            scheme (str):
             upload_size (int):
-            daemon_sftp (int):
-            daemon_listen (int):
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.

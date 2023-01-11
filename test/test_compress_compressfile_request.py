@@ -12,10 +12,6 @@ import sys
 import unittest
 
 import pterodactyl_client
-from pterodactyl_client.model.from_pterodactyl_client_model_compress_compressfile_request_import_compress_compressfile_request import FromPterodactylClientModelCompressCompressfileRequestImportCompressCompressfileRequest
-from pterodactyl_client.model.globals_compress_compressfile_request_compress_compressfile_request import GlobalsCompressCompressfileRequestCompressCompressfileRequest
-globals()['from pterodactyl_client.model.compress_compressfile_request import CompressCompressfileRequest'] = from pterodactyl_client.model.compress_compressfile_request import CompressCompressfileRequest
-globals()['globals()['CompressCompressfileRequest'] = CompressCompressfileRequest'] = globals()['CompressCompressfileRequest'] = CompressCompressfileRequest
 from pterodactyl_client.model.compress_compressfile_request import CompressCompressfileRequest
 
 

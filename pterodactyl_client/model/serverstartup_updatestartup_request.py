@@ -81,11 +81,11 @@ class ServerstartupUpdatestartupRequest(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'startup': (str,),  # noqa: E501
-            'environment': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
             'egg': (int,),  # noqa: E501
+            'environment': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
             'image': (str,),  # noqa: E501
             'skip_scripts': (bool,),  # noqa: E501
+            'startup': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -94,11 +94,11 @@ class ServerstartupUpdatestartupRequest(ModelNormal):
 
 
     attribute_map = {
-        'startup': 'startup',  # noqa: E501
-        'environment': 'environment',  # noqa: E501
         'egg': 'egg',  # noqa: E501
+        'environment': 'environment',  # noqa: E501
         'image': 'image',  # noqa: E501
         'skip_scripts': 'skip_scripts',  # noqa: E501
+        'startup': 'startup',  # noqa: E501
     }
 
     read_only_vars = {
@@ -108,15 +108,15 @@ class ServerstartupUpdatestartupRequest(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, startup, environment, egg, image, skip_scripts, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, egg, environment, image, skip_scripts, startup, *args, **kwargs):  # noqa: E501
         """ServerstartupUpdatestartupRequest - a model defined in OpenAPI
 
         Args:
-            startup (str):
-            environment ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}):
             egg (int):
+            environment ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}):
             image (str):
             skip_scripts (bool):
+            startup (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -180,11 +180,11 @@ class ServerstartupUpdatestartupRequest(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.startup = startup
-        self.environment = environment
         self.egg = egg
+        self.environment = environment
         self.image = image
         self.skip_scripts = skip_scripts
+        self.startup = startup
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -205,15 +205,15 @@ class ServerstartupUpdatestartupRequest(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, startup, environment, egg, image, skip_scripts, *args, **kwargs):  # noqa: E501
+    def __init__(self, egg, environment, image, skip_scripts, startup, *args, **kwargs):  # noqa: E501
         """ServerstartupUpdatestartupRequest - a model defined in OpenAPI
 
         Args:
-            startup (str):
-            environment ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}):
             egg (int):
+            environment ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}):
             image (str):
             skip_scripts (bool):
+            startup (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -275,11 +275,11 @@ class ServerstartupUpdatestartupRequest(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.startup = startup
-        self.environment = environment
         self.egg = egg
+        self.environment = environment
         self.image = image
         self.skip_scripts = skip_scripts
+        self.startup = startup
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

@@ -90,9 +90,9 @@ class CreateuserRequest(ModelComposed):
         lazy_import()
         return {
             'email': (str,),  # noqa: E501
-            'username': (str,),  # noqa: E501
             'first_name': (str,),  # noqa: E501
             'last_name': (str,),  # noqa: E501
+            'username': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -102,9 +102,9 @@ class CreateuserRequest(ModelComposed):
 
     attribute_map = {
         'email': 'email',  # noqa: E501
-        'username': 'username',  # noqa: E501
         'first_name': 'first_name',  # noqa: E501
         'last_name': 'last_name',  # noqa: E501
+        'username': 'username',  # noqa: E501
     }
 
     read_only_vars = {
@@ -117,9 +117,9 @@ class CreateuserRequest(ModelComposed):
 
         Keyword Args:
             email (str):
-            username (str):
             first_name (str):
             last_name (str):
+            username (str):
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -224,9 +224,9 @@ class CreateuserRequest(ModelComposed):
 
         Keyword Args:
             email (str):
-            username (str):
             first_name (str):
             last_name (str):
+            username (str):
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.

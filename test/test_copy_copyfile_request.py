@@ -12,10 +12,6 @@ import sys
 import unittest
 
 import pterodactyl_client
-from pterodactyl_client.model.from_pterodactyl_client_model_copy_copyfile_request_import_copy_copyfile_request import FromPterodactylClientModelCopyCopyfileRequestImportCopyCopyfileRequest
-from pterodactyl_client.model.globals_copy_copyfile_request_copy_copyfile_request import GlobalsCopyCopyfileRequestCopyCopyfileRequest
-globals()['from pterodactyl_client.model.copy_copyfile_request import CopyCopyfileRequest'] = from pterodactyl_client.model.copy_copyfile_request import CopyCopyfileRequest
-globals()['globals()['CopyCopyfileRequest'] = CopyCopyfileRequest'] = globals()['CopyCopyfileRequest'] = CopyCopyfileRequest
 from pterodactyl_client.model.copy_copyfile_request import CopyCopyfileRequest
 
 

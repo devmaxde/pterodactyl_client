@@ -37,27 +37,6 @@ class TestLocationsLocationsApi(unittest.TestCase):
         """
         pass
 
-    def test___location_deletelocation(self):
-        """Test case for __location_deletelocation
-
-        [ /{location} ] Delete location  # noqa: E501
-        """
-        pass
-
-    def test___location_locationdetails(self):
-        """Test case for __location_locationdetails
-
-        [ /{location} ] Location details  # noqa: E501
-        """
-        pass
-
-    def test___updatelocation(self):
-        """Test case for __updatelocation
-
-        [ / ] Update location  # noqa: E501
-        """
-        pass
-
 
 if __name__ == '__main__':
     unittest.main()

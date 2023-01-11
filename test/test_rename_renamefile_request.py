@@ -12,10 +12,6 @@ import sys
 import unittest
 
 import pterodactyl_client
-from pterodactyl_client.model.from_pterodactyl_client_model_rename_renamefile_request_import_rename_renamefile_request import FromPterodactylClientModelRenameRenamefileRequestImportRenameRenamefileRequest
-from pterodactyl_client.model.globals_rename_renamefile_request_rename_renamefile_request import GlobalsRenameRenamefileRequestRenameRenamefileRequest
-globals()['from pterodactyl_client.model.rename_renamefile_request import RenameRenamefileRequest'] = from pterodactyl_client.model.rename_renamefile_request import RenameRenamefileRequest
-globals()['globals()['RenameRenamefileRequest'] = RenameRenamefileRequest'] = globals()['RenameRenamefileRequest'] = RenameRenamefileRequest
 from pterodactyl_client.model.rename_renamefile_request import RenameRenamefileRequest
 
 

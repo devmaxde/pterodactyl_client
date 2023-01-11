@@ -12,10 +12,6 @@ import sys
 import unittest
 
 import pterodactyl_client
-from pterodactyl_client.model.from_pterodactyl_client_model_power_changepowerstate_request_import_power_changepowerstate_request import FromPterodactylClientModelPowerChangepowerstateRequestImportPowerChangepowerstateRequest
-from pterodactyl_client.model.globals_power_changepowerstate_request_power_changepowerstate_request import GlobalsPowerChangepowerstateRequestPowerChangepowerstateRequest
-globals()['from pterodactyl_client.model.power_changepowerstate_request import PowerChangepowerstateRequest'] = from pterodactyl_client.model.power_changepowerstate_request import PowerChangepowerstateRequest
-globals()['globals()['PowerChangepowerstateRequest'] = PowerChangepowerstateRequest'] = globals()['PowerChangepowerstateRequest'] = PowerChangepowerstateRequest
 from pterodactyl_client.model.power_changepowerstate_request import PowerChangepowerstateRequest
 
 
