@@ -12,10 +12,6 @@ import sys
 import unittest
 
 import pterodactyl_client
-from pterodactyl_client.model.from_pterodactyl_client_model_createlocation_request_import_createlocation_request import FromPterodactylClientModelCreatelocationRequestImportCreatelocationRequest
-from pterodactyl_client.model.globals_createlocation_request_createlocation_request import GlobalsCreatelocationRequestCreatelocationRequest
-globals()['from pterodactyl_client.model.createlocation_request import CreatelocationRequest'] = from pterodactyl_client.model.createlocation_request import CreatelocationRequest
-globals()['globals()['CreatelocationRequest'] = CreatelocationRequest'] = globals()['CreatelocationRequest'] = CreatelocationRequest
 from pterodactyl_client.model.createlocation_request import CreatelocationRequest
 
 

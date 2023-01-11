@@ -12,10 +12,6 @@ import sys
 import unittest
 
 import pterodactyl_client
-from pterodactyl_client.model.from_pterodactyl_client_model_two_factor_enable2_fa_request_import_two_factor_enable2_fa_request import FromPterodactylClientModelTwoFactorEnable2FaRequestImportTwoFactorEnable2FARequest
-from pterodactyl_client.model.globals_two_factor_enable2_fa_request_two_factor_enable2_fa_request import GlobalsTwoFactorEnable2FARequestTwoFactorEnable2FARequest
-globals()['from pterodactyl_client.model.two_factor_enable2_fa_request import TwoFactorEnable2FARequest'] = from pterodactyl_client.model.two_factor_enable2_fa_request import TwoFactorEnable2FARequest
-globals()['globals()['TwoFactorEnable2FARequest'] = TwoFactorEnable2FARequest'] = globals()['TwoFactorEnable2FARequest'] = TwoFactorEnable2FARequest
 from pterodactyl_client.model.two_factor_enable2_fa_request import TwoFactorEnable2FARequest
 
 

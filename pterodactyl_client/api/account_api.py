@@ -21,6 +21,10 @@ from pterodactyl_client.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from pterodactyl_client.model.account_api_keys_post_request import AccountApiKeysPostRequest
+from pterodactyl_client.model.account_email_put_request import AccountEmailPutRequest
+from pterodactyl_client.model.account_password_put_request import AccountPasswordPutRequest
+from pterodactyl_client.model.account_two_factor_post_request import AccountTwoFactorPostRequest
 
 
 class AccountApi(object):
@@ -34,6 +38,131 @@ class AccountApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
+        self.account_api_keys_get_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'auth': [
+                    'bearer'
+                ],
+                'endpoint_path': '/account/api-keys',
+                'operation_id': 'account_api_keys_get',
+                'http_method': 'GET',
+                'servers': [
+                    {
+                        'url': "https://pterodactyl.file.properties/api/client",
+                        'description': "No description provided",
+                    },
+                ]
+            },
+            params_map={
+                'all': [
+                    'accept',
+                    'content_type',
+                ],
+                'required': [
+                    'accept',
+                    'content_type',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'accept':
+                        (str,),
+                    'content_type':
+                        (str,),
+                },
+                'attribute_map': {
+                    'accept': 'Accept',
+                    'content_type': 'Content-Type',
+                },
+                'location_map': {
+                    'accept': 'header',
+                    'content_type': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.account_api_keys_post_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'auth': [
+                    'bearer'
+                ],
+                'endpoint_path': '/account/api-keys',
+                'operation_id': 'account_api_keys_post',
+                'http_method': 'POST',
+                'servers': [
+                    {
+                        'url': "https://pterodactyl.file.properties/api/client",
+                        'description': "No description provided",
+                    },
+                ]
+            },
+            params_map={
+                'all': [
+                    'accept',
+                    'account_api_keys_post_request',
+                ],
+                'required': [
+                    'accept',
+                    'account_api_keys_post_request',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'accept':
+                        (str,),
+                    'account_api_keys_post_request':
+                        (AccountApiKeysPostRequest,),
+                },
+                'attribute_map': {
+                    'accept': 'Accept',
+                },
+                'location_map': {
+                    'accept': 'header',
+                    'account_api_keys_post_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
         self.account_api_keysapi_key_id_delete_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
@@ -102,6 +231,560 @@ class AccountApi(object):
             },
             api_client=api_client
         )
+        self.account_email_put_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'auth': [
+                    'bearer'
+                ],
+                'endpoint_path': '/account/email',
+                'operation_id': 'account_email_put',
+                'http_method': 'PUT',
+                'servers': [
+                    {
+                        'url': "https://pterodactyl.file.properties/api/client",
+                        'description': "No description provided",
+                    },
+                ]
+            },
+            params_map={
+                'all': [
+                    'accept',
+                    'account_email_put_request',
+                ],
+                'required': [
+                    'accept',
+                    'account_email_put_request',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'accept':
+                        (str,),
+                    'account_email_put_request':
+                        (AccountEmailPutRequest,),
+                },
+                'attribute_map': {
+                    'accept': 'Accept',
+                },
+                'location_map': {
+                    'accept': 'header',
+                    'account_email_put_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.account_get_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'auth': [
+                    'bearer'
+                ],
+                'endpoint_path': '/account',
+                'operation_id': 'account_get',
+                'http_method': 'GET',
+                'servers': [
+                    {
+                        'url': "https://pterodactyl.file.properties/api/client",
+                        'description': "No description provided",
+                    },
+                ]
+            },
+            params_map={
+                'all': [
+                    'accept',
+                    'content_type',
+                ],
+                'required': [
+                    'accept',
+                    'content_type',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'accept':
+                        (str,),
+                    'content_type':
+                        (str,),
+                },
+                'attribute_map': {
+                    'accept': 'Accept',
+                    'content_type': 'Content-Type',
+                },
+                'location_map': {
+                    'accept': 'header',
+                    'content_type': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.account_password_put_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'auth': [
+                    'bearer'
+                ],
+                'endpoint_path': '/account/password',
+                'operation_id': 'account_password_put',
+                'http_method': 'PUT',
+                'servers': [
+                    {
+                        'url': "https://pterodactyl.file.properties/api/client",
+                        'description': "No description provided",
+                    },
+                ]
+            },
+            params_map={
+                'all': [
+                    'accept',
+                    'account_password_put_request',
+                ],
+                'required': [
+                    'accept',
+                    'account_password_put_request',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'accept':
+                        (str,),
+                    'account_password_put_request':
+                        (AccountPasswordPutRequest,),
+                },
+                'attribute_map': {
+                    'accept': 'Accept',
+                },
+                'location_map': {
+                    'accept': 'header',
+                    'account_password_put_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.account_two_factor_delete_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'auth': [
+                    'bearer'
+                ],
+                'endpoint_path': '/account/two-factor',
+                'operation_id': 'account_two_factor_delete',
+                'http_method': 'DELETE',
+                'servers': [
+                    {
+                        'url': "https://pterodactyl.file.properties/api/client",
+                        'description': "No description provided",
+                    },
+                ]
+            },
+            params_map={
+                'all': [
+                    'content_type',
+                    'accept',
+                ],
+                'required': [
+                    'content_type',
+                    'accept',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                    'content_type',
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                    ('content_type',): {
+
+                        "APPLICATION/JSON": "application/json"
+                    },
+                },
+                'openapi_types': {
+                    'content_type':
+                        (str,),
+                    'accept':
+                        (str,),
+                },
+                'attribute_map': {
+                    'content_type': 'Content-Type',
+                    'accept': 'Accept',
+                },
+                'location_map': {
+                    'content_type': 'header',
+                    'accept': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.account_two_factor_get_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'auth': [
+                    'bearer'
+                ],
+                'endpoint_path': '/account/two-factor',
+                'operation_id': 'account_two_factor_get',
+                'http_method': 'GET',
+                'servers': [
+                    {
+                        'url': "https://pterodactyl.file.properties/api/client",
+                        'description': "No description provided",
+                    },
+                ]
+            },
+            params_map={
+                'all': [
+                    'accept',
+                    'content_type',
+                ],
+                'required': [
+                    'accept',
+                    'content_type',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'accept':
+                        (str,),
+                    'content_type':
+                        (str,),
+                },
+                'attribute_map': {
+                    'accept': 'Accept',
+                    'content_type': 'Content-Type',
+                },
+                'location_map': {
+                    'accept': 'header',
+                    'content_type': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.account_two_factor_post_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'auth': [
+                    'bearer'
+                ],
+                'endpoint_path': '/account/two-factor',
+                'operation_id': 'account_two_factor_post',
+                'http_method': 'POST',
+                'servers': [
+                    {
+                        'url': "https://pterodactyl.file.properties/api/client",
+                        'description': "No description provided",
+                    },
+                ]
+            },
+            params_map={
+                'all': [
+                    'accept',
+                    'account_two_factor_post_request',
+                ],
+                'required': [
+                    'accept',
+                    'account_two_factor_post_request',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'accept':
+                        (str,),
+                    'account_two_factor_post_request':
+                        (AccountTwoFactorPostRequest,),
+                },
+                'attribute_map': {
+                    'accept': 'Accept',
+                },
+                'location_map': {
+                    'accept': 'header',
+                    'account_two_factor_post_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+
+    def account_api_keys_get(
+        self,
+        accept,
+        content_type,
+        **kwargs
+    ):
+        """[ /api-keys ] List API keys  # noqa: E501
+
+        Retries a list of API keys  <!-- RESPONSE 200 --> {   \"object\": \"list\",   \"data\": [     {       \"object\": \"api_key\",       \"attributes\": {         \"identifier\": \"wwQ5DJ6X1XaFznQS\",         \"description\": \"API Docs\",         \"allowed_ips\": [],         \"last_used_at\": \"2020-06-03T15:04:47+01:00\",         \"created_at\": \"2020-05-18T00:12:43+01:00\"       }     }   ] } <!-- ENDRESPONSE -->  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.account_api_keys_get(accept, content_type, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            accept (str): 
+            content_type (str): 
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['accept'] = \
+            accept
+        kwargs['content_type'] = \
+            content_type
+        return self.account_api_keys_get_endpoint.call_with_http_info(**kwargs)
+
+    def account_api_keys_post(
+        self,
+        accept,
+        account_api_keys_post_request,
+        **kwargs
+    ):
+        """[ /api-keys ] Create API key  # noqa: E501
+
+        Generates a new API key  ## Fields | Name        | Required? | Type   | Description          | Rules | |-------------|-----------|--------|----------------------|-------| | description | required  | string | Note for the API key |       | | allowed_ips |           | object | List of allowed IPs  |       |  <!-- RESPONSE 201 --> {   \"object\": \"api_key\",   \"attributes\": {     \"identifier\": \"yjAZbHMyKrv9YRZ0\",     \"description\": \"Restricted IPs\",     \"allowed_ips\": [       \"127.0.0.1\",       \"192.168.0.1\"     ],     \"last_used_at\": null,     \"created_at\": \"2020-08-17T04:44:42+01:00\"   },   \"meta\": {     \"secret_token\": \"wiHiMbmgjLOkA2fPzRD6KdMe7Q9Cqaka\"   } } <!-- ENDRESPONSE -->  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.account_api_keys_post(accept, account_api_keys_post_request, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            accept (str): 
+            account_api_keys_post_request (AccountApiKeysPostRequest): 
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['accept'] = \
+            accept
+        kwargs['account_api_keys_post_request'] = \
+            account_api_keys_post_request
+        return self.account_api_keys_post_endpoint.call_with_http_info(**kwargs)
 
     def account_api_keysapi_key_id_delete(
         self,
@@ -193,4 +876,526 @@ class AccountApi(object):
         kwargs['api_key_id'] = \
             api_key_id
         return self.account_api_keysapi_key_id_delete_endpoint.call_with_http_info(**kwargs)
+
+    def account_email_put(
+        self,
+        accept,
+        account_email_put_request,
+        **kwargs
+    ):
+        """[ /email ] Update email  # noqa: E501
+
+        Updates the email address of the account  ## Fields | Name     | Required? | Type   | Description       | Rules | |----------|-----------|--------|-------------------|-------| | email    | required  | string | New email         |       | | password | required  | string | Existing password |       |  <!-- RESPONSE 201 --> // Successful <!-- ENDRESPONSE -->  <!-- RESPONSE 400 --> // Invalid email format {   \"errors\": [     {       \"code\": \"email\",       \"detail\": \"The email must be a valid email address.\",       \"source\": {         \"field\": \"email\"       }     }   ] } <!-- ENDRESPONSE -->  <!-- RESPONSE 400 --> // Invalid password {   \"errors\": [     {       \"code\": \"InvalidPasswordProvidedException\",       \"status\": \"400\",       \"detail\": \"The password provided was invalid for this account.\"     }   ] } <!-- ENDRESPONSE -->  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.account_email_put(accept, account_email_put_request, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            accept (str): 
+            account_email_put_request (AccountEmailPutRequest): 
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['accept'] = \
+            accept
+        kwargs['account_email_put_request'] = \
+            account_email_put_request
+        return self.account_email_put_endpoint.call_with_http_info(**kwargs)
+
+    def account_get(
+        self,
+        accept,
+        content_type,
+        **kwargs
+    ):
+        """[ / ] Account details  # noqa: E501
+
+        Retrieves information about the account  <!-- RESPONSE 200 --> {   \"object\": \"user\",   \"attributes\": {     \"id\": 1,     \"admin\": true,     \"username\": \"admin\",     \"email\": \"example@example.com\",     \"first_name\": \"Admin\",     \"last_name\": \"User\",     \"language\": \"en\"   } } <!-- ENDRESPONSE -->  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.account_get(accept, content_type, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            accept (str): 
+            content_type (str): 
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['accept'] = \
+            accept
+        kwargs['content_type'] = \
+            content_type
+        return self.account_get_endpoint.call_with_http_info(**kwargs)
+
+    def account_password_put(
+        self,
+        accept,
+        account_password_put_request,
+        **kwargs
+    ):
+        """[ /password ] Update password  # noqa: E501
+
+        Updates the password of the account  ## Fields | Name                  | Required? | Type   | Description          | Rules | |-----------------------|-----------|--------|----------------------|-------| | current_password      | required  | string | Existing password    |       | | password              | required  | string | New password         |       | | password_confirmation | required  | string | Confirm new password |       |  <!-- RESPONSE 204 --> // Successful <!-- ENDRESPONSE -->  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.account_password_put(accept, account_password_put_request, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            accept (str): 
+            account_password_put_request (AccountPasswordPutRequest): 
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['accept'] = \
+            accept
+        kwargs['account_password_put_request'] = \
+            account_password_put_request
+        return self.account_password_put_endpoint.call_with_http_info(**kwargs)
+
+    def account_two_factor_delete(
+        self,
+        accept,
+        content_type="application/json",
+        **kwargs
+    ):
+        """[ /two-factor ] Disable 2FA  # noqa: E501
+
+        Disables TOTP 2FA on the account  ## Fields | Name     | Required? | Type   | Description       | Rules | |----------|-----------|--------|-------------------|-------| | password | required  | string | Existing password |       |  <!-- RESPONSE 204 --> // Successful <!-- ENDRESPONSE -->  <!-- RESPONSE 400 --> // Incorrect password {   \"errors\": [     {       \"code\": \"BadRequestHttpException\",       \"status\": \"400\",       \"detail\": \"An error was encountered while processing this request.\"     }   ] } <!-- ENDRESPONSE -->  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.account_two_factor_delete(accept, content_type="application/json", async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            accept (str): 
+            content_type (str): . defaults to "application/json", must be one of ["application/json"]
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['content_type'] = \
+            content_type
+        kwargs['accept'] = \
+            accept
+        return self.account_two_factor_delete_endpoint.call_with_http_info(**kwargs)
+
+    def account_two_factor_get(
+        self,
+        accept,
+        content_type,
+        **kwargs
+    ):
+        """[ /two-factor ] 2FA details  # noqa: E501
+
+        Generates a TOTP QR code image to allow the setup of 2FA  <!-- RESPONSE 200 --> {   \"data\": {     \"image_url_data\": \"otpauth://totp/Pterodactyl:example%40example.com?secret=LGYOWJEGVRPPGPWATP5ZHOYC7DHAYQ6S&issuer=Pterodactyl\"   } } <!-- ENDRESPONSE -->  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.account_two_factor_get(accept, content_type, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            accept (str): 
+            content_type (str): 
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['accept'] = \
+            accept
+        kwargs['content_type'] = \
+            content_type
+        return self.account_two_factor_get_endpoint.call_with_http_info(**kwargs)
+
+    def account_two_factor_post(
+        self,
+        accept,
+        account_two_factor_post_request,
+        **kwargs
+    ):
+        """[ /two-factor ] Enable 2FA  # noqa: E501
+
+        Enables TOTP 2FA using the QR code generated by the GET request  Uses code generated from `GET /account/two-factor`  ## Fields | Name    | Required? | Type   | Description       | Rules | |---------|-----------|--------|-------------------|-------| | code    | required  | string | TOTP Code         |       |  <!-- RESPONSE 200 --> {   \"object\": \"recovery_tokens\",   \"attributes\": {     \"tokens\": [       \"MpBjHH8O08\",       \"D9H0hktN6L\",       \"ho8KiUpeV8\",       \"06vZEfrYPf\",       \"nFRySZ2ryh\",       \"7K1cTrhGoV\",       \"n6xpwwlJfv\",       \"hAmyCsZxYO\",       \"5FiMKFyNpH\",       \"IViSFoRFvW\"     ]   } } <!-- ENDRESPONSE -->  <!-- RESPONSE 400 --> {   \"errors\": [     {       \"code\": \"TwoFactorAuthenticationTokenInvalid\",       \"status\": \"400\",       \"detail\": \"The token provided is not valid.\"     }   ] } <!-- ENDRESPONSE -->  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.account_two_factor_post(accept, account_two_factor_post_request, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            accept (str): 
+            account_two_factor_post_request (AccountTwoFactorPostRequest): 
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['accept'] = \
+            accept
+        kwargs['account_two_factor_post_request'] = \
+            account_two_factor_post_request
+        return self.account_two_factor_post_endpoint.call_with_http_info(**kwargs)
 

@@ -12,10 +12,6 @@ import sys
 import unittest
 
 import pterodactyl_client
-from pterodactyl_client.model.from_pterodactyl_client_model_createnode_request_import_createnode_request import FromPterodactylClientModelCreatenodeRequestImportCreatenodeRequest
-from pterodactyl_client.model.globals_createnode_request_createnode_request import GlobalsCreatenodeRequestCreatenodeRequest
-globals()['from pterodactyl_client.model.createnode_request import CreatenodeRequest'] = from pterodactyl_client.model.createnode_request import CreatenodeRequest
-globals()['globals()['CreatenodeRequest'] = CreatenodeRequest'] = globals()['CreatenodeRequest'] = CreatenodeRequest
 from pterodactyl_client.model.createnode_request import CreatenodeRequest
 
 

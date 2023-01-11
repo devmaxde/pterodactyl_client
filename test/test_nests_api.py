@@ -23,6 +23,13 @@ class TestNestsApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_application_nests_get(self):
+        """Test case for application_nests_get
+
+        [ / ] List nests  # noqa: E501
+        """
+        pass
+
     def test_application_nestsnest_id_get(self):
         """Test case for application_nestsnest_id_get
 

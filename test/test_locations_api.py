@@ -23,6 +23,20 @@ class TestLocationsApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_application_locations_get(self):
+        """Test case for application_locations_get
+
+        [ / ] List locations  # noqa: E501
+        """
+        pass
+
+    def test_application_locations_post(self):
+        """Test case for application_locations_post
+
+        [ / ] Create location  # noqa: E501
+        """
+        pass
+
     def test_application_locationslocation_id_delete(self):
         """Test case for application_locationslocation_id_delete
 

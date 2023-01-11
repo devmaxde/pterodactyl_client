@@ -8,33 +8,28 @@
 """
 
 
+import sys
 import unittest
 
 import pterodactyl_client
-from pterodactyl_client.api.api_client_client_api import ApiClientClientApi  # noqa: E501
+from pterodactyl_client.model.email_updateemail_request import EmailUpdateemailRequest
+globals()['EmailUpdateemailRequest'] = EmailUpdateemailRequest
+from pterodactyl_client.model.account_email_put_request import AccountEmailPutRequest
 
 
-class TestApiClientClientApi(unittest.TestCase):
-    """ApiClientClientApi unit test stubs"""
+class TestAccountEmailPutRequest(unittest.TestCase):
+    """AccountEmailPutRequest unit test stubs"""
 
     def setUp(self):
-        self.api = ApiClientClientApi()  # noqa: E501
+        pass
 
     def tearDown(self):
         pass
 
-    def test___permissions_showpermissions(self):
-        """Test case for __permissions_showpermissions
-
-        [ /permissions ] Show permissions  # noqa: E501
-        """
-        pass
-
-    def test_get__listservers(self):
-        """Test case for get__listservers
-
-        [ / ] List servers  # noqa: E501
-        """
+    def testAccountEmailPutRequest(self):
+        """Test AccountEmailPutRequest"""
+        # FIXME: construct object with mandatory attributes with example values
+        # model = AccountEmailPutRequest()  # noqa: E501
         pass
 
 

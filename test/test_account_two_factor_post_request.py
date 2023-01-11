@@ -8,26 +8,28 @@
 """
 
 
+import sys
 import unittest
 
 import pterodactyl_client
-from pterodactyl_client.api.nests_nests_api import NestsNestsApi  # noqa: E501
+from pterodactyl_client.model.two_factor_enable2_fa_request import TwoFactorEnable2FARequest
+globals()['TwoFactorEnable2FARequest'] = TwoFactorEnable2FARequest
+from pterodactyl_client.model.account_two_factor_post_request import AccountTwoFactorPostRequest
 
 
-class TestNestsNestsApi(unittest.TestCase):
-    """NestsNestsApi unit test stubs"""
+class TestAccountTwoFactorPostRequest(unittest.TestCase):
+    """AccountTwoFactorPostRequest unit test stubs"""
 
     def setUp(self):
-        self.api = NestsNestsApi()  # noqa: E501
+        pass
 
     def tearDown(self):
         pass
 
-    def test___listnests(self):
-        """Test case for __listnests
-
-        [ / ] List nests  # noqa: E501
-        """
+    def testAccountTwoFactorPostRequest(self):
+        """Test AccountTwoFactorPostRequest"""
+        # FIXME: construct object with mandatory attributes with example values
+        # model = AccountTwoFactorPostRequest()  # noqa: E501
         pass
 
 

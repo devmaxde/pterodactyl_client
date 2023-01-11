@@ -22,6 +22,7 @@ from pterodactyl_client.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from pterodactyl_client.model.application_locations_location_id_patch_request import ApplicationLocationsLocationIdPatchRequest
+from pterodactyl_client.model.application_locations_post_request import ApplicationLocationsPostRequest
 
 
 class LocationsApi(object):
@@ -35,6 +36,131 @@ class LocationsApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
+        self.application_locations_get_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'auth': [
+                    'bearer'
+                ],
+                'endpoint_path': '/application/locations',
+                'operation_id': 'application_locations_get',
+                'http_method': 'GET',
+                'servers': [
+                    {
+                        'url': "https://pterodactyl.file.properties/api",
+                        'description': "No description provided",
+                    },
+                ]
+            },
+            params_map={
+                'all': [
+                    'accept',
+                    'content_type',
+                ],
+                'required': [
+                    'accept',
+                    'content_type',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'accept':
+                        (str,),
+                    'content_type':
+                        (str,),
+                },
+                'attribute_map': {
+                    'accept': 'Accept',
+                    'content_type': 'Content-Type',
+                },
+                'location_map': {
+                    'accept': 'header',
+                    'content_type': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.application_locations_post_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'auth': [
+                    'bearer'
+                ],
+                'endpoint_path': '/application/locations',
+                'operation_id': 'application_locations_post',
+                'http_method': 'POST',
+                'servers': [
+                    {
+                        'url': "https://pterodactyl.file.properties/api",
+                        'description': "No description provided",
+                    },
+                ]
+            },
+            params_map={
+                'all': [
+                    'accept',
+                    'application_locations_post_request',
+                ],
+                'required': [
+                    'accept',
+                    'application_locations_post_request',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'accept':
+                        (str,),
+                    'application_locations_post_request':
+                        (ApplicationLocationsPostRequest,),
+                },
+                'attribute_map': {
+                    'accept': 'Accept',
+                },
+                'location_map': {
+                    'accept': 'header',
+                    'application_locations_post_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
         self.application_locationslocation_id_delete_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
@@ -240,6 +366,180 @@ class LocationsApi(object):
             },
             api_client=api_client
         )
+
+    def application_locations_get(
+        self,
+        accept,
+        content_type,
+        **kwargs
+    ):
+        """[ / ] List locations  # noqa: E501
+
+        Retrieves all locations  # Available include parameters | Parameter | Description                            | |-----------|----------------------------------------| | nodes     | List of nodes assigned to the location | | servers   | List of servers in the location        |  <!-- RESPONSE 200 --> {   \"object\": \"list\",   \"data\": [     {       \"object\": \"location\",       \"attributes\": {         \"id\": 1,         \"short\": \"GB\",         \"long\": \"London Datacenter\",         \"updated_at\": \"2020-06-13T21:16:58+00:00\",         \"created_at\": \"2019-12-22T04:44:18+00:00\"       }     }   ],   \"meta\": {     \"pagination\": {       \"total\": 1,       \"count\": 1,       \"per_page\": 50,       \"current_page\": 1,       \"total_pages\": 1,       \"links\": {}     }   } } <!-- ENDRESPONSE -->  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.application_locations_get(accept, content_type, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            accept (str): 
+            content_type (str): 
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['accept'] = \
+            accept
+        kwargs['content_type'] = \
+            content_type
+        return self.application_locations_get_endpoint.call_with_http_info(**kwargs)
+
+    def application_locations_post(
+        self,
+        accept,
+        application_locations_post_request,
+        **kwargs
+    ):
+        """[ / ] Create location  # noqa: E501
+
+        Creates a new location  ## Fields | Name  | Required? | Type   | Description          | Rules | |-------|-----------|--------|----------------------|-------| | short | required  | string | Location identifier  |       | | long  | optional  | string | Location description |       |  <!-- RESPONSE 200 --> {   \"object\": \"location\",   \"attributes\": {     \"id\": 3,     \"short\": \"G\",     \"long\": \"London Datacenter\",     \"updated_at\": \"2020-06-13T20:44:48+00:00\",     \"created_at\": \"2020-06-13T20:44:48+00:00\"   },   \"meta\": {     \"resource\": \"https://pterodactyl.file.properties/api/application/locations/3\"   } } <!-- ENDRESPONSE -->  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.application_locations_post(accept, application_locations_post_request, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            accept (str): 
+            application_locations_post_request (ApplicationLocationsPostRequest): 
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['accept'] = \
+            accept
+        kwargs['application_locations_post_request'] = \
+            application_locations_post_request
+        return self.application_locations_post_endpoint.call_with_http_info(**kwargs)
 
     def application_locationslocation_id_delete(
         self,

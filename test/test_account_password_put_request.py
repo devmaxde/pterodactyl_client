@@ -8,75 +8,28 @@
 """
 
 
+import sys
 import unittest
 
 import pterodactyl_client
-from pterodactyl_client.api.account_account_api import AccountAccountApi  # noqa: E501
+from pterodactyl_client.model.password_updatepassword_request import PasswordUpdatepasswordRequest
+globals()['PasswordUpdatepasswordRequest'] = PasswordUpdatepasswordRequest
+from pterodactyl_client.model.account_password_put_request import AccountPasswordPutRequest
 
 
-class TestAccountAccountApi(unittest.TestCase):
-    """AccountAccountApi unit test stubs"""
+class TestAccountPasswordPutRequest(unittest.TestCase):
+    """AccountPasswordPutRequest unit test stubs"""
 
     def setUp(self):
-        self.api = AccountAccountApi()  # noqa: E501
+        pass
 
     def tearDown(self):
         pass
 
-    def test___accountdetails(self):
-        """Test case for __accountdetails
-
-        [ / ] Account details  # noqa: E501
-        """
-        pass
-
-    def test___api_keys_create_ap_ikey(self):
-        """Test case for __api_keys_create_ap_ikey
-
-        [ /api-keys ] Create API key  # noqa: E501
-        """
-        pass
-
-    def test___api_keys_list_ap_ikeys(self):
-        """Test case for __api_keys_list_ap_ikeys
-
-        [ /api-keys ] List API keys  # noqa: E501
-        """
-        pass
-
-    def test___email_updateemail(self):
-        """Test case for __email_updateemail
-
-        [ /email ] Update email  # noqa: E501
-        """
-        pass
-
-    def test___password_updatepassword(self):
-        """Test case for __password_updatepassword
-
-        [ /password ] Update password  # noqa: E501
-        """
-        pass
-
-    def test___two_factor2_f_adetails(self):
-        """Test case for __two_factor2_f_adetails
-
-        [ /two-factor ] 2FA details  # noqa: E501
-        """
-        pass
-
-    def test___two_factor_disable2_fa(self):
-        """Test case for __two_factor_disable2_fa
-
-        [ /two-factor ] Disable 2FA  # noqa: E501
-        """
-        pass
-
-    def test___two_factor_enable2_fa(self):
-        """Test case for __two_factor_enable2_fa
-
-        [ /two-factor ] Enable 2FA  # noqa: E501
-        """
+    def testAccountPasswordPutRequest(self):
+        """Test AccountPasswordPutRequest"""
+        # FIXME: construct object with mandatory attributes with example values
+        # model = AccountPasswordPutRequest()  # noqa: E501
         pass
 
 

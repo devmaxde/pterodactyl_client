@@ -12,10 +12,6 @@ import sys
 import unittest
 
 import pterodactyl_client
-from pterodactyl_client.model.from_pterodactyl_client_model_password_updatepassword_request_import_password_updatepassword_request import FromPterodactylClientModelPasswordUpdatepasswordRequestImportPasswordUpdatepasswordRequest
-from pterodactyl_client.model.globals_password_updatepassword_request_password_updatepassword_request import GlobalsPasswordUpdatepasswordRequestPasswordUpdatepasswordRequest
-globals()['from pterodactyl_client.model.password_updatepassword_request import PasswordUpdatepasswordRequest'] = from pterodactyl_client.model.password_updatepassword_request import PasswordUpdatepasswordRequest
-globals()['globals()['PasswordUpdatepasswordRequest'] = PasswordUpdatepasswordRequest'] = globals()['PasswordUpdatepasswordRequest'] = PasswordUpdatepasswordRequest
 from pterodactyl_client.model.password_updatepassword_request import PasswordUpdatepasswordRequest
 
 

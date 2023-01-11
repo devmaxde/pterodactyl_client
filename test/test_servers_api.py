@@ -30,6 +30,20 @@ class TestServersApi(unittest.TestCase):
         """
         pass
 
+    def test_application_servers_get(self):
+        """Test case for application_servers_get
+
+        [ / ] List servers  # noqa: E501
+        """
+        pass
+
+    def test_application_servers_post(self):
+        """Test case for application_servers_post
+
+        [ / ] Create server  # noqa: E501
+        """
+        pass
+
     def test_application_serversserver_id_build_patch(self):
         """Test case for application_serversserver_id_build_patch
 

@@ -21,6 +21,7 @@ from pterodactyl_client.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from pterodactyl_client.model.application_servers_post_request import ApplicationServersPostRequest
 from pterodactyl_client.model.application_servers_server_id_build_patch_request import ApplicationServersServerIdBuildPatchRequest
 from pterodactyl_client.model.application_servers_server_id_details_patch_request import ApplicationServersServerIdDetailsPatchRequest
 from pterodactyl_client.model.application_servers_server_id_startup_patch_request import ApplicationServersServerIdStartupPatchRequest
@@ -102,6 +103,131 @@ class ServersApi(object):
                     'text/plain'
                 ],
                 'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.application_servers_get_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'auth': [
+                    'bearer'
+                ],
+                'endpoint_path': '/application/servers',
+                'operation_id': 'application_servers_get',
+                'http_method': 'GET',
+                'servers': [
+                    {
+                        'url': "https://pterodactyl.file.properties/api",
+                        'description': "No description provided",
+                    },
+                ]
+            },
+            params_map={
+                'all': [
+                    'accept',
+                    'content_type',
+                ],
+                'required': [
+                    'accept',
+                    'content_type',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'accept':
+                        (str,),
+                    'content_type':
+                        (str,),
+                },
+                'attribute_map': {
+                    'accept': 'Accept',
+                    'content_type': 'Content-Type',
+                },
+                'location_map': {
+                    'accept': 'header',
+                    'content_type': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.application_servers_post_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'auth': [
+                    'bearer'
+                ],
+                'endpoint_path': '/application/servers',
+                'operation_id': 'application_servers_post',
+                'http_method': 'POST',
+                'servers': [
+                    {
+                        'url': "https://pterodactyl.file.properties/api",
+                        'description': "No description provided",
+                    },
+                ]
+            },
+            params_map={
+                'all': [
+                    'accept',
+                    'application_servers_post_request',
+                ],
+                'required': [
+                    'accept',
+                    'application_servers_post_request',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'accept':
+                        (str,),
+                    'application_servers_post_request':
+                        (ApplicationServersPostRequest,),
+                },
+                'attribute_map': {
+                    'accept': 'Accept',
+                },
+                'location_map': {
+                    'accept': 'header',
+                    'application_servers_post_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
             },
             api_client=api_client
         )
@@ -811,6 +937,180 @@ class ServersApi(object):
         kwargs['server_id'] = \
             server_id
         return self.application_servers_externalserver_id_get_endpoint.call_with_http_info(**kwargs)
+
+    def application_servers_get(
+        self,
+        accept,
+        content_type,
+        **kwargs
+    ):
+        """[ / ] List servers  # noqa: E501
+
+        Retrieves all servers  <!-- RESPONSE 200 --> {   \"object\": \"list\",   \"data\": [     {       \"object\": \"server\",       \"attributes\": {         \"id\": 5,         \"external_id\": \"RemoteId1\",         \"uuid\": \"{server_id}-259b-452e-8b4e-cecc464142ca\",         \"identifier\": \"{server_id}\",         \"name\": \"Wuhu Island\",         \"description\": \"Matt from Wii Sports\",         \"suspended\": false,         \"limits\": {           \"memory\": 512,           \"swap\": 0,           \"disk\": 200,           \"io\": 500,           \"cpu\": 0,           \"threads\": null         },         \"feature_limits\": {           \"databases\": 5,           \"allocations\": 5,           \"backups\": 2         },         \"user\": 1,         \"node\": 1,         \"allocation\": 1,         \"nest\": 1,         \"egg\": 5,         \"pack\": null,         \"container\": {           \"startup_command\": \"java -Xms128M -Xmx{{SERVER_MEMORY}}M -jar {{SERVER_JARFILE}}\",           \"image\": \"quay.io/pterodactyl/core:java\",           \"installed\": true,           \"environment\": {             \"SERVER_JARFILE\": \"server.jar\",             \"VANILLA_VERSION\": \"latest\",             \"STARTUP\": \"java -Xms128M -Xmx{{SERVER_MEMORY}}M -jar {{SERVER_JARFILE}}\",             \"P_SERVER_LOCATION\": \"Test\",             \"P_SERVER_UUID\": \"{server_id}-259b-452e-8b4e-cecc464142ca\"           }         },         \"updated_at\": \"2020-06-13T04:20:53+00:00\",         \"created_at\": \"2019-12-23T06:46:27+00:00\",         \"relationships\": {           \"databases\": {             \"object\": \"list\",             \"data\": [               {                 \"object\": \"databases\",                 \"attributes\": {                   \"id\": 1,                   \"server\": 5,                   \"host\": 4,                   \"database\": \"s5_perms\",                   \"username\": \"u5_QsIAp1jhvS\",                   \"remote\": \"%\",                   \"max_connections\": 0,                   \"created_at\": \"2020-06-12T23:00:13+01:00\",                   \"updated_at\": \"2020-06-12T23:00:13+01:00\"                 }               },               {                 \"object\": \"databases\",                 \"attributes\": {                   \"id\": 2,                   \"server\": 5,                   \"host\": 4,                   \"database\": \"s5_coreprotect\",                   \"username\": \"u5_2jtJx1nO1d\",                   \"remote\": \"%\",                   \"max_connections\": 0,                   \"created_at\": \"2020-06-12T23:00:20+01:00\",                   \"updated_at\": \"2020-06-12T23:00:20+01:00\"                 }               }             ]           }         }       }     }   ],   \"meta\": {     \"pagination\": {       \"total\": 1,       \"count\": 1,       \"per_page\": 50,       \"current_page\": 1,       \"total_pages\": 1,       \"links\": {}     }   } } <!-- ENDRESPONSE -->  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.application_servers_get(accept, content_type, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            accept (str): 
+            content_type (str): 
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['accept'] = \
+            accept
+        kwargs['content_type'] = \
+            content_type
+        return self.application_servers_get_endpoint.call_with_http_info(**kwargs)
+
+    def application_servers_post(
+        self,
+        accept,
+        application_servers_post_request,
+        **kwargs
+    ):
+        """[ / ] Create server  # noqa: E501
+
+        Creates a new server  <!-- RESPONSE 201 --> {   \"object\": \"server\",   \"attributes\": {     \"id\": 7,     \"external_id\": null,     \"uuid\": \"d557c19c-8b21-4456-a9e5-181beda429f4\",     \"identifier\": \"d557c19c\",     \"name\": \"Building\",     \"description\": \"\",     \"suspended\": false,     \"limits\": {       \"memory\": 128,       \"swap\": 0,       \"disk\": 512,       \"io\": 500,       \"cpu\": 100,       \"threads\": null     },     \"feature_limits\": {       \"databases\": 5,       \"allocations\": 0,       \"backups\": 1     },     \"user\": 1,     \"node\": 1,     \"allocation\": 17,     \"nest\": 1,     \"egg\": 1,     \"container\": {       \"startup_command\": \"java -Xms128M -Xmx128M -jar server.jar\",       \"image\": \"quay.io/pterodactyl/core:java\",       \"installed\": false,       \"environment\": {         \"BUNGEE_VERSION\": \"latest\",         \"SERVER_JARFILE\": \"server.jar\",         \"STARTUP\": \"java -Xms128M -Xmx128M -jar server.jar\",         \"P_SERVER_LOCATION\": \"GB\",         \"P_SERVER_UUID\": \"d557c19c-8b21-4456-a9e5-181beda429f4\",         \"P_SERVER_ALLOCATION_LIMIT\": 0       }     },     \"updated_at\": \"2020-10-29T01:38:59+00:00\",     \"created_at\": \"2020-10-29T01:38:59+00:00\"   } } <!-- ENDRESPONSE -->  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.application_servers_post(accept, application_servers_post_request, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            accept (str): 
+            application_servers_post_request (ApplicationServersPostRequest): 
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['accept'] = \
+            accept
+        kwargs['application_servers_post_request'] = \
+            application_servers_post_request
+        return self.application_servers_post_endpoint.call_with_http_info(**kwargs)
 
     def application_serversserver_id_build_patch(
         self,

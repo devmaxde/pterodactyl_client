@@ -8,33 +8,28 @@
 """
 
 
+import sys
 import unittest
 
 import pterodactyl_client
-from pterodactyl_client.api.locations_locations_api import LocationsLocationsApi  # noqa: E501
+from pterodactyl_client.model.createuser_request import CreateuserRequest
+globals()['CreateuserRequest'] = CreateuserRequest
+from pterodactyl_client.model.application_users_post_request import ApplicationUsersPostRequest
 
 
-class TestLocationsLocationsApi(unittest.TestCase):
-    """LocationsLocationsApi unit test stubs"""
+class TestApplicationUsersPostRequest(unittest.TestCase):
+    """ApplicationUsersPostRequest unit test stubs"""
 
     def setUp(self):
-        self.api = LocationsLocationsApi()  # noqa: E501
+        pass
 
     def tearDown(self):
         pass
 
-    def test___createlocation(self):
-        """Test case for __createlocation
-
-        [ / ] Create location  # noqa: E501
-        """
-        pass
-
-    def test___listlocations(self):
-        """Test case for __listlocations
-
-        [ / ] List locations  # noqa: E501
-        """
+    def testApplicationUsersPostRequest(self):
+        """Test ApplicationUsersPostRequest"""
+        # FIXME: construct object with mandatory attributes with example values
+        # model = ApplicationUsersPostRequest()  # noqa: E501
         pass
 
 

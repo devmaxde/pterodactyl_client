@@ -11,29 +11,29 @@
 import unittest
 
 import pterodactyl_client
-from pterodactyl_client.api.servers_servers_api import ServersServersApi  # noqa: E501
+from pterodactyl_client.api.client_api import ClientApi  # noqa: E501
 
 
-class TestServersServersApi(unittest.TestCase):
-    """ServersServersApi unit test stubs"""
+class TestClientApi(unittest.TestCase):
+    """ClientApi unit test stubs"""
 
     def setUp(self):
-        self.api = ServersServersApi()  # noqa: E501
+        self.api = ClientApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
-    def test___createserver(self):
-        """Test case for __createserver
+    def test_client_get(self):
+        """Test case for client_get
 
-        [ / ] Create server  # noqa: E501
+        [ / ] List servers  # noqa: E501
         """
         pass
 
-    def test___listservers(self):
-        """Test case for __listservers
+    def test_client_permissions_get(self):
+        """Test case for client_permissions_get
 
-        [ / ] List servers  # noqa: E501
+        [ /permissions ] Show permissions  # noqa: E501
         """
         pass
 

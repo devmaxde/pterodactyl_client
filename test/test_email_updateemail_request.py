@@ -12,10 +12,6 @@ import sys
 import unittest
 
 import pterodactyl_client
-from pterodactyl_client.model.from_pterodactyl_client_model_email_updateemail_request_import_email_updateemail_request import FromPterodactylClientModelEmailUpdateemailRequestImportEmailUpdateemailRequest
-from pterodactyl_client.model.globals_email_updateemail_request_email_updateemail_request import GlobalsEmailUpdateemailRequestEmailUpdateemailRequest
-globals()['from pterodactyl_client.model.email_updateemail_request import EmailUpdateemailRequest'] = from pterodactyl_client.model.email_updateemail_request import EmailUpdateemailRequest
-globals()['globals()['EmailUpdateemailRequest'] = EmailUpdateemailRequest'] = globals()['EmailUpdateemailRequest'] = EmailUpdateemailRequest
 from pterodactyl_client.model.email_updateemail_request import EmailUpdateemailRequest
 
 

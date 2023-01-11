@@ -21,6 +21,7 @@ from pterodactyl_client.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from pterodactyl_client.model.application_users_post_request import ApplicationUsersPostRequest
 from pterodactyl_client.model.application_users_user_id_patch_request import ApplicationUsersUserIdPatchRequest
 from pterodactyl_client.model.client_servers_server_id_users_post_request import ClientServersServerIdUsersPostRequest
 from pterodactyl_client.model.client_servers_server_id_users_user_id_post_request import ClientServersServerIdUsersUserIdPostRequest
@@ -102,6 +103,131 @@ class UsersApi(object):
                     'text/plain'
                 ],
                 'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.application_users_get_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'auth': [
+                    'bearer'
+                ],
+                'endpoint_path': '/application/users',
+                'operation_id': 'application_users_get',
+                'http_method': 'GET',
+                'servers': [
+                    {
+                        'url': "https://pterodactyl.file.properties/api",
+                        'description': "No description provided",
+                    },
+                ]
+            },
+            params_map={
+                'all': [
+                    'accept',
+                    'content_type',
+                ],
+                'required': [
+                    'accept',
+                    'content_type',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'accept':
+                        (str,),
+                    'content_type':
+                        (str,),
+                },
+                'attribute_map': {
+                    'accept': 'Accept',
+                    'content_type': 'Content-Type',
+                },
+                'location_map': {
+                    'accept': 'header',
+                    'content_type': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.application_users_post_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'auth': [
+                    'bearer'
+                ],
+                'endpoint_path': '/application/users',
+                'operation_id': 'application_users_post',
+                'http_method': 'POST',
+                'servers': [
+                    {
+                        'url': "https://pterodactyl.file.properties/api",
+                        'description': "No description provided",
+                    },
+                ]
+            },
+            params_map={
+                'all': [
+                    'accept',
+                    'application_users_post_request',
+                ],
+                'required': [
+                    'accept',
+                    'application_users_post_request',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'accept':
+                        (str,),
+                    'application_users_post_request':
+                        (ApplicationUsersPostRequest,),
+                },
+                'attribute_map': {
+                    'accept': 'Accept',
+                },
+                'location_map': {
+                    'accept': 'header',
+                    'application_users_post_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
             },
             api_client=api_client
         )
@@ -761,6 +887,180 @@ class UsersApi(object):
         kwargs['user_id'] = \
             user_id
         return self.application_users_externaluser_id_get_endpoint.call_with_http_info(**kwargs)
+
+    def application_users_get(
+        self,
+        accept,
+        content_type,
+        **kwargs
+    ):
+        """[ / ] List users  # noqa: E501
+
+        Retrieves all users  ## Available Include parameters | Parameter | Description                            | |-----------|----------------------------------------| | servers   | List of servers the user has access to |  ## Filters | Parameter   | |-------------| | email       | | uuid        | | username    | | external_id |  ## Sort by | Parameter   | |-------------| | id          | | uuid        |  <!-- RESPONSE 200 --> {   \"object\": \"list\",   \"data\": [     {       \"object\": \"user\",       \"attributes\": {         \"id\": 1,         \"external_id\": \"RemoteId1\",         \"uuid\": \"4de5a357-ed95-426b-aec1-8c328cfe9751\",         \"username\": \"admin\",         \"email\": \"example@example.com\",         \"first_name\": \"Admin\",         \"last_name\": \"User\",         \"language\": \"en\",         \"root_admin\": true,         \"2fa\": false,         \"created_at\": \"2019-12-22T04:43:29+00:00\",         \"updated_at\": \"2020-07-13T13:10:23+00:00\"       }     },     {       \"object\": \"user\",       \"attributes\": {         \"id\": 2,         \"external_id\": null,         \"uuid\": \"73f233ca-99e0-47a9-bd46-efd3296d7ad9\",         \"username\": \"subuser1uxk\",         \"email\": \"subuser1@example.com\",         \"first_name\": \"Server\",         \"last_name\": \"Subuser\",         \"language\": \"en\",         \"root_admin\": false,         \"2fa\": false,         \"created_at\": \"2020-06-12T22:18:43+00:00\",         \"updated_at\": \"2020-06-12T22:18:43+00:00\"       }     },     {       \"object\": \"user\",       \"attributes\": {         \"id\": 3,         \"external_id\": null,         \"uuid\": \"60a7aec3-e17d-4aa9-abb3-56d944d204b4\",         \"username\": \"subuser2jvc\",         \"email\": \"subuser2@example.com\",         \"first_name\": \"Server\",         \"last_name\": \"Subuser\",         \"language\": \"en\",         \"root_admin\": false,         \"2fa\": false,         \"created_at\": \"2020-06-12T22:31:41+00:00\",         \"updated_at\": \"2020-06-12T22:31:41+00:00\"       }     },     {       \"object\": \"user\",       \"attributes\": {         \"id\": 4,         \"external_id\": null,         \"uuid\": \"a14e9c5f-9c7a-448f-9106-58e2b5286de6\",         \"username\": \"test\",         \"email\": \"example2@example.com\",         \"first_name\": \"Test\",         \"last_name\": \"Admin\",         \"language\": \"en\",         \"root_admin\": true,         \"2fa\": false,         \"created_at\": \"2020-06-14T00:34:50+00:00\",         \"updated_at\": \"2020-06-14T00:34:50+00:00\"       }     },     {       \"object\": \"user\",       \"attributes\": {         \"id\": 5,         \"external_id\": null,         \"uuid\": \"1287632d-9224-40c0-906e-f543423400bc\",         \"username\": \"subuser3bvo\",         \"email\": \"subuser3@example.com\",         \"first_name\": \"Server\",         \"last_name\": \"Subuser\",         \"language\": \"en\",         \"root_admin\": false,         \"2fa\": false,         \"created_at\": \"2020-07-13T13:27:46+00:00\",         \"updated_at\": \"2020-07-13T13:27:46+00:00\"       }     },     {       \"object\": \"user\",       \"attributes\": {         \"id\": 6,         \"external_id\": null,         \"uuid\": \"2fcb6f7e-342a-423a-93a4-6111a237c0c7\",         \"username\": \"geboc70057d6r\",         \"email\": \"geboc70057@djemail.net\",         \"first_name\": \"Server\",         \"last_name\": \"Subuser\",         \"language\": \"en\",         \"root_admin\": false,         \"2fa\": false,         \"created_at\": \"2020-07-13T13:36:44+00:00\",         \"updated_at\": \"2020-07-13T13:36:44+00:00\"       }     },     {       \"object\": \"user\",       \"attributes\": {         \"id\": 7,         \"external_id\": null,         \"uuid\": \"b20e4e11-550f-4c52-893d-94fc8bc46a06\",         \"username\": \"testidq\",         \"email\": \"test@example.com\",         \"first_name\": \"Server\",         \"last_name\": \"Subuser\",         \"language\": \"en\",         \"root_admin\": false,         \"2fa\": false,         \"created_at\": \"2020-07-19T12:48:38+00:00\",         \"updated_at\": \"2020-07-19T12:48:38+00:00\"       }     }   ],   \"meta\": {     \"pagination\": {       \"total\": 7,       \"count\": 7,       \"per_page\": 50,       \"current_page\": 1,       \"total_pages\": 1,       \"links\": {}     }   } } <!-- ENDRESPONSE -->  <!-- RESPONSE 200 --> // GET /api/application/users?filter%5Bemail%5D=dane%40daneeveritt.com {   \"object\": \"list\",   \"data\": [     {       \"object\": \"user\",       \"attributes\": {         \"id\": 27,         \"external_id\": null,         \"uuid\": \"18528bb9-8f60-45e2-adc6-f72611559fd7\",         \"username\": \"hodor7wm\",         \"email\": \"hodor@example.com\",         \"first_name\": \"Server\",         \"last_name\": \"Subuser\",         \"language\": \"en\",         \"root_admin\": false,         \"2fa\": false,         \"created_at\": \"2020-08-19T03:23:35+00:00\",         \"updated_at\": \"2020-08-19T03:23:35+00:00\"       }     },     {       \"object\": \"user\",       \"attributes\": {         \"id\": 26,         \"external_id\": null,         \"uuid\": \"b83673f6-3387-4a37-97cd-dd3a4f508343\",         \"username\": \"testfz0\",         \"email\": \"test@example.com\",         \"first_name\": \"Server\",         \"last_name\": \"Subuser\",         \"language\": \"en\",         \"root_admin\": false,         \"2fa\": false,         \"created_at\": \"2020-08-19T03:15:51+00:00\",         \"updated_at\": \"2020-08-19T03:15:51+00:00\"       }     }   ],   \"meta\": {     \"pagination\": {       \"total\": 2,       \"count\": 2,       \"per_page\": 100,       \"current_page\": 1,       \"total_pages\": 1,       \"links\": {}     }   } } <!-- ENDRESPONSE -->  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.application_users_get(accept, content_type, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            accept (str): 
+            content_type (str): 
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['accept'] = \
+            accept
+        kwargs['content_type'] = \
+            content_type
+        return self.application_users_get_endpoint.call_with_http_info(**kwargs)
+
+    def application_users_post(
+        self,
+        accept,
+        application_users_post_request,
+        **kwargs
+    ):
+        """[ / ] Create user  # noqa: E501
+
+        Creates a new user  <!-- RESPONSE 201 --> {   \"object\": \"user\",   \"attributes\": {     \"id\": 9,     \"external_id\": null,     \"uuid\": \"dac03ece-fd51-4e4b-bd4f-a79e3b2794f9\",     \"username\": \"exampleuser\",     \"email\": \"example10@example.com\",     \"first_name\": \"Example\",     \"last_name\": \"User\",     \"language\": \"en\",     \"root_admin\": false,     \"2fa\": false,     \"created_at\": \"2020-10-29T01:25:12+00:00\",     \"updated_at\": \"2020-10-29T01:25:12+00:00\"   },   \"meta\": {     \"resource\": \"https://pterodactyl.file.properties/api/application/users/9\"   } } <!-- ENDRESPONSE -->  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.application_users_post(accept, application_users_post_request, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            accept (str): 
+            application_users_post_request (ApplicationUsersPostRequest): 
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['accept'] = \
+            accept
+        kwargs['application_users_post_request'] = \
+            application_users_post_request
+        return self.application_users_post_endpoint.call_with_http_info(**kwargs)
 
     def application_usersuser_id_delete(
         self,

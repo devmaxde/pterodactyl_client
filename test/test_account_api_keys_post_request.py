@@ -8,82 +8,28 @@
 """
 
 
+import sys
 import unittest
 
 import pterodactyl_client
-from pterodactyl_client.api.account_api import AccountApi  # noqa: E501
+from pterodactyl_client.model.api_keys_create_ap_ikey_request import ApiKeysCreateAPIkeyRequest
+globals()['ApiKeysCreateAPIkeyRequest'] = ApiKeysCreateAPIkeyRequest
+from pterodactyl_client.model.account_api_keys_post_request import AccountApiKeysPostRequest
 
 
-class TestAccountApi(unittest.TestCase):
-    """AccountApi unit test stubs"""
+class TestAccountApiKeysPostRequest(unittest.TestCase):
+    """AccountApiKeysPostRequest unit test stubs"""
 
     def setUp(self):
-        self.api = AccountApi()  # noqa: E501
+        pass
 
     def tearDown(self):
         pass
 
-    def test_account_api_keys_get(self):
-        """Test case for account_api_keys_get
-
-        [ /api-keys ] List API keys  # noqa: E501
-        """
-        pass
-
-    def test_account_api_keys_post(self):
-        """Test case for account_api_keys_post
-
-        [ /api-keys ] Create API key  # noqa: E501
-        """
-        pass
-
-    def test_account_api_keysapi_key_id_delete(self):
-        """Test case for account_api_keysapi_key_id_delete
-
-        [ /api-keys/{identifier} ] Delete API key  # noqa: E501
-        """
-        pass
-
-    def test_account_email_put(self):
-        """Test case for account_email_put
-
-        [ /email ] Update email  # noqa: E501
-        """
-        pass
-
-    def test_account_get(self):
-        """Test case for account_get
-
-        [ / ] Account details  # noqa: E501
-        """
-        pass
-
-    def test_account_password_put(self):
-        """Test case for account_password_put
-
-        [ /password ] Update password  # noqa: E501
-        """
-        pass
-
-    def test_account_two_factor_delete(self):
-        """Test case for account_two_factor_delete
-
-        [ /two-factor ] Disable 2FA  # noqa: E501
-        """
-        pass
-
-    def test_account_two_factor_get(self):
-        """Test case for account_two_factor_get
-
-        [ /two-factor ] 2FA details  # noqa: E501
-        """
-        pass
-
-    def test_account_two_factor_post(self):
-        """Test case for account_two_factor_post
-
-        [ /two-factor ] Enable 2FA  # noqa: E501
-        """
+    def testAccountApiKeysPostRequest(self):
+        """Test AccountApiKeysPostRequest"""
+        # FIXME: construct object with mandatory attributes with example values
+        # model = AccountApiKeysPostRequest()  # noqa: E501
         pass
 
 

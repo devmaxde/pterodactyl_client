@@ -12,10 +12,6 @@ import sys
 import unittest
 
 import pterodactyl_client
-from pterodactyl_client.model.from_pterodactyl_client_model_createuser_request_import_createuser_request import FromPterodactylClientModelCreateuserRequestImportCreateuserRequest
-from pterodactyl_client.model.globals_createuser_request_createuser_request import GlobalsCreateuserRequestCreateuserRequest
-globals()['from pterodactyl_client.model.createuser_request import CreateuserRequest'] = from pterodactyl_client.model.createuser_request import CreateuserRequest
-globals()['globals()['CreateuserRequest'] = CreateuserRequest'] = globals()['CreateuserRequest'] = CreateuserRequest
 from pterodactyl_client.model.createuser_request import CreateuserRequest
 
 

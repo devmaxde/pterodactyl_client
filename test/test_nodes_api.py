@@ -23,6 +23,20 @@ class TestNodesApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_application_nodes_get(self):
+        """Test case for application_nodes_get
+
+        [ / ] List nodes  # noqa: E501
+        """
+        pass
+
+    def test_application_nodes_post(self):
+        """Test case for application_nodes_post
+
+        [ / ] Create node  # noqa: E501
+        """
+        pass
+
     def test_application_nodesnode_id_configuration_get(self):
         """Test case for application_nodesnode_id_configuration_get
 

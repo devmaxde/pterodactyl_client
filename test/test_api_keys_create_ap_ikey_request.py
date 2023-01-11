@@ -12,10 +12,6 @@ import sys
 import unittest
 
 import pterodactyl_client
-from pterodactyl_client.model.from_pterodactyl_client_model_api_keys_create_ap_ikey_request_import_api_keys_create_ap_ikey_request import FromPterodactylClientModelApiKeysCreateApIkeyRequestImportApiKeysCreateAPIkeyRequest
-from pterodactyl_client.model.globals_api_keys_create_ap_ikey_request_api_keys_create_ap_ikey_request import GlobalsApiKeysCreateAPIkeyRequestApiKeysCreateAPIkeyRequest
-globals()['from pterodactyl_client.model.api_keys_create_ap_ikey_request import ApiKeysCreateAPIkeyRequest'] = from pterodactyl_client.model.api_keys_create_ap_ikey_request import ApiKeysCreateAPIkeyRequest
-globals()['globals()['ApiKeysCreateAPIkeyRequest'] = ApiKeysCreateAPIkeyRequest'] = globals()['ApiKeysCreateAPIkeyRequest'] = ApiKeysCreateAPIkeyRequest
 from pterodactyl_client.model.api_keys_create_ap_ikey_request import ApiKeysCreateAPIkeyRequest
 
 

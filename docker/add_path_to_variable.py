@@ -43,18 +43,20 @@ def check_urls(file_path):
                         "type": variable_data[var_name]["datatype"]
                     }
                 }
-                keys = operations.keys()
+
                 for operation in operations.values():
                     if 'parameters' not in operation:
                         operation['parameters'] = []
                     operation['parameters'].append(variable)
-                    op = ""
-                    for i in keys:
-                        if operations[i] == operation:
-                            op = i
-                            break
-                    operation['operationId'] = path.replace(f"/", "_") + "_" + op
-                    operation['tags'] = [x.split("]")[-1] for x in operation['tags']]
+        keys = operations.keys()
+        for operation in operations.values():
+                op = ""
+                for i in keys:
+                    if operations[i] == operation:
+                        op = i
+                        break
+                operation['operationId'] = path.replace(f"/", "_") + "_" + op
+                operation['tags'] = [x.split("]")[-1] for x in operation['tags']]
 
     with open(file_path, 'w') as f:
         yaml.dump(openapi_spec, f)

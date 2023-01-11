@@ -30,6 +30,20 @@ class TestUsersApi(unittest.TestCase):
         """
         pass
 
+    def test_application_users_get(self):
+        """Test case for application_users_get
+
+        [ / ] List users  # noqa: E501
+        """
+        pass
+
+    def test_application_users_post(self):
+        """Test case for application_users_post
+
+        [ / ] Create user  # noqa: E501
+        """
+        pass
+
     def test_application_usersuser_id_delete(self):
         """Test case for application_usersuser_id_delete
 
